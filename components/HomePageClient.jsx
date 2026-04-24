@@ -8,9 +8,10 @@ import HeroSection from './HeroSection';
 import StatsStrip from './StatsStrip';
 import SampleHouseSlider from './SampleHouseSlider';
 import AmenitiesFlip from './AmenitiesFlip';
+import ScrollOverlapGallery from './ScrollOverlapGallery';
 import SectionHeading from './SectionHeading';
 import ProjectCard from './ProjectCard';
-import ScrollOverlapGallery from './ScrollOverlapGallery';
+
 
 import { featuredProjects, homeGallery } from '@/data/projects';
 
@@ -27,6 +28,8 @@ export default function HomePageClient() {
 
       <ScrollOverlapGallery />
 
+     
+      
       <section className="section-block">
         <SectionHeading
           eyebrow="Featured Projects"
@@ -46,6 +49,8 @@ export default function HomePageClient() {
           </Link>
         </div>
       </section>
+
+      <ScrollOverlapGallery images={homeGallery.slice(0, 5)} />
 
       <section className="section-block alt-surface">
         <SectionHeading
