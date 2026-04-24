@@ -455,3 +455,51 @@ p,
     text-align: center;
   }
 }
+
+
+/* ===== SINGLE AWARD SECTION ===== */
+
+.single-award-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 42px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 26px;
+  background: rgba(255,255,255,.06);
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.award-icon {
+  font-size: 70px;
+}
+
+.award-label {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .82rem;
+  margin-bottom: 10px;
+}
+
+.single-award-card h3 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.single-award-card p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .single-award-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 22px;
+  }
+}
