@@ -24,11 +24,7 @@ export default function HomePageClient() {
 
       <SampleHouseSlider />
 
-      <AmenitiesFlip />
-
-      <ScrollOverlapGallery />
-
-     
+      <AmenitiesFlip />     
       
       <section className="section-block">
         <SectionHeading
