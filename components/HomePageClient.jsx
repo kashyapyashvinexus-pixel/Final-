@@ -7,11 +7,12 @@ import { ArrowRight } from 'lucide-react';
 import HeroSection from './HeroSection';
 import StatsStrip from './StatsStrip';
 import SampleHouseSlider from './SampleHouseSlider';
+import AmenitiesFlip from './AmenitiesFlip';
 import SectionHeading from './SectionHeading';
 import ProjectCard from './ProjectCard';
 import ScrollOverlapGallery from './ScrollOverlapGallery';
 
-import { featuredProjects, homeGallery, principles } from '@/data/projects';
+import { featuredProjects, homeGallery } from '@/data/projects';
 
 export default function HomePageClient() {
   return (
@@ -22,30 +23,7 @@ export default function HomePageClient() {
 
       <SampleHouseSlider />
 
-      <section className="section-block alt-surface">
-        <SectionHeading
-          eyebrow="Who We Are"
-          title="Designed like a premium real estate brand, built like a trusted construction company."
-          text="Stellavia combines architectural presentation, construction clarity, and a luxury-first digital experience for flats and apartment developments."
-        />
-
-        <div className="principles-grid">
-          {principles.map((item, index) => (
-            <motion.article
-              key={item.title}
-              className="principle-card hover-panel"
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.55, delay: index * 0.08 }}
-            >
-              <span>0{index + 1}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </motion.article>
-          ))}
-        </div>
-      </section>
+      <AmenitiesFlip />
 
       <section className="section-block">
         <SectionHeading
