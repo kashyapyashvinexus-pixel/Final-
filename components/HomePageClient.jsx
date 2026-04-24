@@ -8,9 +8,10 @@ import HeroSection from './HeroSection';
 import StatsStrip from './StatsStrip';
 import SampleHouseSlider from './SampleHouseSlider';
 import AmenitiesFlip from './AmenitiesFlip';
+import ScrollOverlapGallery from './ScrollOverlapGallery';
 import SectionHeading from './SectionHeading';
 import ProjectCard from './ProjectCard';
-import ScrollOverlapGallery from './ScrollOverlapGallery';
+
 
 import { featuredProjects, homeGallery } from '@/data/projects';
 
