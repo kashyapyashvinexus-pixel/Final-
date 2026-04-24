@@ -476,7 +476,7 @@ p,
 }
 
 .award-label {
-  color: var(--gold);
+  color: #d8b45c !important;
   text-transform: uppercase;
   letter-spacing: .18em;
   font-size: .82rem;
@@ -485,17 +485,16 @@ p,
 
 .single-award-card h3 {
   font-size: clamp(2rem, 4vw, 4rem);
-  color: var(--white);
+  color: #ffffff !important;
   margin-bottom: 14px;
 }
 
 .single-award-card p {
-  color: var(--muted);
+  color: #ffffff !important;
   font-size: 1.05rem;
   line-height: 1.7;
 }
 
-/* mobile */
 @media (max-width: 768px) {
   .single-award-card {
     flex-direction: column;
