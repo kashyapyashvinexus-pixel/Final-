@@ -1,16 +1,17 @@
-import { stats } from '@/data/projects';
-import CountUpValue from './CountUpValue';
-
 export default function StatsStrip() {
   return (
     <section className="stats-strip full-bleed">
-      <div className="stats-grid">
-        {stats.map((item) => (
-          <article key={item.label} className="stat-card">
-            <h3><CountUpValue value={item.value} /></h3>
-            <p>{item.label}</p>
-          </article>
-        ))}
+      <div className="single-award-card">
+        <div className="award-icon">🏆</div>
+
+        <div>
+          <p className="award-label">Award-Winning Excellence</p>
+          <h3>Recognized for Quality & Trust</h3>
+          <p>
+            Stellavia is honoured for its commitment to quality construction,
+            thoughtful design, timely delivery, and customer satisfaction.
+          </p>
+        </div>
       </div>
     </section>
   );
