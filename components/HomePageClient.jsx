@@ -25,7 +25,7 @@ export default function HomePageClient() {
 
       <AmenitiesFlip />
 
-      <ScrollOverlapGallery images={homeGallery.slice(0, 5)} />
+      <ScrollOverlapGallery />
 
       <section className="section-block">
         <SectionHeading
