@@ -25,6 +25,8 @@ export default function HomePageClient() {
 
       <AmenitiesFlip />
 
+      <ProjectCard />
+      
       <section className="section-block">
         <SectionHeading
           eyebrow="Featured Projects"
