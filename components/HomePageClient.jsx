@@ -25,7 +25,7 @@ export default function HomePageClient() {
 
       <AmenitiesFlip />
 
-      <ProjectCard />
+      <SectionOverlapGallery />
       
       <section className="section-block">
         <SectionHeading
