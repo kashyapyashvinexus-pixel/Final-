@@ -26,15 +26,19 @@ export default function HomePageClient() {
 
       <section className="section-block">
         <SectionHeading
-          eyebrow="Featured Projects"
+          eyebrow="Projects"
           title="Completed and under-construction projects presented with brochure-ready detail."
           text="Every project card opens into a dedicated single project page with highlights, metrics, floor plans, and brochure access."
         />
 
-        <div className="projects-grid">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+        <div className="projects-slider">
+          <div className="projects-track">
+            {featuredProjects.concat(featuredProjects).map((project, index) => (
+              <div className="projects-slide" key={`${project.id}-${index}`}>
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="project-cta-row">
