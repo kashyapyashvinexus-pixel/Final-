@@ -75,7 +75,7 @@ export default function HomePageClient() {
       </section> */}
       
 
-      <section className="section-block">
+      {/*  <section className="section-block">
         <div className="split-showcase">
           <div className="split-showcase-card hover-panel">
             <div className="mini-plan">
@@ -96,7 +96,8 @@ export default function HomePageClient() {
             </Link>
           </div>
         </div>
-      </section>
+      </section>*/}
+      
     </>
   );
 }
