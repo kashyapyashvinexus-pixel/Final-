@@ -10,7 +10,6 @@ import SampleHouseSlider from './SampleHouseSlider';
 import AmenitiesFlip from './AmenitiesFlip';
 import ScrollOverlapGallery from './ScrollOverlapGallery';
 import SectionHeading from './SectionHeading';
-import ProjectCard from './ProjectCard';
 
 import { featuredProjects, homeGallery } from '@/data/projects';
 
@@ -27,15 +26,19 @@ export default function HomePageClient() {
       <section className="section-block">
         <SectionHeading
           eyebrow="Projects"
-          title="Completed and under-construction projects presented with brochure-ready detail."
-          text="Every project card opens into a dedicated single project page with highlights, metrics, floor plans, and brochure access."
+          title="Completed and under-construction projects"
+          text="Explore our premium project visuals."
         />
 
         <div className="projects-marquee">
           <div className="projects-marquee-track">
             {[...featuredProjects, ...featuredProjects].map((project, index) => (
               <div className="projects-marquee-item" key={`${project.id}-${index}`}>
-                <ProjectCard project={project} />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="project-marquee-image"
+                />
               </div>
             ))}
           </div>
