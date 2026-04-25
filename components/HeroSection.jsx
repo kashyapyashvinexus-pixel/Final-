@@ -67,7 +67,7 @@ export default function HeroSection() {
           </p>
 
           <div className="hero-actions">
-            <Link href="/projects" className="primary-btn">
+            <Link href="/" className="primary-btn">
               Explore Projects
             </Link>
 
