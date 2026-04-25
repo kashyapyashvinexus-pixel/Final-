@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const slides = [
-  '/images/sample-house-1.jpg',
-  '/images/sample-house-2.jpg',
-  '/images/sample-house-3.jpg',
-  '/images/sample-house-4.jpg',
+  '/img/JB_CAM_04_FFF.webp',
+  '/img/JB_CAM_16_FFF.webp',
+  '/img/ST_CAM_02_FFF.webp',
+  '/img/ST_CAM_01_FFF.webp',
 ];
 
 export default function SampleHouseSlider() {
