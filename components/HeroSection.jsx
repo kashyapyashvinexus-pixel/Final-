@@ -30,10 +30,19 @@ export default function HeroSection() {
     const move = (e) => {
       const x = (window.innerWidth / 2 - e.clientX) / 35;
       const y = (window.innerHeight / 2 - e.clientY) / 35;
-      gsap.to(imageRef.current, { x: -x, y: -y, duration: 0.8, ease: 'power3.out' });
+
+      if (imageRef.current) {
+        gsap.to(imageRef.current, {
+          x: -x,
+          y: -y,
+          duration: 0.8,
+          ease: 'power3.out'
+        });
+      }
     };
 
     window.addEventListener('mousemove', move);
+
     return () => {
       window.removeEventListener('mousemove', move);
       ctx.revert();
@@ -43,16 +52,28 @@ export default function HeroSection() {
   return (
     <section ref={heroRef} className="hero-section full-bleed">
       <div className="hero-overlay" />
+
       <div className="hero-layout hero-layout-pushed">
         <div className="hero-copy">
           <p className="eyebrow">Premium Residential Construction</p>
-          <h1 className="hero-title">We shape flats and apartments into landmark living experiences.</h1>
+
+          <h1 className="hero-title">
+            We shape flats and apartments into landmark living experiences.
+          </h1>
+
           <p className="lead body-large">
-            Stellavia creates high-value residential spaces with sharp architecture, trusted construction, and presentation-worthy design details.
+            Stellavia creates high-value residential spaces with sharp architecture,
+            trusted construction, and presentation-worthy design details.
           </p>
+
           <div className="hero-actions">
-            <Link href="/projects" className="primary-btn">Explore Projects</Link>
-            <Link href="/floor-plans" className="ghost-btn">View Floor Plans</Link>
+            <Link href="/projects" className="primary-btn">
+              Explore Projects
+            </Link>
+
+            <Link href="/" className="ghost-btn">
+              View Floor Plans
+            </Link>
           </div>
         </div>
 
@@ -63,10 +84,19 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.2 }}
         >
+          <img
+            src="public/img/JB_CAM_02_FFF.webp"
+            alt="Stellavia luxury apartment"
+            className="hero-main-image"
+          />
+
           <div className="hero-card glass-card">
             <span>Signature Launch</span>
             <strong>Aurelia Heights</strong>
-            <p>Luxury apartment towers with skyline amenities and elegant urban planning.</p>
+            <p>
+              Luxury apartment towers with skyline amenities and elegant urban
+              planning.
+            </p>
           </div>
         </motion.div>
       </div>
