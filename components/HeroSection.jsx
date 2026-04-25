@@ -85,7 +85,7 @@ export default function HeroSection() {
           transition={{ duration: 1.1, delay: 0.2 }}
         >
           <img
-            src="public/img/JB_CAM_02_FFF.webp"
+            src="/img/JB_CAM_02_FFF.webp"
             alt="Stellavia luxury apartment"
             className="hero-main-image"
           />
