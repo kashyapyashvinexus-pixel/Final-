@@ -914,7 +914,7 @@ p,
   bottom: 20px;
   width: 100vw;
   transform: translateX(-50%) scaleX(1.08);
-  font-size: clamp(7rem, 18vw, 22rem);
+  font-size: clamp(7rem, 10vw, 22rem);
   line-height: 0.8;
   letter-spacing: -0.09em;
   text-align: center;
