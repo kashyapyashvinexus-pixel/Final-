@@ -908,14 +908,18 @@ p,
 
 .contact-booking-bg {
   position: absolute;
-  left: -20px;
-  bottom: -35px;
-  font-size: clamp(7rem, 20vw, 22rem);
-  line-height: 0.8;
-  letter-spacing: -0.08em;
-  color: rgba(255,255,255,0.035);
-  font-weight: 700;
+  left: 50%;
+  bottom: -45px;
+  width: 100vw;
+  transform: translateX(-50%);
+  font-size: clamp(8rem, 24vw, 30rem);
+  line-height: 0.75;
+  letter-spacing: -0.11em;
+  text-align: center;
+  color: rgba(255,255,255,0.045);
+  font-weight: 800;
   pointer-events: none;
+  white-space: nowrap;
 }
 
 .contact-booking-wrap {
