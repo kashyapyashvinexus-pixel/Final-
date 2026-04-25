@@ -669,7 +669,7 @@ p,
   }
 }
 
-/* ===== AMENITIES FLIP SECTION ===== */
+/* ===== AMENITIES FLIP SECTION =====
 
 .amenities-section {
   background: var(--bg);
@@ -750,7 +750,117 @@ p,
 .amenity-back-overlay h3 {
   color: #fff;
   font-size: 1.35rem;
+}*/
+
+/*==========================================*/
+
+/* ===== AMENITIES FLIP SECTION ===== */
+
+.amenities-section {
+  background: var(--bg);
 }
+
+.amenities-flip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.amenity-flip-card {
+  height: 260px;
+  perspective: 1200px;
+}
+
+.amenity-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.amenity-flip-card:hover .amenity-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.amenity-front,
+.amenity-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.amenity-front {
+  background: linear-gradient(145deg, #191919, #0c0c0c);
+  border: 1px solid rgba(255,255,255,.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px;
+}
+
+.amenity-front span {
+  color: #d8b45c;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.amenity-front h3 {
+  color: #fff;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.amenity-back {
+  transform: rotateY(180deg);
+}
+
+.amenity-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.amenity-flip-card:hover .amenity-back img {
+  transform: scale(1.18);
+}
+
+.amenity-back-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.1));
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+}
+
+.amenity-back-overlay h3 {
+  color: #fff;
+  font-size: 1.35rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .amenities-flip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .amenities-flip-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amenity-flip-card {
+    height: 230px;
+  }
+}
+
+/*=======================*/
 
 /* Tablet */
 @media (max-width: 1024px) {
