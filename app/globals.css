@@ -911,7 +911,7 @@ p,
 .contact-booking-bg {
   position: absolute;
   left: 50%;
-  bottom: -45px;
+  bottom: -20px;
   width: 120vw;
   transform: translateX(-50%) scaleX(1.18);
   font-size: clamp(10rem, 30vw, 36rem);
