@@ -912,11 +912,11 @@ p,
   position: absolute;
   left: 50%;
   bottom: -45px;
-  width: 100vw;
-  transform: translateX(-50%) scaleX(1.02);
-  font-size: clamp(10rem, 28vw, 34rem);
+  width: 120vw;
+  transform: translateX(-50%) scaleX(1.18);
+  font-size: clamp(10rem, 30vw, 36rem);
   line-height: 0.72;
-  letter-spacing: -0.12em;
+  letter-spacing: -0.13em;
   text-align: center;
   color: rgba(255,255,255,0.055);
   font-weight: 900;
@@ -924,7 +924,6 @@ p,
   white-space: nowrap;
   z-index: 1;
 }
-
 .contact-booking-wrap {
   position: relative;
   z-index: 2;
