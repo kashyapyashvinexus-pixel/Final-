@@ -12,6 +12,7 @@
   --dark: #111111;
   --accent: #c7a46a;
   --accent-soft: #f0d7b4;
+  --black:#000000;
   --shadow: 0 20px 80px rgba(0, 0, 0, 0.08);
 
   --h1-size: clamp(42px, 6vw, 104px);
@@ -1109,4 +1110,17 @@ p,
   .contact-booking-left h2 {
     max-width: 100%;
   }
+}
+
+.contact-booking-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: rgba(255,255,255,0.06) !important;
+  color: #ffffff !important;
+}
+
+.contact-booking-form select option {
+  background: #111111;
+  color: #ffffff;
 }
