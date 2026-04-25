@@ -671,7 +671,7 @@ p,
 /* ===== AMENITIES FLIP SECTION ===== */
 
 .amenities-section {
-  background: #111;
+  background: var(--bg);
 }
 
 .amenities-flip-grid {
