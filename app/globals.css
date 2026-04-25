@@ -911,12 +911,12 @@ p,
 .contact-booking-bg {
   position: absolute;
   left: 50%;
-  bottom: -70px;
-  width: 120vw;
-  transform: translateX(-50%) scaleX(1.18);
-  font-size: clamp(10rem, 30vw, 36rem);
-  line-height: 0.72;
-  letter-spacing: -0.13em;
+  bottom: 40px;
+  width: 100%;
+  transform: translateX(-50%);
+  font-size: clamp(8rem, 23vw, 26rem);
+  line-height: 0.8;
+  letter-spacing: -0.1em;
   text-align: center;
   color: rgba(255,255,255,0.055);
   font-weight: 900;
