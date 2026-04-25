@@ -26,8 +26,6 @@ export default function HomePageClient() {
 
       <ScrollOverlapGallery images={homeGallery.slice(0, 5)} />
 
-      <ContactBookingSection />
-
       <section className="section-block">
         <SectionHeading
           eyebrow="Projects"
@@ -55,6 +53,8 @@ export default function HomePageClient() {
           </Link>
         </div>
       </section>
+
+      <ContactBookingSection />
     </>
   );
 }
