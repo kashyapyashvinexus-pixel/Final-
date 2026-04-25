@@ -12,6 +12,7 @@ import ScrollOverlapGallery from './ScrollOverlapGallery';
 import SectionHeading from './SectionHeading';
 
 import { featuredProjects, homeGallery } from '@/data/projects';
+import ContactBookingSection from './ContactBookingSection';
 
 export default function HomePageClient() {
   return (
@@ -22,7 +23,7 @@ export default function HomePageClient() {
       <AmenitiesFlip />
 
       <ScrollOverlapGallery images={homeGallery.slice(0, 5)} />
-
+      <ContactBookingSection />
       <section className="section-block">
         <SectionHeading
           eyebrow="Projects"
