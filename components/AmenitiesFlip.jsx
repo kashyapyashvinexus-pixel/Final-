@@ -1,12 +1,12 @@
 const amenities = [
-  { title: 'Lift', image: '/img/JB_CAM_FFF_FOYER.webp' },
-  { title: 'Gymnasium', image: '/img/IMG_4238.JPG.jpg' },
-  { title: 'Landscaped Garden', image: '/img/ST_CAM_03_FFF.webp' },
   { title: 'Children Play Area', image: '/img/ST_CAM_05_FFF.webp' },
-  { title: 'Club House', image: '/img/IMG_4239.JPG.jpg' },
-  { title: 'Indoor Games', image: '/img/IMG_4239.JPG.jpg' },
-  { title: 'Security System', image: '/img/IMG_4236.JPG.jpg' },
-  { title: 'Basement Parking', image: '/img/IMG_4240.JPG.jpg' },
+  { title: 'Gymnasium', image: '/img/IMG_4238.webp' },
+  { title: 'Landscaped Garden', image: '/img/ST_CAM_03_FFF.webp' },  
+  { title: 'Club House', image: '/img/IMG_4239.webp' },
+  { title: 'Indoor Games', image: '/img/IMG_4239.webp' },
+  { title: 'Security System', image: '/img/IMG_4236.webp' },
+  { title: 'Basement Parking', image: '/img/IMG_4240.webp' },
+  { title: 'Lift', image: '/img/JB_CAM_FFF_FOYER.webp' },
 ];
 
 export default function AmenitiesFlip() {
