@@ -904,20 +904,22 @@ p,
   background: var(--dark);
   color: var(--white);
   overflow: hidden;
+  padding-top: 120px;
+  padding-bottom: 140px;
 }
 
 .contact-booking-bg {
   position: absolute;
   left: 50%;
-  bottom: -45px;
+  bottom: -55px;
   width: 100vw;
   transform: translateX(-50%);
-  font-size: clamp(8rem, 24vw, 30rem);
-  line-height: 0.75;
-  letter-spacing: -0.11em;
+  font-size: clamp(9rem, 28vw, 34rem);
+  line-height: 0.72;
+  letter-spacing: -0.12em;
   text-align: center;
-  color: rgba(255,255,255,0.045);
-  font-weight: 800;
+  color: rgba(255,255,255,0.05);
+  font-weight: 900;
   pointer-events: none;
   white-space: nowrap;
 }
@@ -1075,9 +1077,24 @@ p,
     grid-template-columns: 1fr;
     gap: 48px;
   }
+
+  .contact-booking-bg {
+    font-size: clamp(8rem, 26vw, 22rem);
+  }
 }
 
 @media (max-width: 600px) {
+  .contact-booking-section {
+    padding-top: 90px;
+    padding-bottom: 110px;
+  }
+
+  .contact-booking-bg {
+    bottom: -28px;
+    font-size: 7.8rem;
+    letter-spacing: -0.12em;
+  }
+
   .contact-booking-form {
     padding: 26px 20px;
   }
