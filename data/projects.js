@@ -6,12 +6,12 @@ export const stats = [
 ];
 
 export const homeGallery = [
-  'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=80',
-  'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=80',
-  'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80',
-  'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80',
-  'https://images.unsplash.com/photo-1462396881884-de2c07cb95ed?auto=format&fit=crop&w=1400&q=80',
-  'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80'
+  '/img/JB_CAM_05_FFF.webp',
+  '/img/ST_CAM_06_FFF.webp',
+  '/img/ST_CAM_01_FFF.webp',
+  '/img/ST_CAM_02_FFF.webp',
+  '/img/JB_CAM_16_FFF.webp',
+  '/img/ST_CAM_07_FFF.webp'
 ];
 
 export const projects = [
