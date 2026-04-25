@@ -1124,3 +1124,13 @@ p,
   background: #111111;
   color: #000;
 }
+
+/*================*/
+
+.amenity-back img {
+  transition: transform 0.8s ease;
+}
+
+.amenity-flip-card:hover .amenity-back img {
+  transform: scale(1.12);
+}
