@@ -894,3 +894,195 @@ p,
     height: 260px;
   }
 }
+
+/*===================================*/
+
+/* ===== CONTACT BOOKING SECTION ===== */
+
+.contact-booking-section {
+  position: relative;
+  background: var(--dark);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.contact-booking-bg {
+  position: absolute;
+  left: -20px;
+  bottom: -35px;
+  font-size: clamp(7rem, 20vw, 22rem);
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  color: rgba(255,255,255,0.035);
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.contact-booking-wrap {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 70px;
+  max-width: 1180px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.contact-booking-left h2 {
+  color: var(--white);
+  font-size: clamp(2.6rem, 5vw, 5rem);
+  line-height: 1.05;
+  max-width: 10ch;
+  margin-bottom: 22px;
+}
+
+.contact-booking-left h2 em {
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.gold-line {
+  display: block;
+  width: 52px;
+  height: 1px;
+  background: var(--accent);
+  margin: 0 0 24px;
+}
+
+.contact-booking-left p {
+  color: rgba(255,255,255,0.72);
+  max-width: 560px;
+}
+
+.contact-info-list {
+  display: grid;
+  gap: 22px;
+  margin-top: 38px;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.contact-info-item > span {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(199,164,106,0.45);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.contact-info-item small {
+  display: block;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  margin-bottom: 6px;
+}
+
+.contact-info-item a,
+.contact-info-item p {
+  color: var(--white);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.contact-booking-form {
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.035);
+  padding: 42px;
+}
+
+.contact-booking-form h3 {
+  color: var(--white);
+  font-size: clamp(1.6rem, 2vw, 2.4rem);
+  margin-bottom: 28px;
+}
+
+.contact-booking-form form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.contact-booking-form label {
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  display: grid;
+  gap: 8px;
+}
+
+.contact-booking-form input,
+.contact-booking-form select,
+.contact-booking-form textarea {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: var(--white);
+  padding: 15px 16px;
+  outline: none;
+  border-radius: 0;
+}
+
+.contact-booking-form input::placeholder,
+.contact-booking-form textarea::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.contact-booking-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.contact-booking-form button {
+  border: 0;
+  background: var(--accent);
+  color: var(--dark);
+  padding: 18px 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.form-note {
+  color: rgba(255,255,255,0.35);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .contact-booking-wrap {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-booking-form {
+    padding: 26px 20px;
+  }
+
+  .form-two {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-booking-left h2 {
+    max-width: 100%;
+  }
+}
