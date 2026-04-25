@@ -771,7 +771,7 @@ p,
 
 /*==============================*/
 
-/* ===== PROJECT IMAGES MARQUEE RIGHT TO LEFT ===== */
+/* ===== FIXED PROJECT MARQUEE (LIKE YOUR IMAGE) ===== */
 
 .projects-marquee {
   width: 100%;
@@ -783,75 +783,56 @@ p,
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: projectMoveRTL 28s linear infinite;
+  animation: projectMoveRTL 26s linear infinite;
 }
 
+/* EXACT SAME CARD SIZE LIKE ORIGINAL GRID */
 .projects-marquee-item {
-  width: calc((94vw - 48px) / 3);
-  min-width: calc((94vw - 48px) / 3);
+  width: 33.3333%;
+  min-width: 33.3333%;
   flex: 0 0 auto;
 }
 
+/* KEEP SAME IMAGE STYLE AS PROJECT CARD */
 .project-marquee-image {
   width: 100%;
-  height: 520px;
+  height: 320px; /* same as your .project-image-wrap */
   object-fit: cover;
   border-radius: 28px;
   display: block;
 }
 
+/* smooth infinite scroll */
+@keyframes projectMoveRTL {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* hover pause */
 .projects-marquee:hover .projects-marquee-track {
   animation-play-state: paused;
 }
 
-@keyframes projectMoveRTL {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-50% - 12px));
-  }
-}
-
 /* Tablet */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .projects-marquee-item {
-    width: 46vw;
-    min-width: 46vw;
-  }
-
-  .project-marquee-image {
-    height: 420px;
+    width: 50%;
+    min-width: 50%;
   }
 }
 
 /* Mobile */
-@media (max-width: 600px) {
-  .projects-marquee {
-    margin-top: 28px;
-  }
-
-  .projects-marquee-track {
-    gap: 16px;
-    animation-duration: 22s;
-  }
-
+@media (max-width: 767px) {
   .projects-marquee-item {
-    width: 82vw;
-    min-width: 82vw;
+    width: 100%;
+    min-width: 100%;
   }
 
   .project-marquee-image {
-    height: 320px;
-    border-radius: 22px;
-  }
-
-  @keyframes projectMoveRTL {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-50% - 8px));
-    }
+    height: 260px;
   }
 }
