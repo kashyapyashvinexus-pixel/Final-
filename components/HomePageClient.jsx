@@ -51,7 +51,7 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="section-block alt-surface">
+      {/* <section className="section-block alt-surface">
         <SectionHeading
           eyebrow="Home Gallery"
           title="Extra premium imagery added to the home page for a richer launch feel."
@@ -72,7 +72,8 @@ export default function HomePageClient() {
             </motion.article>
           ))}
         </div>
-      </section>
+      </section>*/}
+      
 
       <section className="section-block">
         <div className="split-showcase">
