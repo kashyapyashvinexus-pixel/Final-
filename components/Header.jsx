@@ -7,12 +7,20 @@ import { usePathname } from 'next/navigation';
 import { gsap } from 'gsap';
 import { Menu, X } from 'lucide-react';
 
-const navItems = [
+{/*const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Projects', path: '/projects' },
   { label: 'Floor Plans', path: '/floor-plans' },
   { label: 'Contact', path: '/contact' }
+];*/}
+
+const navItems = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '' },
+  { label: 'Projects', path: '' },
+  { label: 'Floor Plans', path: '' },
+  { label: 'Contact', path: '' }
 ];
 
 export default function Header() {
