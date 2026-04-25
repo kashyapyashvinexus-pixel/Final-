@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   const heroRef = useRef(null);
-  const imageRef = useRef(null);
+  const cardRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -16,14 +16,14 @@ export default function HeroSection() {
         opacity: 0,
         duration: 1,
         stagger: 0.15,
-        ease: 'power3.out'
+        ease: 'power3.out',
       });
 
-      gsap.from('.hero-visual', {
+      gsap.from('.hero-card', {
         scale: 1.08,
         opacity: 0,
         duration: 1.4,
-        ease: 'power3.out'
+        ease: 'power3.out',
       });
     }, heroRef);
 
@@ -31,12 +31,12 @@ export default function HeroSection() {
       const x = (window.innerWidth / 2 - e.clientX) / 35;
       const y = (window.innerHeight / 2 - e.clientY) / 35;
 
-      if (imageRef.current) {
-        gsap.to(imageRef.current, {
+      if (cardRef.current) {
+        gsap.to(cardRef.current, {
           x: -x,
           y: -y,
           duration: 0.8,
-          ease: 'power3.out'
+          ease: 'power3.out',
         });
       }
     };
@@ -78,18 +78,12 @@ export default function HeroSection() {
         </div>
 
         <motion.div
-          ref={imageRef}
+          ref={cardRef}
           className="hero-visual hover-panel"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.2 }}
         >
-          <img
-            src="/img/JB_CAM_02_FFF.webp"
-            alt="Stellavia luxury apartment"
-            className="hero-main-image"
-          />
-
           <div className="hero-card glass-card">
             <span>Signature Launch</span>
             <strong>Aurelia Heights</strong>
