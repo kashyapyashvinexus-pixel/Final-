@@ -26,28 +26,8 @@ export default function HomePageClient() {
 
       <AmenitiesFlip />     
       <ScrollOverlapGallery />
-      
-      <section className="section-block">
-        <SectionHeading
-          eyebrow="Featured Projects"
-          title="Completed and under-construction projects presented with brochure-ready detail."
-          text="Every project card opens into a dedicated single project page with highlights, metrics, floor plans, and brochure access."
-        />
 
-        <div className="projects-grid">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-
-        <div className="project-cta-row">
-          <Link href="/projects" className="inline-link">
-            See All Projects <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
-
-      <ScrollOverlapGallery images={homeGallery.slice(0, 5)} />
+       <ScrollOverlapGallery images={homeGallery.slice(0, 5)} />
 
       <section className="section-block alt-surface">
         <SectionHeading
@@ -72,6 +52,28 @@ export default function HomePageClient() {
         </div>
       </section>
 
+      
+      <section className="section-block">
+        <SectionHeading
+          eyebrow="Featured Projects"
+          title="Completed and under-construction projects presented with brochure-ready detail."
+          text="Every project card opens into a dedicated single project page with highlights, metrics, floor plans, and brochure access."
+        />
+
+        <div className="projects-grid">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+
+        <div className="project-cta-row">
+          <Link href="/projects" className="inline-link">
+            See All Projects <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+
+     
       <section className="section-block">
         <div className="split-showcase">
           <div className="split-showcase-card hover-panel">
