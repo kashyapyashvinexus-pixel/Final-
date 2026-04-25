@@ -912,7 +912,7 @@ p,
   position: absolute;
   left: 50%;
   bottom: -45px;
-  width: 90vw;
+  width: 80vw;
   transform: translateX(-50%) scaleX(1.18);
   font-size: clamp(10rem, 30vw, 36rem);
   line-height: 0.72;
