@@ -1,5 +1,5 @@
 const amenities = [
-  { title: 'Swimming Pool', image: '/img/' },
+  { title: 'Lift', image: '/img/JB_CAM_FFF_FOYER.webp' },
   { title: 'Gymnasium', image: '/img/IMG_4238.JPG' },
   { title: 'Landscaped Garden', image: '/img/ST_CAM_03_FFF.webp' },
   { title: 'Children Play Area', image: '/img/ST_CAM_05_FFF.webp' },
