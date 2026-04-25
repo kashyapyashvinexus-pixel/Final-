@@ -31,10 +31,10 @@ export default function HomePageClient() {
           text="Every project card opens into a dedicated single project page with highlights, metrics, floor plans, and brochure access."
         />
 
-        <div className="projects-slider">
-          <div className="projects-track">
-            {featuredProjects.concat(featuredProjects).map((project, index) => (
-              <div className="projects-slide" key={`${project.id}-${index}`}>
+        <div className="projects-marquee">
+          <div className="projects-marquee-track">
+            {[...featuredProjects, ...featuredProjects].map((project, index) => (
+              <div className="projects-marquee-item" key={`${project.id}-${index}`}>
                 <ProjectCard project={project} />
               </div>
             ))}
