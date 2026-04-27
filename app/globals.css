@@ -693,11 +693,12 @@ p,
   background: #000;
 }
 
-/* TRACK */
+/* 🔥 TRACK WITH ULTRA SMOOTH EASING */
 .sample-track {
   display: flex;
   height: 100%;
-  transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+  /* 👆 luxury easing (used in premium sites) */
 }
 
 /* SLIDE */
@@ -705,13 +706,21 @@ p,
   position: relative;
   min-width: 100%;
   height: 100%;
-  flex-shrink: 0;
 }
 
 /* IMAGE */
 .sample-img {
   object-fit: cover;
   object-position: center;
+
+  /* 👇 cinematic zoom */
+  transform: scale(1);
+  transition: transform 5s ease;
+}
+
+/* ACTIVE IMAGE ZOOM */
+.sample-img.active {
+  transform: scale(1.08);
 }
 
 /* =========================
@@ -723,7 +732,11 @@ p,
   }
 
   .sample-track {
-    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .sample-img.active {
+    transform: scale(1.04);
   }
 }
 
@@ -734,23 +747,20 @@ p,
   }
 }
 
-/* =========================
-   💻 TABLET
-========================= */
+/* TABLET */
 @media (min-width: 769px) and (max-width: 1024px) {
   .sample-slider {
     height: 80vh;
   }
 }
 
-/* =========================
-   🖥️ LARGE SCREEN
-========================= */
+/* LARGE SCREEN */
 @media (min-width: 1440px) {
   .sample-track {
-    transition: transform 1.3s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
+
 /* ===== AMENITIES FLIP SECTION =====
 
 .amenities-section {
