@@ -1,6 +1,6 @@
 export default function StatsStrip() {
   return (
-    <section className="lux-award-section full-bleed">
+    <section className="lux-award-section">
       <div className="lux-award-card">
         <span className="lux-diamond lux-top">◆</span>
         <span className="lux-diamond lux-bottom">◆</span>
