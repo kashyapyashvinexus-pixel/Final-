@@ -681,6 +681,10 @@ p,
 
 /* ===== SAMPLE HOUSE FULL SCREEN SLIDER ===== */
 
+/* ===============================
+   PIRAMAL STYLE BUTTER SLIDER
+================================ */
+
 .sample-house-slider {
   position: relative;
   width: 100%;
@@ -689,27 +693,34 @@ p,
   background: #000;
 }
 
-/* BASE */
+/* BASE SLIDE */
 .sample-house-slide {
   position: absolute;
   inset: 0;
   transform: translateX(100%);
   z-index: 1;
-  will-change: transform;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
-/* 🔥 ACTIVE (COMING IN SLOW) */
+/* 🔥 ACTIVE SLIDE (COMING IN) */
 .sample-house-slide.is-active {
   z-index: 3;
   transform: translateX(0%);
-  transition: transform 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 1;
+  transition: 
+    transform 2.8s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 1.2s ease;
 }
 
-/* 🔥 PREVIOUS (GOING OUT SLOW) */
+/* 🔥 PREVIOUS SLIDE (GOING OUT SLOW) */
 .sample-house-slide.is-prev {
   z-index: 2;
-  transform: translateX(-12%);
-  transition: transform 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateX(-10%);
+  opacity: 1;
+  transition: 
+    transform 2.8s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 1.2s ease;
 }
 
 /* IMAGE */
@@ -717,12 +728,12 @@ p,
   object-fit: cover;
   object-position: center;
 
-  /* cinematic zoom */
+  /* 🔥 cinematic zoom */
   transform: scale(1.06);
-  transition: transform 5.2s ease;
+  transition: transform 6s ease;
 }
 
-/* active zoom */
+/* ACTIVE ZOOM RESET */
 .sample-house-slide.is-active .sample-house-img {
   transform: scale(1);
 }
@@ -739,7 +750,7 @@ p,
 
   .sample-house-slide.is-active,
   .sample-house-slide.is-prev {
-    transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 2.2s cubic-bezier(0.19, 1, 0.22, 1);
   }
 }
 
@@ -758,7 +769,7 @@ p,
   }
 }
 
-/* Small mobile */
+/* Small Mobile */
 @media (max-width: 480px) {
   .sample-house-slider {
     height: 60vh;
