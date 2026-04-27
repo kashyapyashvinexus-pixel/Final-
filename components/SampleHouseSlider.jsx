@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
 
 const slides = [
   '/img/JB_CAM_04_FFF.webp',
@@ -12,18 +13,62 @@ const slides = [
 
 export default function SampleHouseSlider() {
   const [active, setActive] = useState(0);
-  const [prev, setPrev] = useState(slides.length - 1);
-  const intervalRef = useRef(null);
+  const sliderRef = useRef([]);
+  const imgRef = useRef([]);
 
   useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setActive((prevActive) => {
-        setPrev(prevActive);
-        return (prevActive + 1) % slides.length;
-      });
-    }, 6500);
+    let current = 0;
 
-    return () => clearInterval(intervalRef.current);
+    const runSlider = () => {
+      const next = (current + 1) % slides.length;
+
+      const currentSlide = sliderRef.current[current];
+      const nextSlide = sliderRef.current[next];
+
+      const currentImg = imgRef.current[current];
+      const nextImg = imgRef.current[next];
+
+      // Bring next slide above
+      gsap.set(nextSlide, { x: '100%', zIndex: 3 });
+      gsap.set(currentSlide, { zIndex: 2 });
+
+      // Timeline for smooth transition
+      const tl = gsap.timeline();
+
+      tl.to(currentSlide, {
+        x: '-12%',
+        duration: 2.6,
+        ease: 'power4.inOut',
+      });
+
+      tl.to(
+        nextSlide,
+        {
+          x: '0%',
+          duration: 2.6,
+          ease: 'power4.inOut',
+        },
+        0
+      );
+
+      // Zoom animation
+      gsap.fromTo(
+        nextImg,
+        { scale: 1.08 },
+        {
+          scale: 1,
+          duration: 6,
+          ease: 'power2.out',
+        }
+      );
+
+      current = next;
+      setActive(next);
+    };
+
+    const interval = setInterval(runSlider, 6500);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -31,11 +76,11 @@ export default function SampleHouseSlider() {
       {slides.map((src, index) => (
         <div
           key={index}
-          className={`sample-house-slide 
-            ${index === active ? 'is-active' : ''} 
-            ${index === prev ? 'is-prev' : ''}`}
+          ref={(el) => (sliderRef.current[index] = el)}
+          className="sample-house-slide"
         >
           <Image
+            ref={(el) => (imgRef.current[index] = el)}
             src={src}
             alt="sample"
             fill
