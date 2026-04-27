@@ -6,18 +6,11 @@ export default function StatsStrip() {
         <span className="lux-diamond lux-bottom">◆</span>
 
         <div className="lux-award-left">
-          <div className="lux-laurel">‹</div>
-
-          <div className="lux-medal">
-            <div className="lux-crown">♛</div>
-            <div className="lux-circle">
-              <span className="lux-star">★</span>
-              <span className="lux-trophy">🏆</span>
-            </div>
-            <div className="lux-ribbon">★★★★★</div>
-          </div>
-
-          <div className="lux-laurel lux-right">›</div>
+          <img
+            src="/award-medal.png"
+            alt="Award Medal"
+            className="lux-award-image"
+          />
         </div>
 
         <div className="lux-award-content">
