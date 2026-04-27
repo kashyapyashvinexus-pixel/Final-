@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const slides = [
   '/img/JB_CAM_04_FFF.webp',
@@ -13,15 +13,19 @@ const slides = [
 export default function SampleHouseSlider() {
   const [active, setActive] = useState(0);
   const [prev, setPrev] = useState(slides.length - 1);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setPrev(active);
-      setActive((active + 1) % slides.length);
-    }, 6500); // 🔥 slow cycle (important)
+    intervalRef.current = setInterval(() => {
+      setActive((prevActive) => {
+        const next = (prevActive + 1) % slides.length;
+        setPrev(prevActive);
+        return next;
+      });
+    }, 6500); // 🔥 smooth timing
 
-    return () => clearInterval(interval);
-  }, [active]);
+    return () => clearInterval(intervalRef.current);
+  }, []);
 
   return (
     <section className="sample-house-slider">
