@@ -20,25 +20,25 @@ export default function SampleHouseSlider() {
         setPrev(current);
         return (current + 1) % slides.length;
       });
-    }, 6000); // ✔ hold + smooth timing
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="sample-slider">
-      {slides.map((src, i) => (
+      {slides.map((src, index) => (
         <div
-          key={i}
-          className={`slide 
-            ${i === active ? 'active' : ''} 
-            ${i === prev ? 'prev' : ''}`}
+          key={index}
+          className={`slide ${index === active ? 'active' : ''} ${
+            index === prev ? 'prev' : ''
+          }`}
         >
           <Image
             src={src}
-            alt={`slide-${i}`}
+            alt={`Sample House ${index + 1}`}
             fill
-            priority={i === 0}
+            priority={index === 0}
             sizes="100vw"
             className="slide-img"
           />
