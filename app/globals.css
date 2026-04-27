@@ -681,10 +681,6 @@ p,
 
 /* ===== SAMPLE HOUSE FULL SCREEN SLIDER ===== */
 
-/* ===============================
-   PIRAMAL STYLE SAMPLE SLIDER
-================================ */
-
 .sample-house-slider {
   position: relative;
   width: 100%;
@@ -693,82 +689,79 @@ p,
   background: #000;
 }
 
+/* BASE */
 .sample-house-slide {
   position: absolute;
   inset: 0;
-  z-index: 1;
-  overflow: hidden;
   transform: translateX(100%);
-  opacity: 1;
+  z-index: 1;
   will-change: transform;
 }
 
+/* 🔥 ACTIVE (COMING IN SLOW) */
 .sample-house-slide.is-active {
   z-index: 3;
-  transform: translateX(0);
-  transition: transform 1.55s cubic-bezier(0.76, 0, 0.24, 1);
+  transform: translateX(0%);
+  transition: transform 2.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* 🔥 PREVIOUS (GOING OUT SLOW) */
 .sample-house-slide.is-prev {
   z-index: 2;
-  transform: translateX(-18%);
-  transition: transform 1.55s cubic-bezier(0.76, 0, 0.24, 1);
+  transform: translateX(-12%);
+  transition: transform 2.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* IMAGE */
 .sample-house-img {
   object-fit: cover;
   object-position: center;
-  transform: scale(1.08);
-  transition: transform 4.2s ease;
+
+  /* cinematic zoom */
+  transform: scale(1.06);
+  transition: transform 5.2s ease;
 }
 
+/* active zoom */
 .sample-house-slide.is-active .sample-house-img {
   transform: scale(1);
 }
 
-/* subtle premium edge depth */
-.sample-house-slider::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(0,0,0,.12), transparent 22%, transparent 78%, rgba(0,0,0,.10)),
-    linear-gradient(180deg, rgba(0,0,0,.10), transparent 25%, transparent 75%, rgba(0,0,0,.12));
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
 /* Tablet */
 @media (max-width: 1024px) {
   .sample-house-slider {
-    height: 82vh;
+    height: 80vh;
   }
 
   .sample-house-slide.is-active,
   .sample-house-slide.is-prev {
-    transition-duration: 1.35s;
+    transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .sample-house-slider {
-    height: 72vh;
+    height: 70vh;
   }
 
   .sample-house-slide.is-prev {
-    transform: translateX(-10%);
+    transform: translateX(-8%);
   }
 
   .sample-house-img {
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
 }
 
-/* Small Mobile */
+/* Small mobile */
 @media (max-width: 480px) {
   .sample-house-slider {
-    height: 62vh;
+    height: 60vh;
   }
 }
 
