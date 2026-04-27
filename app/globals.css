@@ -472,7 +472,8 @@ p,
 .stats-strip {
   width: 100%;
   padding: 28px 0;
-  background: #0f0f0f;
+ /* background: #0f0f0f;*/
+  background: #ffffff;
 }
 
 .single-award-card {
