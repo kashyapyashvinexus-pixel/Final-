@@ -5,13 +5,22 @@ export const stats = [
   { value: '3.8M+', label: 'Sq. Ft. Delivered' }
 ];
 
-export const homeGallery = [
+{/*export const homeGallery = [
   'img/JB_CAM_05_FFF.webp',
   'ST_CAM_06_FFF.webp',
   'ST_CAM_01_FFF.webp',
   'ST_CAM_02_FFF.webp',
   'JB_CAM_16_FFF.webp',
   'ST_CAM_07_FFF.webp'
+];*/}
+
+export const homeGallery = [
+  '/img/JB_CAM_05_FFF.webp',
+  '/img/ST_CAM_06_FFF.webp',
+  '/img/ST_CAM_01_FFF.webp',
+  '/img/ST_CAM_02_FFF.webp',
+  '/img/JB_CAM_16_FFF.webp',
+  '/img/ST_CAM_07_FFF.webp'
 ];
 
 export const projects = [
