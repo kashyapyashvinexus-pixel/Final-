@@ -498,7 +498,7 @@ p,
 
 .award-label {
  /* color: #d8b45c !important;*/
-   color: #fff;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.82rem;
@@ -507,14 +507,14 @@ p,
 }
 
 .single-award-card h3 {
-  color: #ffffff !important;
+  color: #000 !important;
   font-size: clamp(2rem, 4vw, 4.2rem);
   line-height: 1.05;
   margin-bottom: 18px;
 }
 
 .single-award-card p {
-  color: #ffffff !important;
+  color: #000 !important;
   font-size: 1.05rem;
   line-height: 1.7;
   max-width: 900px;
