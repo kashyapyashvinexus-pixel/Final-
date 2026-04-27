@@ -22,32 +22,34 @@ export default function StatsStrip() {
   return (
     <section className="stats-strip full-bleed">
       <div className="single-award-card">
-        <div className="award-frame"></div>
+        <div className="gold-corner top-left"></div>
+        <div className="gold-corner top-right"></div>
+        <div className="gold-diamond top">◆</div>
+        <div className="gold-diamond bottom">◆</div>
 
         <div className="award-visual">
-          <div className="laurel left">‹</div>
+          <div className="laurel laurel-left">❬</div>
 
-          <div className="award-medal">
-            <div className="crown">♛</div>
-            <div className="medal-circle">
-              <span>🏆</span>
+          <div className="award-badge">
+            <div className="award-crown">♛</div>
+            <div className="badge-circle">
+              <span className="badge-star">★</span>
+              <span className="badge-trophy">🏆</span>
             </div>
-            <div className="award-ribbon">★★★★★</div>
+            <div className="badge-ribbon">★★★★★</div>
           </div>
 
-          <div className="laurel right">›</div>
+          <div className="laurel laurel-right">❭</div>
         </div>
 
         <div className="award-content">
           <p className="award-label">Award-Winning Excellence</p>
-          <h3>Recognized for Quality & Trust</h3>
-
+          <h3>Recognized for<br />Quality & Trust</h3>
           <div className="award-line">
             <span></span>
             <i>◆</i>
             <span></span>
           </div>
-
           <p className="award-desc">
             Stellavia is honoured for its commitment to quality construction,
             thoughtful design, timely delivery, and customer satisfaction.
