@@ -12,36 +12,38 @@ const slides = [
 
 export default function SampleHouseSlider() {
   const [active, setActive] = useState(0);
+  const [prev, setPrev] = useState(slides.length - 1);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % slides.length);
-    }, 4200); // 2.5s hold + ~1.7s smooth slide
+    const timer = setInterval(() => {
+      setPrev(active);
+      setActive((active + 1) % slides.length);
+    }, 4200);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(timer);
+  }, [active]);
 
   return (
-    <section className="sample-slider">
-      <div
-        className="sample-track"
-        style={{
-          transform: `translateX(-${active * 100}%)`,
-        }}
-      >
-        {slides.map((src, i) => (
-          <div className="sample-slide" key={i}>
-            <Image
-              src={src}
-              alt={`Slide ${i}`}
-              fill
-              priority={i === 0}
-              sizes="100vw"
-              className={`sample-img ${active === i ? 'active' : ''}`}
-            />
-          </div>
-        ))}
-      </div>
+    <section className="sample-house-slider">
+      {slides.map((src, index) => (
+        <div
+          key={src}
+          className={[
+            'sample-house-slide',
+            index === active ? 'is-active' : '',
+            index === prev ? 'is-prev' : '',
+          ].join(' ')}
+        >
+          <Image
+            src={src}
+            alt={`Sample house ${index + 1}`}
+            fill
+            priority={index === 0}
+            sizes="100vw"
+            className="sample-house-img"
+          />
+        </div>
+      ))}
     </section>
   );
 }
