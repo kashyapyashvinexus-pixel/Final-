@@ -837,107 +837,136 @@ p,
 
 /* ===== AMENITIES HOVER POPUP SECTION ===== */
 
+/* ===== AMENITIES FLIP + IMAGE POPOUT ===== */
+
 .amenities-section {
   background: var(--bg);
   overflow: visible;
 }
 
 .amenities-flip-grid {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 22px;
   overflow: visible;
 }
 
-.amenity-card {
+.amenity-flip-card {
   position: relative;
-  height: 280px;
-  border-radius: 26px;
+  height: 260px;
+  perspective: 1200px;
   overflow: visible;
-  cursor: pointer;
-  background: #111;
-  isolation: isolate;
   z-index: 1;
 }
 
-.amenity-card > img {
+.amenity-flip-card:hover {
+  z-index: 50;
+}
+
+.amenity-flip-inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 26px;
-  transform: scale(1);
-  transition: transform 0.7s ease, filter 0.7s ease;
+  transition: transform 0.75s ease;
+  transform-style: preserve-3d;
 }
 
-.amenity-card:hover {
-  z-index: 20;
+.amenity-flip-card:hover .amenity-flip-inner {
+  transform: rotateY(180deg);
 }
 
-.amenity-card:hover > img {
-  transform: scale(0.96);
-  filter: brightness(0.55);
-}
-
-.amenity-overlay {
+.amenity-front,
+.amenity-back {
   position: absolute;
   inset: 0;
-  z-index: 2;
-  padding: 24px;
-  border-radius: 26px;
+  border-radius: 24px;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.amenity-front {
+  background: linear-gradient(145deg, #191919, #0c0c0c);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.78),
-    rgba(0, 0, 0, 0.25),
-    rgba(0, 0, 0, 0.04)
-  );
+  justify-content: center;
+  padding: 28px;
 }
 
-.amenity-icon {
+.amenity-front span {
   color: #d8b45c;
-  font-size: 28px;
-  margin-bottom: 12px;
+  font-size: 34px;
+  margin-bottom: 20px;
 }
 
-.amenity-overlay h3 {
+.amenity-front h3 {
   color: #fff;
-  font-size: 1.28rem;
+  font-size: 1.35rem;
   line-height: 1.2;
   margin: 0;
 }
 
-.amenity-popup {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: min(520px, 90vw);
-  height: 360px;
-  border-radius: 28px;
-  overflow: hidden;
-  z-index: 50;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0.82);
-  transition: all 0.45s ease;
-  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.45);
+.amenity-back {
+  transform: rotateY(180deg);
 }
 
-.amenity-card:hover .amenity-popup {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.amenity-popup img {
+.amenity-back img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.amenity-popup h3 {
+.amenity-back-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.1));
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+}
+
+.amenity-back-overlay h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+/* Popout Image */
+.amenity-popout {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(540px, 90vw);
+  height: 360px;
+  border-radius: 28px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.65) rotateY(-18deg);
+  transition: all 0.65s ease;
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.48);
+  z-index: 100;
+}
+
+.amenity-flip-card:hover .amenity-popout {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+}
+
+.amenity-popout img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.amenity-popout::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.65), transparent 55%);
+}
+
+.amenity-popout h3 {
   position: absolute;
   left: 26px;
   bottom: 24px;
@@ -947,29 +976,18 @@ p,
   font-size: 1.45rem;
 }
 
-.amenity-popup::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.62),
-    transparent 55%
-  );
-}
-
 /* Tablet */
 @media (max-width: 1024px) {
   .amenities-flip-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .amenity-card {
-    height: 260px;
+  .amenity-flip-card {
+    height: 250px;
   }
 
-  .amenity-popup {
-    width: min(460px, 86vw);
+  .amenity-popout {
+    width: min(470px, 86vw);
     height: 320px;
   }
 }
@@ -980,16 +998,15 @@ p,
     grid-template-columns: 1fr;
   }
 
-  .amenity-card {
+  .amenity-flip-card {
     height: 240px;
     overflow: hidden;
   }
 
-  .amenity-popup {
+  .amenity-popout {
     display: none;
   }
 }
-
 /*==============================*/
 
 /* ===== FIXED PROJECT MARQUEE (LIKE YOUR IMAGE) =====
