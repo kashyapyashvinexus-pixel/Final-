@@ -840,7 +840,7 @@ p,
 /* ===== AMENITIES FLIP + IMAGE POPOUT ===== */
 
 .amenities-section {
-  background: var(--bg);
+  background: var(--white);
   overflow: visible;
 }
 
