@@ -18,11 +18,10 @@ export default function SampleHouseSlider() {
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setActive((prevActive) => {
-        const next = (prevActive + 1) % slides.length;
         setPrev(prevActive);
-        return next;
+        return (prevActive + 1) % slides.length;
       });
-    }, 6500); // 🔥 smooth timing
+    }, 6500);
 
     return () => clearInterval(intervalRef.current);
   }, []);
@@ -38,7 +37,7 @@ export default function SampleHouseSlider() {
         >
           <Image
             src={src}
-            alt={`Slide ${index}`}
+            alt="sample"
             fill
             priority={index === 0}
             sizes="100vw"
