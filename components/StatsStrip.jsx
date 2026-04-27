@@ -7,7 +7,7 @@ export default function StatsStrip() {
 
         <div className="lux-award-left">
           <img
-            src="/award-medal.webp"
+            src="/award-medal.jpg"
             alt="Award Medal"
             className="lux-award-image"
           />
