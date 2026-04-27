@@ -555,213 +555,263 @@ p,
 
 /*================================*/
 
-.award-section {
+.stats-strip {
   width: 100%;
-  padding: 80px 0;
+  padding: 56px 0;
   background:
-    linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.7)),
-    url("/img/JB_CAM_02_FFF.webp") center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.28)),
+    url("/JB_CAM_02_FFF.webp") center/cover no-repeat;
   display: flex;
   justify-content: center;
 }
 
-.award-card {
-  width: calc(100% - 100px);
-  max-width: 1350px;
-  min-height: 360px;
-  padding: 60px 75px;
-  border-radius: 38px;
+.single-award-card {
+  width: calc(100% - 140px);
+  max-width: 1500px;
+  min-height: 390px;
+  padding: 58px 86px;
   position: relative;
   overflow: hidden;
+  border-radius: 44px;
 
   display: grid;
-  grid-template-columns: 36% 64%;
+  grid-template-columns: 38% 62%;
   align-items: center;
-  gap: 40px;
+  gap: 35px;
 
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.72), rgba(255,255,255,0.38)),
-    radial-gradient(circle at 20% 20%, rgba(199,164,106,0.28), transparent 38%);
+    linear-gradient(135deg, rgba(255,255,255,0.68), rgba(255,255,255,0.30)),
+    radial-gradient(circle at 18% 50%, rgba(220,168,73,0.22), transparent 34%);
 
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-
-  border: 1px solid rgba(199,164,106,0.5);
+  border: 1px solid rgba(177, 128, 45, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 
   box-shadow:
-    0 40px 90px rgba(0,0,0,0.16),
-    inset 0 1px 0 rgba(255,255,255,0.95);
+    0 35px 90px rgba(0,0,0,0.20),
+    inset 0 1px 0 rgba(255,255,255,0.95),
+    inset 0 -1px 0 rgba(177,128,45,0.35);
 }
 
-.award-frame {
+.single-award-card::before {
+  content: "";
   position: absolute;
-  inset: 18px;
-  border-radius: 30px;
-  border: 1px solid rgba(183, 136, 54, 0.4);
+  inset: 16px;
+  border-radius: 34px;
+  border: 1px solid rgba(177,128,45,0.35);
   pointer-events: none;
 }
 
-.award-card::before {
+.single-award-card::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 10% 80%, rgba(255,255,255,0.6), transparent 35%),
-    linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.35) 45%, transparent 70%);
+    linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.55) 46%, transparent 62%),
+    radial-gradient(circle at 8% 85%, rgba(255,255,255,0.55), transparent 28%);
+  opacity: 0.8;
   pointer-events: none;
 }
 
-.award-card::after {
-  content: "◆";
+.gold-diamond {
   position: absolute;
-  top: 13px;
   left: 50%;
   transform: translateX(-50%);
-  color: #b88a3d;
+  color: #b88937;
+  z-index: 3;
   font-size: 18px;
+}
+
+.gold-diamond.top {
+  top: 7px;
+}
+
+.gold-diamond.bottom {
+  bottom: 7px;
+}
+
+.gold-corner {
+  position: absolute;
+  width: 130px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #b88937);
+  top: 18px;
+  z-index: 3;
+}
+
+.gold-corner.top-left {
+  left: 42px;
+}
+
+.gold-corner.top-right {
+  right: 42px;
+  transform: rotate(180deg);
 }
 
 .award-visual,
 .award-content {
   position: relative;
-  z-index: 2;
+  z-index: 4;
 }
 
 .award-visual {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
 }
 
 .laurel {
-  font-size: 120px;
-  line-height: 1;
-  color: rgba(176, 128, 42, 0.75);
   font-family: Georgia, serif;
-  transform: scaleY(1.6);
+  font-size: 155px;
+  line-height: 1;
+  color: rgba(169, 121, 39, 0.72);
+  transform: scaleY(1.45);
+  margin-top: 24px;
 }
 
-.laurel.left {
-  transform: scaleY(1.6) rotate(180deg);
+.laurel-left {
+  margin-right: -10px;
 }
 
-.award-medal {
-  position: relative;
+.laurel-right {
+  margin-left: -10px;
+}
+
+.award-badge {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
-.crown {
-  color: #b8862b;
-  font-size: 48px;
-  margin-bottom: -10px;
-  filter: drop-shadow(0 8px 14px rgba(142, 96, 28, 0.28));
+.award-crown {
+  font-size: 64px;
+  color: #c89537;
+  margin-bottom: -18px;
+  filter: drop-shadow(0 10px 16px rgba(103,65,12,0.28));
 }
 
-.medal-circle {
-  width: 150px;
-  height: 150px;
+.badge-circle {
+  width: 172px;
+  height: 172px;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 35% 25%, #fff2b0, #d2a34d 38%, #6c4a20 72%, #151515 100%);
-  border: 4px solid rgba(230, 189, 98, 0.95);
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at 35% 25%, #fff0ad 0%, #d6a84e 34%, #5d421f 66%, #111 100%);
+  border: 5px solid rgba(229, 183, 84, 0.95);
+
   box-shadow:
-    0 22px 35px rgba(90, 54, 10, 0.3),
-    inset 0 4px 8px rgba(255,255,255,0.35);
+    0 28px 38px rgba(67,42,10,0.32),
+    inset 0 6px 12px rgba(255,255,255,0.38),
+    inset 0 -10px 20px rgba(0,0,0,0.28);
 }
 
-.medal-circle span {
-  font-size: 58px;
-  filter: drop-shadow(0 8px 10px rgba(0,0,0,0.25));
+.badge-star {
+  position: absolute;
+  top: 24px;
+  color: #fff2bb;
+  font-size: 20px;
 }
 
-.award-ribbon {
-  margin-top: -10px;
-  padding: 11px 34px;
-  border-radius: 5px;
-  background: linear-gradient(135deg, #b77d24, #f3d17a, #9f6720);
-  color: #3b2508;
+.badge-trophy {
+  font-size: 66px;
+  filter: drop-shadow(0 8px 8px rgba(0,0,0,0.35));
+}
+
+.badge-ribbon {
+  margin-top: -13px;
+  padding: 12px 36px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #9d641c, #f5d27b 45%, #a66b20);
+  color: #3d2709;
   font-size: 13px;
-  letter-spacing: 0.22em;
-  font-weight: 800;
-  box-shadow: 0 12px 25px rgba(99, 61, 13, 0.24);
+  letter-spacing: 0.25em;
+  font-weight: 900;
+  box-shadow: 0 14px 26px rgba(87,52,10,0.26);
+}
+
+.award-content {
+  text-align: left;
 }
 
 .award-label {
-  color: #a57932;
+  color: #a77a32 !important;
   text-transform: uppercase;
-  letter-spacing: 0.24em;
-  font-size: 0.9rem;
+  letter-spacing: 0.28em;
+  font-size: 0.92rem;
   font-weight: 800;
   margin-bottom: 18px;
-  position: relative;
 }
 
 .award-label::before,
 .award-label::after {
   content: "";
   display: inline-block;
-  width: 48px;
+  width: 52px;
   height: 1px;
-  background: #b88a3d;
+  background: #b88937;
   vertical-align: middle;
   margin: 0 16px;
 }
 
-.award-content h2 {
+.award-content h3 {
   font-family: Georgia, "Times New Roman", serif;
-  color: #151515;
-  font-size: clamp(3rem, 5vw, 5.8rem);
-  line-height: 0.98;
+  color: #151515 !important;
+  font-size: clamp(3.4rem, 5vw, 6.3rem);
+  line-height: 0.96;
   font-weight: 500;
-  max-width: 760px;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
+  letter-spacing: -0.04em;
 }
 
 .award-line {
   display: flex;
   align-items: center;
   gap: 12px;
-  max-width: 520px;
-  margin-bottom: 22px;
+  max-width: 560px;
+  margin-bottom: 24px;
 }
 
 .award-line span {
   height: 1px;
   flex: 1;
-  background: linear-gradient(90deg, transparent, #b88a3d, transparent);
+  background: linear-gradient(90deg, transparent, #b88937, transparent);
 }
 
 .award-line i {
-  color: #b88a3d;
+  color: #b88937;
   font-style: normal;
   font-size: 13px;
 }
 
 .award-desc {
-  color: #333;
-  font-size: 1.08rem;
-  line-height: 1.75;
-  max-width: 750px;
+  color: #333 !important;
+  font-size: 1.13rem;
+  line-height: 1.72;
+  max-width: 740px;
 }
 
-/* Mobile Responsive */
 @media (max-width: 900px) {
-  .award-section {
-    padding: 45px 0;
+  .stats-strip {
+    padding: 38px 0;
   }
 
-  .award-card {
+  .single-award-card {
     width: calc(100% - 32px);
-    padding: 48px 24px;
+    min-height: auto;
+    padding: 44px 24px;
     grid-template-columns: 1fr;
+    gap: 28px;
     text-align: center;
-    gap: 25px;
+    border-radius: 30px;
+  }
+
+  .award-content {
+    text-align: center;
   }
 
   .award-label::before,
@@ -769,12 +819,12 @@ p,
     display: none;
   }
 
-  .award-line {
-    margin: 0 auto 20px;
+  .award-content h3 {
+    font-size: 2.8rem;
   }
 
-  .award-content h2 {
-    font-size: 2.7rem;
+  .award-line {
+    margin: 0 auto 22px;
   }
 
   .award-desc {
@@ -782,23 +832,22 @@ p,
   }
 
   .laurel {
-    font-size: 75px;
+    font-size: 86px;
   }
 
-  .medal-circle {
-    width: 115px;
-    height: 115px;
+  .badge-circle {
+    width: 122px;
+    height: 122px;
   }
 
-  .medal-circle span {
-    font-size: 45px;
+  .badge-trophy {
+    font-size: 48px;
   }
 
-  .crown {
-    font-size: 36px;
+  .award-crown {
+    font-size: 42px;
   }
 }
-
 /* ===== SAMPLE HOUSE FULL SCREEN SLIDER ===== */
 
 .sample-house-slider {
