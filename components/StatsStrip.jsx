@@ -16,7 +16,7 @@ export default function StatsStrip() {
         <div className="lux-award-content">
           <p className="lux-award-label">
             <span></span>
-            Award-Winning Excellence
+            Times Realty Awards
             <span></span>
           </p>
 
