@@ -682,7 +682,7 @@ p,
 /* ===== SAMPLE HOUSE FULL SCREEN SLIDER ===== */
 
 /* ===============================
-   PIRAMAL STYLE BUTTER SLIDER
+   FULL DEVICE SAFE SLIDER
 ================================ */
 
 .sample-house-slider {
@@ -694,7 +694,7 @@ p,
   background: #000;
 }
 
-/* BASE */
+/* SLIDES */
 .sample-house-slide {
   position: absolute;
   inset: 0;
@@ -721,9 +721,11 @@ p,
               opacity 1.2s ease;
 }
 
-/* IMAGE */
+/* =========================
+   IMAGE DEFAULT (DESKTOP)
+========================= */
 .sample-house-img {
-  object-fit: cover;
+  object-fit: cover; /* premium look */
   object-position: center;
   transform: scale(1.06);
   transition: transform 6s ease;
@@ -735,22 +737,22 @@ p,
 }
 
 /* =========================
-   RESPONSIVE FIXES
+   TABLET (BALANCED)
 ========================= */
-
-/* Tablet */
 @media (max-width: 1024px) {
   .sample-house-slider {
     height: 80vh;
   }
 
-  /* 👇 show full image better */
   .sample-house-img {
-    object-position: center top;
+    object-fit: cover;
+    object-position: center top; /* show more content */
   }
 }
 
-/* Mobile */
+/* =========================
+   MOBILE (FULL IMAGE FIX)
+========================= */
 @media (max-width: 768px) {
   .sample-house-slider {
     height: 75vh;
@@ -761,12 +763,13 @@ p,
   }
 
   .sample-house-img {
-    object-position: center top;
-    transform: scale(1.04);
+    object-fit: contain; /* 👈 FULL IMAGE ALWAYS VISIBLE */
+    background: #000;    /* fill gaps */
+    transform: scale(1);
   }
 }
 
-/* Small Mobile */
+/* SMALL MOBILE */
 @media (max-width: 480px) {
   .sample-house-slider {
     height: 65vh;
