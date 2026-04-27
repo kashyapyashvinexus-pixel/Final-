@@ -472,11 +472,10 @@ p,
 .lux-award-section {
   width: 100%;
   padding: 70px 0;
-  background:
-    linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.22)),
-    url("/") center/cover no-repeat;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f5ef 100%);
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .lux-award-card {
@@ -494,8 +493,8 @@ p,
   gap: 40px;
 
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.74), rgba(255,255,255,0.32)),
-    radial-gradient(circle at 18% 55%, rgba(213,162,62,0.28), transparent 38%);
+    linear-gradient(135deg, rgba(255,255,255,0.82), rgba(255,255,255,0.42)),
+    radial-gradient(circle at 18% 55%, rgba(213,162,62,0.22), transparent 40%);
 
   border: 1px solid rgba(184, 137, 55, 0.65);
 
@@ -503,7 +502,7 @@ p,
   -webkit-backdrop-filter: blur(26px);
 
   box-shadow:
-    0 38px 95px rgba(0,0,0,0.24),
+    0 38px 95px rgba(0,0,0,0.18),
     inset 0 1px 0 rgba(255,255,255,0.95);
 }
 
@@ -555,78 +554,19 @@ p,
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 280px;
+  overflow: visible;
 }
 
-.lux-laurel {
-  font-family: Georgia, serif;
-  font-size: 160px;
-  line-height: 1;
-  color: rgba(169, 121, 39, 0.72);
-  transform: scaleY(1.45);
-  margin-right: -12px;
-}
-
-.lux-laurel.lux-right {
-  margin-left: -12px;
-  margin-right: 0;
-}
-
-.lux-medal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.lux-crown {
-  font-size: 64px;
-  color: #c89537;
-  margin-bottom: -18px;
-  filter: drop-shadow(0 10px 16px rgba(103,65,12,0.28));
-}
-
-.lux-circle {
-  width: 174px;
-  height: 174px;
-  border-radius: 50%;
+.lux-award-image {
+  width: 360px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
   position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background:
-    radial-gradient(circle at 35% 25%, #fff3bd 0%, #d8a84a 35%, #5c411e 67%, #101010 100%);
-
-  border: 5px solid rgba(229, 183, 84, 0.98);
-
-  box-shadow:
-    0 28px 42px rgba(67,42,10,0.36),
-    inset 0 6px 12px rgba(255,255,255,0.42),
-    inset 0 -12px 24px rgba(0,0,0,0.3);
-}
-
-.lux-star {
-  position: absolute;
-  top: 24px;
-  color: #fff2bb;
-  font-size: 20px;
-}
-
-.lux-trophy {
-  font-size: 68px;
-  filter: drop-shadow(0 8px 8px rgba(0,0,0,0.35));
-}
-
-.lux-ribbon {
-  margin-top: -13px;
-  padding: 12px 38px;
-  border-radius: 6px;
-  background: linear-gradient(135deg, #9d641c, #f5d27b 45%, #a66b20);
-  color: #3d2709;
-  font-size: 13px;
-  letter-spacing: 0.26em;
-  font-weight: 900;
-  box-shadow: 0 14px 26px rgba(87,52,10,0.28);
+  z-index: 10;
+  filter: drop-shadow(0 28px 35px rgba(120, 78, 22, 0.28));
 }
 
 .lux-award-content {
@@ -731,26 +671,8 @@ p,
     font-size: 0.96rem;
   }
 
-  .lux-laurel {
-    font-size: 86px;
-  }
-
-  .lux-circle {
-    width: 124px;
-    height: 124px;
-  }
-
-  .lux-trophy {
-    font-size: 48px;
-  }
-
-  .lux-crown {
-    font-size: 42px;
-  }
-
-  .lux-ribbon {
-    padding: 9px 24px;
-    font-size: 10px;
+  .lux-award-image {
+    width: 240px;
   }
 }
 /*==============*/
