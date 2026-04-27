@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const slides = [
   '/img/JB_CAM_04_FFF.webp',
@@ -10,16 +11,31 @@ const slides = [
 ];
 
 export default function SampleHouseSlider() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % slides.length);
+    }, 3000); // 2s hold + 1s slide
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="sample-slider">
-      <div className="sample-track">
-        {[...slides, ...slides].map((src, i) => (
+      <div
+        className="sample-track"
+        style={{
+          transform: `translateX(-${active * 100}%)`,
+        }}
+      >
+        {slides.map((src, i) => (
           <div className="sample-slide" key={i}>
             <Image
               src={src}
-              alt="Sample House"
+              alt={`Slide ${i}`}
               fill
-              priority={i < 2}
+              priority={i === 0}
               sizes="100vw"
               className="sample-img"
             />
