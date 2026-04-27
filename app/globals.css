@@ -681,17 +681,19 @@ p,
 
 /* ===== SAMPLE HOUSE FULL SCREEN SLIDER ===== */
 
-/* MAIN CONTAINER */
+/* ===============================
+   SAMPLE HOUSE SLIDER
+================================ */
+
 .sample-slider {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 500px;
+  aspect-ratio: 16 / 9;
+  height: auto;
   overflow: hidden;
-  background: #000;
+  background: #fff;
 }
 
-/* BASE SLIDE */
 .slide {
   position: absolute;
   inset: 0;
@@ -700,60 +702,62 @@ p,
   z-index: 1;
 }
 
-/* ACTIVE SLIDE (COMING IN) */
 .slide.active {
   transform: translateX(0%);
   opacity: 1;
   z-index: 3;
-  transition: 
+  transition:
     transform 2.4s cubic-bezier(0.22, 1, 0.36, 1),
     opacity 1s ease;
 }
 
-/* PREVIOUS SLIDE (GOING OUT) */
 .slide.prev {
   transform: translateX(-10%);
   opacity: 1;
   z-index: 2;
-  transition: 
+  transition:
     transform 2.4s cubic-bezier(0.22, 1, 0.36, 1),
     opacity 1s ease;
 }
 
-/* IMAGE */
 .slide-img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  transform: scale(1.05);
-  transition: transform 6s ease;
+  background: #fff;
 }
 
-/* ACTIVE IMAGE ZOOM */
-.slide.active .slide-img {
-  transform: scale(1);
+/* Laptop / Desktop */
+@media (min-width: 1025px) {
+  .sample-slider {
+    height: 100vh;
+    aspect-ratio: auto;
+  }
+
+  .slide-img {
+    object-fit: cover;
+    object-position: center;
+  }
 }
-
----
-
-/* =========================
-   RESPONSIVE FIXES
-========================= */
 
 /* Tablet */
 @media (max-width: 1024px) {
   .sample-slider {
-    height: 80vh;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
   }
 
   .slide-img {
-    object-position: center top;
+    object-fit: contain;
   }
 }
 
-/* Mobile (FULL IMAGE FIX) */
+/* Mobile */
 @media (max-width: 768px) {
   .sample-slider {
-    height: 75vh;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
   }
 
   .slide.prev {
@@ -761,16 +765,7 @@ p,
   }
 
   .slide-img {
-    object-fit: contain;   /* 👈 full image visible */
-    background: #000;
-    transform: scale(1);
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .sample-slider {
-    height: 65vh;
+    object-fit: contain;
   }
 }
 
