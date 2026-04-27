@@ -567,6 +567,7 @@ p,
   position: relative;
   z-index: 10;
   filter: drop-shadow(0 28px 35px rgba(120, 78, 22, 0.28));
+  border-radius: 36px;
 }
 
 .lux-award-content {
