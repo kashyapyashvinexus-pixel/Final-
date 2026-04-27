@@ -16,7 +16,7 @@ export default function SampleHouseSlider() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % slides.length);
-    }, 3000); // 2s hold + 1s slide
+    }, 4200); // 2.5s hold + ~1.7s smooth slide
 
     return () => clearInterval(interval);
   }, []);
@@ -37,7 +37,7 @@ export default function SampleHouseSlider() {
               fill
               priority={i === 0}
               sizes="100vw"
-              className="sample-img"
+              className={`sample-img ${active === i ? 'active' : ''}`}
             />
           </div>
         ))}
