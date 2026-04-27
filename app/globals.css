@@ -681,7 +681,10 @@ p,
 
 /* ===== SAMPLE HOUSE FULL SCREEN SLIDER ===== */
 
-/* MAIN */
+/* =========================
+   SAMPLE HOUSE SLIDER
+========================= */
+
 .sample-slider {
   position: relative;
   width: 100%;
@@ -695,7 +698,6 @@ p,
   display: flex;
   height: 100%;
   transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1);
-  /* 👆 this gives PREMIUM smooth easing (not cheap linear) */
 }
 
 /* SLIDE */
@@ -725,9 +727,7 @@ p,
   }
 }
 
-/* =========================
-   📱 SMALL MOBILE
-========================= */
+/* SMALL MOBILE */
 @media (max-width: 480px) {
   .sample-slider {
     height: 60vh;
