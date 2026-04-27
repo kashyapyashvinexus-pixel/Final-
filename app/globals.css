@@ -467,149 +467,295 @@ p,
 }
 
 
-/* ===== SINGLE AWARD SECTION ===== */
-..stats-strip {
+/* ===== LUXURY AWARD SECTION ===== */
+
+.lux-award-section {
   width: 100%;
   padding: 70px 0;
   background:
-    linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.35)),
+    linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.22)),
     url("/JB_CAM_02_FFF.webp") center/cover no-repeat;
   display: flex;
   justify-content: center;
 }
 
-.single-award-card {
-  width: calc(100% - 100px);
-  max-width: 1450px;
-  min-height: 360px;
-  padding: 60px 80px;
-  border-radius: 42px;
+.lux-award-card {
+  width: calc(100% - 110px);
+  max-width: 1500px;
+  min-height: 390px;
+  padding: 58px 84px;
   position: relative;
   overflow: hidden;
+  border-radius: 46px;
 
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 38% 62%;
   align-items: center;
-  gap: 50px;
+  gap: 40px;
 
-  background: rgba(255, 255, 255, 0.58);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.74), rgba(255,255,255,0.32)),
+    radial-gradient(circle at 18% 55%, rgba(213,162,62,0.28), transparent 38%);
 
-  border: 1px solid rgba(190, 142, 56, 0.55);
-  box-shadow: 0 35px 90px rgba(0,0,0,0.18);
+  border: 1px solid rgba(184, 137, 55, 0.65);
+
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+
+  box-shadow:
+    0 38px 95px rgba(0,0,0,0.24),
+    inset 0 1px 0 rgba(255,255,255,0.95);
 }
 
-.single-award-card::before {
+.lux-award-card::before {
   content: "";
   position: absolute;
-  inset: 16px;
-  border-radius: 32px;
-  border: 1px solid rgba(190, 142, 56, 0.35);
+  inset: 17px;
+  border-radius: 36px;
+  border: 1px solid rgba(184, 137, 55, 0.36);
   pointer-events: none;
-}
-
-.award-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
   z-index: 2;
 }
 
-.award-circle {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
+.lux-award-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(circle at 35% 25%, #fff1b8, #d8a947 38%, #4a3215 70%, #111 100%);
-  border: 5px solid #d8a947;
+    linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.52) 48%, transparent 64%),
+    radial-gradient(circle at 10% 85%, rgba(255,255,255,0.55), transparent 28%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.lux-diamond {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #b88937;
+  font-size: 18px;
+  z-index: 4;
+}
+
+.lux-top {
+  top: 10px;
+}
+
+.lux-bottom {
+  bottom: 10px;
+}
+
+.lux-award-left,
+.lux-award-content {
+  position: relative;
+  z-index: 5;
+}
+
+.lux-award-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lux-laurel {
+  font-family: Georgia, serif;
+  font-size: 160px;
+  line-height: 1;
+  color: rgba(169, 121, 39, 0.72);
+  transform: scaleY(1.45);
+  margin-right: -12px;
+}
+
+.lux-laurel.lux-right {
+  margin-left: -12px;
+  margin-right: 0;
+}
+
+.lux-medal {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  color: #fff;
-  box-shadow: 0 25px 45px rgba(80, 45, 10, 0.35);
 }
 
-.award-crown {
-  font-size: 46px;
-  color: #f5d27a;
-  margin-bottom: 4px;
+.lux-crown {
+  font-size: 64px;
+  color: #c89537;
+  margin-bottom: -18px;
+  filter: drop-shadow(0 10px 16px rgba(103,65,12,0.28));
 }
 
-.award-trophy {
-  font-size: 62px;
-  line-height: 1;
-}
-
-.award-stars {
-  margin-top: 14px;
-  color: #f5d27a;
-  letter-spacing: 6px;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.award-content {
+.lux-circle {
+  width: 174px;
+  height: 174px;
+  border-radius: 50%;
   position: relative;
-  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(circle at 35% 25%, #fff3bd 0%, #d8a84a 35%, #5c411e 67%, #101010 100%);
+
+  border: 5px solid rgba(229, 183, 84, 0.98);
+
+  box-shadow:
+    0 28px 42px rgba(67,42,10,0.36),
+    inset 0 6px 12px rgba(255,255,255,0.42),
+    inset 0 -12px 24px rgba(0,0,0,0.3);
+}
+
+.lux-star {
+  position: absolute;
+  top: 24px;
+  color: #fff2bb;
+  font-size: 20px;
+}
+
+.lux-trophy {
+  font-size: 68px;
+  filter: drop-shadow(0 8px 8px rgba(0,0,0,0.35));
+}
+
+.lux-ribbon {
+  margin-top: -13px;
+  padding: 12px 38px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #9d641c, #f5d27b 45%, #a66b20);
+  color: #3d2709;
+  font-size: 13px;
+  letter-spacing: 0.26em;
+  font-weight: 900;
+  box-shadow: 0 14px 26px rgba(87,52,10,0.28);
+}
+
+.lux-award-content {
   text-align: left;
 }
 
-.award-label {
-  color: #a7782f !important;
+.lux-award-label {
+  color: #a77a32 !important;
   text-transform: uppercase;
-  letter-spacing: 0.24em;
-  font-size: 0.9rem;
+  letter-spacing: 0.28em;
+  font-size: 0.92rem;
   font-weight: 800;
   margin-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.award-content h3 {
+.lux-award-label span {
+  width: 54px;
+  height: 1px;
+  background: #b88937;
+  display: inline-block;
+}
+
+.lux-award-content h3 {
   font-family: Georgia, "Times New Roman", serif;
-  color: #111 !important;
-  font-size: clamp(3rem, 5vw, 5.8rem);
-  line-height: 0.98;
+  color: #151515 !important;
+  font-size: clamp(3.5rem, 5.2vw, 6.4rem);
+  line-height: 0.96;
   font-weight: 500;
+  letter-spacing: -0.045em;
   margin-bottom: 24px;
 }
 
-.award-content p {
+.lux-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 560px;
+  margin-bottom: 24px;
+}
+
+.lux-line span {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #b88937, transparent);
+}
+
+.lux-line i {
+  color: #b88937;
+  font-style: normal;
+  font-size: 13px;
+}
+
+.lux-desc {
   color: #333 !important;
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1.13rem;
+  line-height: 1.72;
   max-width: 760px;
 }
 
 @media (max-width: 900px) {
-  .single-award-card {
+  .lux-award-section {
+    padding: 38px 0;
+  }
+
+  .lux-award-card {
     width: calc(100% - 32px);
+    min-height: auto;
+    padding: 44px 24px;
     grid-template-columns: 1fr;
-    padding: 45px 24px;
-    text-align: center;
     gap: 30px;
+    text-align: center;
+    border-radius: 32px;
   }
 
-  .award-content {
+  .lux-award-content {
     text-align: center;
   }
 
-  .award-circle {
-    width: 150px;
-    height: 150px;
+  .lux-award-label {
+    justify-content: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
   }
 
-  .award-trophy {
-    font-size: 45px;
+  .lux-award-label span {
+    display: none;
   }
 
-  .award-content h3 {
-    font-size: 2.7rem;
+  .lux-award-content h3 {
+    font-size: 2.8rem;
+  }
+
+  .lux-line {
+    margin: 0 auto 22px;
+  }
+
+  .lux-desc {
+    font-size: 0.96rem;
+  }
+
+  .lux-laurel {
+    font-size: 86px;
+  }
+
+  .lux-circle {
+    width: 124px;
+    height: 124px;
+  }
+
+  .lux-trophy {
+    font-size: 48px;
+  }
+
+  .lux-crown {
+    font-size: 42px;
+  }
+
+  .lux-ribbon {
+    padding: 9px 24px;
+    font-size: 10px;
   }
 }
-
 /*==============*/
+
+
 /* ===== SAMPLE HOUSE FULL SCREEN SLIDER ===== */
 
 .sample-house-slider {
