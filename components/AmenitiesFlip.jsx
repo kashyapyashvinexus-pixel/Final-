@@ -23,15 +23,22 @@ export default function AmenitiesFlip() {
 
       <div className="amenities-flip-grid">
         {amenities.map((item) => (
-          <div className="amenity-card" key={item.title}>
-            <img src={item.image} alt={item.title} />
+          <div className="amenity-flip-card" key={item.title}>
+            <div className="amenity-flip-inner">
+              <div className="amenity-front">
+                <span>✦</span>
+                <h3>{item.title}</h3>
+              </div>
 
-            <div className="amenity-overlay">
-              <span className="amenity-icon">✦</span>
-              <h3>{item.title}</h3>
+              <div className="amenity-back">
+                <img src={item.image} alt={item.title} />
+                <div className="amenity-back-overlay">
+                  <h3>{item.title}</h3>
+                </div>
+              </div>
             </div>
 
-            <div className="amenity-popup">
+            <div className="amenity-popout">
               <img src={item.image} alt={item.title} />
               <h3>{item.title}</h3>
             </div>
