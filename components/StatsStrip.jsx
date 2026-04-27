@@ -16,14 +16,14 @@ export default function StatsStrip() {
         <div className="lux-award-content">
           <p className="lux-award-label">
             <span></span>
-            Times Realty Awards
+            Awards-Winning Excellence
             <span></span>
           </p>
 
           <h3>
-            Recognized for
+            Times Realty Awards
             <br />
-            Quality & Trust
+            Gujarat 2026
           </h3>
 
           <div className="lux-line">
