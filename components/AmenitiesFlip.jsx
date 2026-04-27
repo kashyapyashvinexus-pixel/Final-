@@ -21,7 +21,7 @@ export default function AmenitiesFlip() {
         </p>
       </div>
 
-      {/*  <div className="amenities-flip-grid">
+      <div className="amenities-flip-grid">
         {amenities.map((item) => (
           <div className="amenity-card" key={item.title}>
             <img src={item.image} alt={item.title} />
@@ -29,11 +29,15 @@ export default function AmenitiesFlip() {
             <div className="amenity-overlay">
               <span className="amenity-icon">✦</span>
               <h3>{item.title}</h3>
-              <p>View Amenity</p>
+            </div>
+
+            <div className="amenity-popup">
+              <img src={item.image} alt={item.title} />
+              <h3>{item.title}</h3>
             </div>
           </div>
         ))}
-      </div>*/}
+      </div>
     </section>
   );
 }
