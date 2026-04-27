@@ -559,9 +559,8 @@ p,
 }
 
 .lux-award-image {
-  width: 360px;
-  /*height: auto;*/
-  height: 360px;
+  width: 450px;
+  height: auto;
   max-width: 100%;
   object-fit: contain;
   display: block;
