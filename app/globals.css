@@ -681,10 +681,6 @@ p,
 
 /* ===== SAMPLE HOUSE FULL SCREEN SLIDER ===== */
 
-/* ===============================
-   PIRAMAL STYLE BUTTER SLIDER
-================================ */
-
 .sample-house-slider {
   position: relative;
   width: 100%;
@@ -693,34 +689,31 @@ p,
   background: #000;
 }
 
-/* BASE SLIDE */
+/* BASE */
 .sample-house-slide {
   position: absolute;
   inset: 0;
   transform: translateX(100%);
-  z-index: 1;
   opacity: 0;
-  will-change: transform, opacity;
+  z-index: 1;
 }
 
-/* 🔥 ACTIVE SLIDE (COMING IN) */
+/* ACTIVE */
 .sample-house-slide.is-active {
   z-index: 3;
   transform: translateX(0%);
   opacity: 1;
-  transition: 
-    transform 2.8s cubic-bezier(0.19, 1, 0.22, 1),
-    opacity 1.2s ease;
+  transition: transform 2.6s cubic-bezier(0.23, 1, 0.32, 1),
+              opacity 1.2s ease;
 }
 
-/* 🔥 PREVIOUS SLIDE (GOING OUT SLOW) */
+/* PREVIOUS */
 .sample-house-slide.is-prev {
   z-index: 2;
-  transform: translateX(-10%);
+  transform: translateX(-12%);
   opacity: 1;
-  transition: 
-    transform 2.8s cubic-bezier(0.19, 1, 0.22, 1),
-    opacity 1.2s ease;
+  transition: transform 2.6s cubic-bezier(0.23, 1, 0.32, 1),
+              opacity 1.2s ease;
 }
 
 /* IMAGE */
@@ -728,12 +721,10 @@ p,
   object-fit: cover;
   object-position: center;
 
-  /* 🔥 cinematic zoom */
   transform: scale(1.06);
   transition: transform 6s ease;
 }
 
-/* ACTIVE ZOOM RESET */
 .sample-house-slide.is-active .sample-house-img {
   transform: scale(1);
 }
@@ -742,19 +733,12 @@ p,
    RESPONSIVE
 ========================= */
 
-/* Tablet */
 @media (max-width: 1024px) {
   .sample-house-slider {
     height: 80vh;
   }
-
-  .sample-house-slide.is-active,
-  .sample-house-slide.is-prev {
-    transition: transform 2.2s cubic-bezier(0.19, 1, 0.22, 1);
-  }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .sample-house-slider {
     height: 70vh;
@@ -769,13 +753,11 @@ p,
   }
 }
 
-/* Small Mobile */
 @media (max-width: 480px) {
   .sample-house-slider {
     height: 60vh;
   }
 }
-
 /* ===== AMENITIES FLIP SECTION =====
 
 .amenities-section {
