@@ -5,19 +5,19 @@ import { useEffect, useState } from 'react';
 const slides = [
   {
     desktop: '/img/JB_CAM_04_FFF.webp',
-    mobile: '/img/JB_CAM_04_MOBILE.webp',
+    mobile: '/img/JB_CAM_04_FFF.webp',
   },
   {
     desktop: '/img/JB_CAM_16_FFF.webp',
-    mobile: '/img/JB_CAM_16_MOBILE.webp',
+    mobile: '/img/JB_CAM_16_FFF.webp',
   },
   {
     desktop: '/img/ST_CAM_02_FFF.webp',
-    mobile: '/img/ST_CAM_02_MOBILE.webp',
+    mobile: '/img/ST_CAM_02_FFF.webp',
   },
   {
     desktop: '/img/ST_CAM_01_FFF.webp',
-    mobile: '/img/ST_CAM_01_MOBILE.webp',
+    mobile: '/img/ST_CAM_01_FFF.webp',
   },
 ];
 
