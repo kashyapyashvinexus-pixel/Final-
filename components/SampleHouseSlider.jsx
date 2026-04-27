@@ -18,7 +18,7 @@ export default function SampleHouseSlider() {
     const interval = setInterval(() => {
       setPrev(active);
       setActive((active + 1) % slides.length);
-    }, 5200); // 🔥 longer hold time
+    }, 6500); // 🔥 slow cycle (important)
 
     return () => clearInterval(interval);
   }, [active]);
@@ -34,7 +34,7 @@ export default function SampleHouseSlider() {
         >
           <Image
             src={src}
-            alt="sample"
+            alt={`Slide ${index}`}
             fill
             priority={index === 0}
             sizes="100vw"
