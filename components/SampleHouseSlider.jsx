@@ -15,28 +15,26 @@ export default function SampleHouseSlider() {
   const [prev, setPrev] = useState(slides.length - 1);
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const interval = setInterval(() => {
       setPrev(active);
       setActive((active + 1) % slides.length);
-    }, 4200);
+    }, 5200); // 🔥 longer hold time
 
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, [active]);
 
   return (
     <section className="sample-house-slider">
       {slides.map((src, index) => (
         <div
-          key={src}
-          className={[
-            'sample-house-slide',
-            index === active ? 'is-active' : '',
-            index === prev ? 'is-prev' : '',
-          ].join(' ')}
+          key={index}
+          className={`sample-house-slide 
+            ${index === active ? 'is-active' : ''} 
+            ${index === prev ? 'is-prev' : ''}`}
         >
           <Image
             src={src}
-            alt={`Sample house ${index + 1}`}
+            alt="sample"
             fill
             priority={index === 0}
             sizes="100vw"
