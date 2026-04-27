@@ -835,10 +835,11 @@ p,
 
 /* ===== AMENITIES FLIP SECTION ===== */
 
-/* ===== AMENITIES FLIP SECTION ===== */
+/* ===== AMENITIES PREMIUM HOVER SECTION ===== */
 
 .amenities-section {
   background: var(--bg);
+  overflow: hidden;
 }
 
 .amenities-flip-grid {
@@ -848,87 +849,114 @@ p,
 }
 
 .amenity-flip-card {
-  height: 260px;
-  perspective: 1200px;
+  position: relative;
+  height: 280px;
+  border-radius: 26px;
+  overflow: hidden;
+  cursor: pointer;
+  isolation: isolate;
 }
 
 .amenity-flip-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s ease;
-  transform-style: preserve-3d;
-}
-
-.amenity-flip-card:hover .amenity-flip-inner {
-  transform: rotateY(180deg);
-}
-
-.amenity-front,
-.amenity-back {
-  position: absolute;
-  inset: 0;
-  border-radius: 24px;
-  overflow: hidden;
-  backface-visibility: hidden;
+  transform: none !important;
 }
 
 .amenity-front {
-  background: linear-gradient(145deg, #191919, #0c0c0c);
-  border: 1px solid rgba(255,255,255,.12);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 28px;
-}
-
-.amenity-front span {
-  color: #d8b45c;
-  font-size: 34px;
-  margin-bottom: 20px;
-}
-
-.amenity-front h3 {
-  color: #fff;
-  font-size: 1.45rem;
-  line-height: 1.2;
+  display: none;
 }
 
 .amenity-back {
-  transform: rotateY(180deg);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  inset: auto;
+  transform: none !important;
+  border-radius: 26px;
+  overflow: hidden;
+  backface-visibility: visible;
 }
 
 .amenity-back img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transform: scale(1);
-  transition: transform 1.2s ease;
+  transition: transform 0.9s ease;
 }
 
 .amenity-flip-card:hover .amenity-back img {
-  transform: scale(1.25);
+  transform: scale(1.12);
 }
 
 .amenity-back-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.1));
+  z-index: 2;
+  padding: 24px;
   display: flex;
   align-items: flex-end;
-  padding: 24px;
-  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.05)
+  );
 }
 
 .amenity-back-overlay h3 {
   color: #fff;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin: 0;
+  transform: translateY(14px);
+  transition: transform 0.45s ease;
+}
+
+.amenity-flip-card:hover .amenity-back-overlay h3 {
+  transform: translateY(0);
+}
+
+.amenity-flip-card::after {
+  content: "View Amenity";
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 3;
+  color: #d8b45c;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.45s ease;
+}
+
+.amenity-flip-card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.amenity-flip-card:hover .amenity-back-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82),
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.08)
+  );
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
   .amenities-flip-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .amenity-flip-card {
+    height: 260px;
   }
 }
 
@@ -939,27 +967,16 @@ p,
   }
 
   .amenity-flip-card {
-    height: 230px;
-  }
-}
-
-/*=======================*/
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .amenities-flip-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .amenities-flip-grid {
-    grid-template-columns: 1fr;
+    height: 240px;
   }
 
-  .amenity-flip-card {
-    height: 230px;
+  .amenity-back-overlay h3 {
+    transform: translateY(0);
+  }
+
+  .amenity-flip-card::after {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
