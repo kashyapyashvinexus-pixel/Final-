@@ -18,8 +18,16 @@ export default function ScrollOverlapGallery({ images = [] }) {
     if (!section || !sticky || !stack || !images.length) return;
 
     const cards = gsap.utils.toArray('.overlap-card', stack);
+
+    const refreshScrollTrigger = () => {
+      ScrollTrigger.refresh();
+    };
+
     const ctx = gsap.context(() => {
-      gsap.set(cards, { transformOrigin: 'center center', willChange: 'transform, opacity' });
+      gsap.set(cards, {
+        transformOrigin: 'center center',
+        willChange: 'transform, opacity',
+      });
 
       cards.forEach((card, index) => {
         gsap.set(card, {
@@ -27,7 +35,7 @@ export default function ScrollOverlapGallery({ images = [] }) {
           scale: index === 0 ? 1 : 0.94,
           rotate: index % 2 === 0 ? -1.4 : 1.4,
           autoAlpha: index === 0 ? 1 : 0,
-          zIndex: cards.length - index
+          zIndex: cards.length - index,
         });
       });
 
@@ -40,33 +48,71 @@ export default function ScrollOverlapGallery({ images = [] }) {
           scrub: 1,
           pin: true,
           anticipatePin: 1,
-          invalidateOnRefresh: true
-        }
+          invalidateOnRefresh: true,
+        },
       });
 
       cards.forEach((card, index) => {
         if (index === cards.length - 1) return;
+
         const nextCard = cards[index + 1];
-        tl.to(card, { scale: 0.92, yPercent: -8, autoAlpha: 0.18, duration: 0.9 }, index)
-          .fromTo(nextCard, { yPercent: 18, scale: 0.94, autoAlpha: 0, zIndex: cards.length + index }, { yPercent: 0, scale: 1, autoAlpha: 1, duration: 0.9 }, index + 0.15)
+
+        tl.to(
+          card,
+          {
+            scale: 0.92,
+            yPercent: -8,
+            autoAlpha: 0.18,
+            duration: 0.9,
+          },
+          index
+        )
+          .fromTo(
+            nextCard,
+            {
+              yPercent: 18,
+              scale: 0.94,
+              autoAlpha: 0,
+              zIndex: cards.length + index,
+            },
+            {
+              yPercent: 0,
+              scale: 1,
+              autoAlpha: 1,
+              duration: 0.9,
+            },
+            index + 0.15
+          )
           .to({}, { duration: 0.55 }, index + 0.95);
       });
 
       ScrollTrigger.refresh();
+
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 500);
+
+      window.addEventListener('load', refreshScrollTrigger);
     }, section);
 
-    return () => ctx.revert();
+    return () => {
+      window.removeEventListener('load', refreshScrollTrigger);
+      ctx.revert();
+    };
   }, [images]);
 
-  const stageHeight = `${Math.max(images.length * 90, 220)}vh`;
+  const stageHeight = `${Math.max(images.length * 90, 220)}svh`;
 
   return (
     <section ref={sectionRef} className="section-block overlap-gallery-section">
       <div className="overlap-copy">
         <p className="section-label">Luxury Scroll Experience</p>
         <h2 className="premium-heading">Images reveal one by one while you scroll.</h2>
-        <p className="section-text body-large">Each visual enters in sequence, so the next image appears only when the previous one moves away.</p>
+        <p className="section-text body-large">
+          Each visual enters in sequence, so the next image appears only when the previous one moves away.
+        </p>
       </div>
+
       <div className="overlap-gallery-stage" style={{ minHeight: stageHeight }}>
         <div ref={stickyRef} className="overlap-sticky-shell">
           <div ref={stackRef} className="overlap-stack">
@@ -76,7 +122,9 @@ export default function ScrollOverlapGallery({ images = [] }) {
                 <div className="overlap-card-overlay" />
                 <div className="overlap-card-caption">
                   <span>0{index + 1}</span>
-                  <strong>{index % 2 === 0 ? 'Signature Exterior' : 'Premium Interior View'}</strong>
+                  <strong>
+                    {index % 2 === 0 ? 'Signature Exterior' : 'Premium Interior View'}
+                  </strong>
                 </div>
               </article>
             ))}
