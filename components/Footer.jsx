@@ -18,10 +18,10 @@ export default function Footer() {
           <div className="footer-column">
             <h4>Explore</h4>
             <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/projects">Projects</Link>
-            <Link href="/floor-plans">Floor Plans</Link>
-            <Link href="/contact">Contact</Link>
+            <Link href="/">About</Link>
+            <Link href="/">Projects</Link>
+            <Link href="/">Floor Plans</Link>
+            <Link href="/">Contact</Link>
           </div>
 
           <div className="footer-column">
