@@ -15,13 +15,10 @@ export default function ScrollOverlapGallery({ images = [] }) {
     const section = sectionRef.current;
     const sticky = stickyRef.current;
     const stack = stackRef.current;
+
     if (!section || !sticky || !stack || !images.length) return;
 
     const cards = gsap.utils.toArray('.overlap-card', stack);
-
-    const refreshScrollTrigger = () => {
-      ScrollTrigger.refresh();
-    };
 
     const ctx = gsap.context(() => {
       gsap.set(cards, {
@@ -43,9 +40,8 @@ export default function ScrollOverlapGallery({ images = [] }) {
         defaults: { ease: 'power2.inOut' },
         scrollTrigger: {
           trigger: sticky,
-      /*    start: 'top top+=40',*/
           start: 'top top+=110',
-          end: `+=${Math.max(cards.length - 1, 1) * 1000}`,
+          end: `+=${Math.max(cards.length - 1, 1) * 900}`,
           scrub: 1,
           pin: true,
           anticipatePin: 1,
@@ -84,25 +80,18 @@ export default function ScrollOverlapGallery({ images = [] }) {
             },
             index + 0.15
           )
-          .to({}, { duration: 0.55 }, index + 0.95);
+          .to({}, { duration: 0.45 }, index + 0.95);
       });
-
-      ScrollTrigger.refresh();
 
       setTimeout(() => {
         ScrollTrigger.refresh();
       }, 500);
-
-      window.addEventListener('load', refreshScrollTrigger);
     }, section);
 
-    return () => {
-      window.removeEventListener('load', refreshScrollTrigger);
-      ctx.revert();
-    };
+    return () => ctx.revert();
   }, [images]);
 
-  const stageHeight = `${Math.max(images.length * 90, 220)}svh`;
+  const stageHeight = `${Math.max(images.length * 65, 160)}svh`;
 
   return (
     <section ref={sectionRef} className="section-block overlap-gallery-section">
@@ -118,14 +107,12 @@ export default function ScrollOverlapGallery({ images = [] }) {
         <div ref={stickyRef} className="overlap-sticky-shell">
           <div ref={stackRef} className="overlap-stack">
             {images.map((image, index) => (
-              <article key={image} className="overlap-card">
+              <article key={`${image}-${index}`} className="overlap-card">
                 <img src={image} alt={`Stellavia premium residence visual ${index + 1}`} />
                 <div className="overlap-card-overlay" />
                 <div className="overlap-card-caption">
                   <span>0{index + 1}</span>
-                  <strong>
-                    {index % 2 === 0 ? 'Signature Exterior' : 'Premium Interior View'}
-                  </strong>
+                  <strong>{index % 2 === 0 ? 'Signature Exterior' : 'Premium Interior View'}</strong>
                 </div>
               </article>
             ))}
