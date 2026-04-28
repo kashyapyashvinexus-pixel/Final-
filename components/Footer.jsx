@@ -37,7 +37,7 @@ export default function Footer() {
             <h4>Contact</h4>
             <p>Khoraj, Ahmedabad</p>
             <a href="mailto:sales@stellavia.com">sales@stellavia.com</a>
-            <a href="tel:+919876543210">+91 75728 18000</a>
+            <a href="tel:+917572818000">+91 75728 18000</a>
 
             <div className="footer-socials">
               <a href="https://www.instagram.com/stellavia___/" aria-label="Instagram"><Instagram size={20} /></a>
