@@ -1631,7 +1631,7 @@ p,
   .contact-info-item {
     gap: 16px;
   }
-}
+
 
 /* Small Mobile */
 @media (max-width: 380px) {
