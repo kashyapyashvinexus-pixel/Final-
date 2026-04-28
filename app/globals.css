@@ -303,8 +303,10 @@ p,
 .overlap-gallery-section {
   position: relative;
   overflow: hidden;
-  padding-top: 24px !important;
-  padding-bottom: 40px !important;
+  /*padding-top: 24px !important;*/
+  padding-top: 30px !important;
+  /*padding-bottom: 40px !important;*/
+  padding-bottom: 20px !important;
   margin-bottom: 0 !important;
 }
 
