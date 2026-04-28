@@ -29,8 +29,8 @@ export default function HomePageClient() {
       <section className="section-block">
         <SectionHeading
           eyebrow="Projects"
-          title="Completed and under-construction projects"
-          text="Explore our premium project visuals."
+          title="Stellavia Sample House"
+          text="Exterior And Interior Design."
         />
 
         <div className="projects-marquee">
