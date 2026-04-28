@@ -55,15 +55,15 @@ export default function HeroSection() {
 
       <div className="hero-layout hero-layout-pushed">
         <div className="hero-copy">
-          <p className="eyebrow">Premium Residential Construction</p>
+          <p className="eyebrow">Infinity Projects Presents
+</p>
 
           <h1 className="hero-title">
-            We shape flats and apartments into landmark living experiences.
+            The Future of Residential Excellence
           </h1>
 
           <p className="lead body-large">
-            Stellavia creates high-value residential spaces with sharp architecture,
-            trusted construction, and presentation-worthy design details.
+            Where sophisticated premium living meets smart affordability. 140 thoughtfully designed homes crafted for families who refuse to compromise.
           </p>
 
           <div className="hero-actions">
@@ -86,7 +86,7 @@ export default function HeroSection() {
         >
           <div className="hero-card glass-card">
             <span>Signature Launch</span>
-            <strong>Aurelia Heights</strong>
+            <strong>Stellavia</strong>
             <p>
               Luxury apartment towers with skyline amenities and elegant urban
               planning.
