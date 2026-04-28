@@ -7,20 +7,12 @@ import { usePathname } from 'next/navigation';
 import { gsap } from 'gsap';
 import { Menu, X } from 'lucide-react';
 
-{/*const navItems = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Projects', path: '/projects' },
-  { label: 'Floor Plans', path: '/floor-plans' },
-  { label: 'Contact', path: '/contact' }
-];*/}
-
 const navItems = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '' },
-  { label: 'Projects', path: '' },
-  { label: 'Floor Plans', path: '' },
-  { label: 'Contact', path: '' }
+  { label: 'About', path: '#' },
+  { label: 'Projects', path: '#' },
+  { label: 'Floor Plans', path: '#' },
+  { label: 'Contact', path: '#' }
 ];
 
 export default function Header() {
@@ -54,8 +46,7 @@ export default function Header() {
       <div className="header-shell">
         <Link href="/" className="brand-mark" aria-label="Stellavia Construction Home">
           <Image
-            src="stellavia-update-final-next
-/public/Stellavia Logo - Light BG & Gradient Colors - RGB.jpg"
+            src="/Stellavia Logo - Light BG & Gradient Colors - RGB.jpg"
             alt="Stellavia Construction"
             width={160}
             height={48}
@@ -67,16 +58,10 @@ export default function Header() {
         <nav className={`site-nav ${open ? 'is-open' : ''}`}>
           <div className="site-nav-center">
             {navItems.map((item) => {
-              const active =
-                pathname === item.path ||
-                (item.path !== '/' && pathname.startsWith(item.path));
+              const active = item.path !== '#' && pathname === item.path;
 
               return (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={active ? 'active' : ''}
-                >
+                <Link key={item.label} href={item.path} className={active ? 'active' : ''}>
                   {item.label}
                 </Link>
               );
