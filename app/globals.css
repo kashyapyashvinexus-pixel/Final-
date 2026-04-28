@@ -323,13 +323,22 @@ p,
   min-height: 100svh;
 }
 
-.overlap-sticky-shell {
+/*.overlap-sticky-shell {
   height: 100svh !important;
   min-height: 100svh;
   display: grid;
   place-items: start center;
   padding-top: 0;
+}*/
+
+.overlap-sticky-shell {
+  padding-top: 110px;
+  height: calc(100svh - 110px) !important;
+  min-height: calc(100svh - 110px);
+  display: grid;
+  place-items: start center;
 }
+
 
 .overlap-stack {
   position: relative;
@@ -428,10 +437,12 @@ p,
 
 /* Mobile */
 @media (max-width: 767px) {
-  .overlap-gallery-section {
-    padding-top: 12px !important;
-    padding-bottom: 24px !important;
+  .overlap-sticky-shell {
+    padding-top: 90px;
+    height: calc(100svh - 90px) !important;
+    min-height: calc(100svh - 90px);
   }
+}
 
   .overlap-copy {
     margin-bottom: 8px !important;
