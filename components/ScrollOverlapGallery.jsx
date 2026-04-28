@@ -44,7 +44,7 @@ export default function ScrollOverlapGallery({ images = [] }) {
         scrollTrigger: {
           trigger: sticky,
       /*    start: 'top top+=40',*/
-          start: 'top top+=20',
+          start: 'top top+=45',
           end: `+=${Math.max(cards.length - 1, 1) * 1000}`,
           scrub: 1,
           pin: true,
