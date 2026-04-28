@@ -13,11 +13,10 @@ export default function AmenitiesFlip() {
   return (
     <section className="section-block amenities-section">
       <div className="section-heading">
-        <p className="eyebrow">Amenities</p>
-        <h2>Key Features Designed for Premium Everyday Living</h2>
+        <p className="eyebrow">Curated For You</p>
+        <h2>Amenities that Elevate Your Daily Life</h2>
         <p>
-          Explore lifestyle features crafted for comfort, safety, and modern
-          community living.
+          Every detail designed to enrich every moment — from sunrise yoga to evening gatherings, from children's laughter to quiet contemplation.
         </p>
       </div>
 
