@@ -16,7 +16,7 @@ export default function AmenitiesFlip() {
         <p className="eyebrow">Curated For You</p>
         <h2>Amenities that Elevate Your Daily Life</h2>
         <p>
-          Every detail designed to enrich every moment — from sunrise yoga to evening gatherings, from children's laughter to quiet contemplation.
+          Every detail designed to enrich every moment from sunrise yoga to evening gatherings, from children's laughter to quiet contemplation.
         </p>
       </div>
 
