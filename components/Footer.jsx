@@ -40,8 +40,8 @@ export default function Footer() {
             <a href="tel:+919876543210">+91 98765 43210</a>
 
             <div className="footer-socials">
-              <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
-              <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
+              <a href="https://www.instagram.com/stellavia___/" aria-label="Instagram"><Instagram size={20} /></a>
+              <a href="https://www.facebook.com/stellavia01/" aria-label="Facebook"><Facebook size={20} /></a>
               <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
               <a href="#" aria-label="YouTube"><Youtube size={20} /></a>
             </div>
