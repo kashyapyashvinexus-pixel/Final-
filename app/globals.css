@@ -1596,18 +1596,21 @@ p,
 /* Mobile */
 @media (max-width: 600px) {
   .contact-booking-section {
-    padding: 80px 18px 100px;
+    padding-top: 130px;
+    padding-bottom: 150px;
+    min-height: auto;
   }
 
   .contact-booking-wrap {
-    gap: 42px;
+    padding-bottom: 40px;
   }
 
   .contact-booking-bg {
-    bottom: 20px;
-    font-size: 6.5rem;
-    transform: translateX(-50%) scaleX(1.15);
+    bottom: 35px;
+    font-size: clamp(6rem, 34vw, 9rem);
+    transform: translateX(-50%) scaleX(1.18);
   }
+}
 
   .contact-booking-left h2 {
     font-size: 3rem;
