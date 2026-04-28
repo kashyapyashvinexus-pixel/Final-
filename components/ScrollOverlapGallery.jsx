@@ -97,9 +97,9 @@ export default function ScrollOverlapGallery({ images = [] }) {
     <section ref={sectionRef} className="section-block overlap-gallery-section">
       <div className="overlap-copy">
         <p className="section-label">Project Gallery</p>
-        <h2 className="premium-heading">Images reveal one by one while you scroll.</h2>
+        <h2 className="premium-heading">See Stellavia Come to Life</h2>
         <p className="section-text body-large">
-          Each visual enters in sequence, so the next image appears only when the previous one moves away.
+          Scroll through Stellavia where premium finishes, open spaces, and elegant details come together in every frame.
         </p>
       </div>
 
