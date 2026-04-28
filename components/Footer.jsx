@@ -7,20 +7,7 @@ export default function Footer() {
       <div className="footer-glow footer-glow-two"></div>
       <div className="footer-big-text">STELLAVIA</div>
 
-      <div className="luxury-footer-inner">
-        <div className="footer-top-card">
-          <div>
-            <p className="footer-label">Stellavia Construction</p>
-            <h2>Where premium living meets timeless architecture.</h2>
-          </div>
-
-          <Link href="/contact" className="footer-cta">
-            Book Site Visit
-            <span>→</span>
-          </Link>
-        </div>
-
-        <div className="footer-content-grid">
+      <div className="footer-content-grid">
           <div className="footer-brand-area">
             <h3>Stellavia</h3>
             <p>
