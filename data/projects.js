@@ -5,15 +5,6 @@ export const stats = [
   { value: '3.8M+', label: 'Sq. Ft. Delivered' }
 ];
 
-{/*export const homeGallery = [
-  'img/JB_CAM_05_FFF.webp',
-  'ST_CAM_06_FFF.webp',
-  'ST_CAM_01_FFF.webp',
-  'ST_CAM_02_FFF.webp',
-  'JB_CAM_16_FFF.webp',
-  'ST_CAM_07_FFF.webp'
-];*/}
-
 export const homeGallery = [
   '/img/JB_CAM_05_FFF.webp',
   '/img/ST_CAM_06_FFF.webp',
@@ -32,8 +23,8 @@ export const projects = [
     year: '2025',
     units: '164 Apartments',
     type: 'Luxury Residential Tower',
-    heroImage: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1800&q=80',
-    image: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/img/JB_CAM_04_FFF.webp',
+    image: '/img/JB_CAM_04_FFF.webp',
     description: 'A sleek high-rise residence built for urban families with sky decks, wellness zones, and refined common spaces.',
     summary: 'Premium 3 & 4 BHK towers with rooftop social zones and panoramic skyline decks.',
     brochureSummary: 'Skyline Reserve brochure presents premium elevations, clubhouse amenities, floor plan highlights, and lifestyle visuals with a smooth scroll-led reveal.',
@@ -45,13 +36,13 @@ export const projects = [
       { label: 'Amenities', value: '25+' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80'
+      '/img/JB_CAM_04_FFF.webp',
+      '/img/JB_CAM_05_FFF.webp',
+      '/img/JB_CAM_16_FFF.webp'
     ],
     floorPlans: [
-      { code: 'Type A', title: '3 BHK Signature', size: '1780 sq. ft.', bedrooms: '3 Beds', baths: '3 Baths', facing: 'East + West open', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80' },
-      { code: 'Type B', title: '4 BHK Sky Deck', size: '2480 sq. ft.', bedrooms: '4 Beds', baths: '4 Baths', facing: 'Corner residence', image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80' }
+      { code: 'Type A', title: '3 BHK Signature', size: '1780 sq. ft.', bedrooms: '3 Beds', baths: '3 Baths', facing: 'East + West open', image: '/img/JB_CAM_04_FFF.webp' },
+      { code: 'Type B', title: '4 BHK Sky Deck', size: '2480 sq. ft.', bedrooms: '4 Beds', baths: '4 Baths', facing: 'Corner residence', image: '/img/JB_CAM_16_FFF.webp' }
     ]
   },
   {
@@ -62,8 +53,8 @@ export const projects = [
     year: '2026',
     units: '212 Apartments',
     type: 'Premium Apartment Community',
-    heroImage: 'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1800&q=80',
-    image: 'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/img/ST_CAM_01_FFF.webp',
+    image: '/img/ST_CAM_01_FFF.webp',
     description: 'A future-forward apartment cluster with landscaped podiums, smart access, and signature double-height arrival lobbies.',
     summary: 'Two iconic residential towers currently shaping a premium community with retail frontage.',
     brochureSummary: 'Aurelia Heights brochure is designed like a launch presentation with section-wise scrolling, image transitions, and plan comparison panels.',
@@ -75,14 +66,14 @@ export const projects = [
       { label: 'Amenities', value: '30+' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1462396881884-de2c07cb95ed?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1464146072230-91cabc968266?auto=format&fit=crop&w=1400&q=80'
+      '/img/ST_CAM_01_FFF.webp',
+      '/img/ST_CAM_02_FFF.webp',
+      '/img/ST_CAM_03_FFF.webp'
     ],
     floorPlans: [
-      { code: 'Type A', title: '2 BHK Smart Plan', size: '1240 sq. ft.', bedrooms: '2 Beds', baths: '2 Baths', facing: 'Garden facing', image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80' },
-      { code: 'Type B', title: '3 BHK Family Plan', size: '1780 sq. ft.', bedrooms: '3 Beds', baths: '3 Baths', facing: 'Central amenity view', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80' },
-      { code: 'Type C', title: '4 BHK Sky Residence', size: '2480 sq. ft.', bedrooms: '4 Beds', baths: '4 Baths', facing: 'Dual aspect luxury plan', image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80' }
+      { code: 'Type A', title: '2 BHK Smart Plan', size: '1240 sq. ft.', bedrooms: '2 Beds', baths: '2 Baths', facing: 'Garden facing', image: '/img/ST_CAM_01_FFF.webp' },
+      { code: 'Type B', title: '3 BHK Family Plan', size: '1780 sq. ft.', bedrooms: '3 Beds', baths: '3 Baths', facing: 'Central amenity view', image: '/img/ST_CAM_02_FFF.webp' },
+      { code: 'Type C', title: '4 BHK Sky Residence', size: '2480 sq. ft.', bedrooms: '4 Beds', baths: '4 Baths', facing: 'Dual aspect luxury plan', image: '/img/ST_CAM_03_FFF.webp' }
     ]
   },
   {
@@ -93,8 +84,8 @@ export const projects = [
     year: '2024',
     units: '98 Flats',
     type: 'Mid-Rise Lifestyle Project',
-    heroImage: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1800&q=80',
-    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/img/ST_CAM_02_FFF.webp',
+    image: '/img/ST_CAM_02_FFF.webp',
     description: 'A balanced living environment with family-friendly spaces, practical floor plans, and warm community architecture.',
     summary: 'Contemporary family flats designed around natural light, cross ventilation, and greenery.',
     brochureSummary: 'Verde Court brochure mixes photography with compact plan callouts and smooth image parallax sections.',
@@ -106,13 +97,13 @@ export const projects = [
       { label: 'Amenities', value: '18+' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80'
+      '/img/ST_CAM_02_FFF.webp',
+      '/img/ST_CAM_06_FFF.webp',
+      '/img/ST_CAM_07_FFF.webp'
     ],
     floorPlans: [
-      { code: 'Type A', title: '2 BHK Urban Plan', size: '1180 sq. ft.', bedrooms: '2 Beds', baths: '2 Baths', facing: 'Park facing', image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80' },
-      { code: 'Type B', title: '3 BHK Court Plan', size: '1650 sq. ft.', bedrooms: '3 Beds', baths: '3 Baths', facing: 'Courtyard facing', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80' }
+      { code: 'Type A', title: '2 BHK Urban Plan', size: '1180 sq. ft.', bedrooms: '2 Beds', baths: '2 Baths', facing: 'Park facing', image: '/img/ST_CAM_02_FFF.webp' },
+      { code: 'Type B', title: '3 BHK Court Plan', size: '1650 sq. ft.', bedrooms: '3 Beds', baths: '3 Baths', facing: 'Courtyard facing', image: '/img/ST_CAM_06_FFF.webp' }
     ]
   },
   {
@@ -180,6 +171,7 @@ export const projects = [
 export const featuredProjects = projects.slice(0, 3);
 export const completedProjects = projects.filter((project) => project.status === 'Completed');
 export const inProgressProjects = projects.filter((project) => project.status === 'In Progress');
+
 export const floorPlans = projects.flatMap((project) =>
   project.floorPlans.map((plan) => ({ ...plan, projectName: project.name, projectId: project.id }))
 );
