@@ -25,31 +25,51 @@ export default function SampleHouseSlider() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
+    slides.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.desktop;
+
+      const mobileImg = new Image();
+      mobileImg.src = slide.mobile;
+    });
+  }, []);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       setActive((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 5200);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="sample-slider">
-      <div
-        className="sample-track"
-        style={{ transform: `translateX(-${active * 100}%)` }}
-      >
-        {slides.map((slide, index) => (
-          <div className="sample-slide" key={index}>
-            <picture>
-              <source media="(max-width: 768px)" srcSet={slide.mobile} />
-              <img
-                src={slide.desktop}
-                alt={`Sample House ${index + 1}`}
-                className="sample-img"
-                loading={index === 0 ? 'eager' : 'lazy'}
-              />
-            </picture>
-          </div>
+      {slides.map((slide, index) => (
+        <div
+          className={`sample-slide ${active === index ? 'active' : ''}`}
+          key={index}
+        >
+          <picture>
+            <source media="(max-width: 768px)" srcSet={slide.mobile} />
+            <img
+              src={slide.desktop}
+              alt={`Sample House ${index + 1}`}
+              className="sample-img"
+              loading={index === 0 ? 'eager' : 'lazy'}
+              draggable="false"
+            />
+          </picture>
+        </div>
+      ))}
+
+      <div className="sample-dots">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            className={active === index ? 'active' : ''}
+            onClick={() => setActive(index)}
+            aria-label={`Go to slide ${index + 1}`}
+          />
         ))}
       </div>
     </section>
