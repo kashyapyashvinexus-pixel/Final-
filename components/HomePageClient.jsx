@@ -48,7 +48,7 @@ export default function HomePageClient() {
         </div>
 
         <div className="project-cta-row">
-          <Link href="/projects" className="inline-link">
+          <Link href="/" className="inline-link">
             See All Projects <ArrowRight size={16} />
           </Link>
         </div>
