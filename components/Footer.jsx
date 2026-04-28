@@ -1,34 +1,18 @@
 import Link from 'next/link';
+import { Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="luxury-footer full-bleed">
-      <div className="footer-glow footer-glow-one"></div>
-      <div className="footer-glow footer-glow-two"></div>
-      <div className="footer-big-text">STELLAVIA</div>
-
-      <div className="footer-content-grid">
+      <div className="luxury-footer-inner">
+        <div className="footer-content-grid">
           <div className="footer-brand-area">
+            <p className="footer-label">Stellavia Construction</p>
             <h3>Stellavia</h3>
             <p>
               Thoughtfully planned premium residences in Ahmedabad with elegant
               spaces, privacy-first layouts, and construction you can trust.
             </p>
-
-            <div className="footer-mini-stats">
-              <div>
-                <strong>3 BHK</strong>
-                <span>Premium Homes</span>
-              </div>
-              <div>
-                <strong>2</strong>
-                <span>Units Per Floor</span>
-              </div>
-              <div>
-                <strong>100%</strong>
-                <span>Cross Ventilation</span>
-              </div>
-            </div>
           </div>
 
           <div className="footer-column">
@@ -56,9 +40,10 @@ export default function Footer() {
             <a href="tel:+919876543210">+91 98765 43210</a>
 
             <div className="footer-socials">
-              <a href="#">IG</a>
-              <a href="#">FB</a>
-              <a href="#">IN</a>
+              <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
+              <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
+              <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
+              <a href="#" aria-label="YouTube"><Youtube size={20} /></a>
             </div>
           </div>
         </div>
