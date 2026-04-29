@@ -9,10 +9,10 @@ import SampleHouseSlider from './SampleHouseSlider';
 import AmenitiesFlip from './AmenitiesFlip';
 import ScrollOverlapGallery from './ScrollOverlapGallery';
 import HeroVideoSection from './HeroVideoSection';
-import SectionHeading from './SectionHeading';
+import ProjectImageSlider from './ProjectImageSlider';
 import ContactBookingSection from './ContactBookingSection';
 
-import { featuredProjects, homeGallery } from '@/data/projects';
+import { homeGallery } from '@/data/projects';
 
 export default function HomePageClient() {
   return (
@@ -29,33 +29,7 @@ export default function HomePageClient() {
 
       <HeroVideoSection />
 
-      <section className="section-block">
-        <SectionHeading
-          eyebrow="Projects"
-          title="Stellavia Sample House"
-          text="Exterior And Interior Design."
-        />
-
-        <div className="projects-marquee">
-          <div className="projects-marquee-track">
-            {[...featuredProjects, ...featuredProjects].map((project, index) => (
-              <div className="projects-marquee-item" key={`${project.id}-${index}`}>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-marquee-image"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="project-cta-row">
-          <Link href="/" className="inline-link">
-            See All Projects <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
+      <ProjectImageSlider />
 
       <ContactBookingSection />
     </>
