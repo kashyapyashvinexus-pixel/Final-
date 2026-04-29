@@ -8,6 +8,7 @@ import StatsStrip from './StatsStrip';
 import SampleHouseSlider from './SampleHouseSlider';
 import AmenitiesFlip from './AmenitiesFlip';
 import ScrollOverlapGallery from './ScrollOverlapGallery';
+import HeroVideoSection from './HeroVideoSection';
 import SectionHeading from './SectionHeading';
 import ContactBookingSection from './ContactBookingSection';
 
@@ -25,6 +26,8 @@ export default function HomePageClient() {
       <AmenitiesFlip />
 
       <ScrollOverlapGallery images={homeGallery.slice(0, 5)} />
+
+      <HeroVideoSection />
 
       <section className="section-block">
         <SectionHeading
