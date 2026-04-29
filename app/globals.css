@@ -2088,7 +2088,7 @@ p,
 .project-slider-section {
   width: 100%;
   padding: clamp(55px, 7vw, 90px) 0 clamp(55px, 7vw, 80px) clamp(18px, 4vw, 60px);
-  background: #f5f2eb;
+  background: var(--white);
   overflow: hidden;
 }
 
