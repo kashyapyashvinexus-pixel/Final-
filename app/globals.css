@@ -2128,9 +2128,10 @@ p,
   align-items: stretch;
   gap: clamp(14px, 2vw, 28px);
   width: max-content;
-  animation: projectSlideLTR 75s linear infinite;
+  animation: projectSlideRTL 75s linear infinite;
   will-change: transform;
 }
+
 
 .project-slider-card {
   flex: 0 0 auto;
@@ -2150,10 +2151,10 @@ p,
 
 @keyframes projectSlideLTR {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
 }
 
