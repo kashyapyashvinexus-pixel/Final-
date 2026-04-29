@@ -310,6 +310,7 @@ p,
   /*padding-bottom: 40px !important;*/
   padding-bottom: 0px !important;
   margin-bottom: 0 !important;
+  background: var(--white);
 }
 
 .overlap-gallery-section + section {
@@ -358,8 +359,7 @@ p,
   border-radius: 32px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  /*background: #ddd;*/
-  background: var(--white);
+  background: #ddd;
   transform: translateZ(0);
   backface-visibility: hidden;
   will-change: transform, opacity;
