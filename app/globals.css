@@ -2004,43 +2004,80 @@ p,
 
 /*=============================Hero Video Section====================================*/
 
+/* ===== VIDEO SECTION (NO TEXT) ===== */
+
 .hero-video-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
-  background: #111;
+  background: #000;
 }
 
+/* Video element */
 .hero-bg-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.hero-video-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,.65), rgba(0,0,0,.25));
+  display: block;
   z-index: 1;
 }
 
-.hero-video-content {
-  position: relative;
+/* Optional cinematic overlay (keep or remove) */
+.hero-video-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.15) 40%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
   z-index: 2;
-  min-height: 100vh;
-  width: min(1180px, 92%);
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
+  pointer-events: none;
 }
 
-.hero-video-content h1 {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(4rem, 11vw, 10rem);
+/* Prevent any unwanted spacing */
+.hero-video-section,
+.hero-video-section video {
   margin: 0;
+  padding: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-video-section {
+    height: 80vh;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-video-section {
+    height: 65vh;
+  }
+
+  .hero-bg-video {
+    object-fit: cover;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .hero-video-section {
+    height: 60vh;
+  }
+}
+
+/* Landscape mobile fix */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-video-section {
+    height: 100vh;
+  }
 }
