@@ -2001,3 +2001,46 @@ p,
     flex-direction: column;
   }
 }
+
+/*=============================Hero Video Section====================================*/
+
+.hero-video-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #111;
+}
+
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.65), rgba(0,0,0,.25));
+  z-index: 1;
+}
+
+.hero-video-content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  width: min(1180px, 92%);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.hero-video-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(4rem, 11vw, 10rem);
+  margin: 0;
+}
