@@ -1,16 +1,9 @@
 export default function HeroVideoSection() {
   return (
     <section className="hero-video-section">
-      <video
-        className="hero-bg-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/img/hero-fallback.webp"
-      >
+      <video className="hero-bg-video" autoPlay muted loop playsInline>
         <source
-          src="https://res.cloudinary.com/YOUR_CLOUD_NAME/video/upload/q_auto,f_auto,w_1920/YOUR_VIDEO.mp4"
+          src="https://res.cloudinary.com/diauur8uy/video/upload/q_auto,f_auto/v1777441650/Stellavia_video_xvlxra.mp4"
           type="video/mp4"
         />
       </video>
@@ -18,10 +11,9 @@ export default function HeroVideoSection() {
       <div className="hero-video-overlay" />
 
       <div className="hero-video-content">
-        <p>Premium Living</p>
-        <h1>STELLAVIA</h1>
-        <h2>Premium 3 BHK at Khoraj, Gandhinagar</h2>
-        <span>Affordable Luxury. Elevated Living.</span>
+        <p className="hero-eyebrow">Premium Walkthrough</p>
+        <h2>Experience Stellavia</h2>
+        <p>Step into premium living crafted for modern families.</p>
       </div>
     </section>
   );
