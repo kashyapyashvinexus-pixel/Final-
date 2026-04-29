@@ -7,14 +7,6 @@ export default function HeroVideoSection() {
           type="video/mp4"
         />
       </video>
-
-      <div className="hero-video-overlay" />
-
-      <div className="hero-video-content">
-        <p className="hero-eyebrow">Premium Walkthrough</p>
-        <h2>Experience Stellavia</h2>
-        <p>Step into premium living crafted for modern families.</p>
-      </div>
     </section>
   );
 }
