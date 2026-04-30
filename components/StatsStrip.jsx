@@ -7,7 +7,7 @@ export default function StatsStrip() {
 
         <div className="lux-award-left">
           <img
-            src="/award-medal.jpg"
+            src="logo/Jbp with CM.jpeg/"
             alt="Award Medal"
             className="lux-award-image"
           />
