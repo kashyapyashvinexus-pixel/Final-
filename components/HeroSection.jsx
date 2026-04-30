@@ -58,12 +58,14 @@ export default function HeroSection() {
           <p className="eyebrow">Infinity Projects Presents</p>
 
           <h1 className="hero-title">
-            <span>The Future of Residential </span>
-            <span> Excellence</span>
+            <span className="title-line-1">The Future of Residential</span>
+            <span className="title-line-2">Excellence</span>
           </h1>
 
           <p className="lead body-large">
-            Where sophisticated premium living meets smart affordability. 140 thoughtfully designed homes crafted for families who refuse to compromise.
+            Where sophisticated premium living meets smart affordability. 140
+            thoughtfully designed homes crafted for families who refuse to
+            compromise.
           </p>
 
           <div className="hero-actions">
