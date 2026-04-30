@@ -1869,9 +1869,8 @@ background:
 .lux-contact-form input[readonly] {
   cursor: default;
   color: #181818;
-  background:
-    linear-gradient(45deg, transparent calc(100% - 28px), rgba(183, 127, 43, 0.08) calc(100% - 28px)),
-    rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(188, 138, 58, 0.52);
 }
 
 .lux-contact-form textarea {
@@ -1974,6 +1973,15 @@ background:
   width: 1px;
   height: 58px;
   background: rgba(183, 127, 43, 0.45);
+}
+
+.lux-form-note {
+  max-width: 780px;
+  margin: 28px auto 0;
+  text-align: center;
+  color: rgba(18, 18, 18, 0.45);
+  font-size: 0.76rem;
+  line-height: 1.6;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -2080,6 +2088,10 @@ background:
 
   .lux-contact-info-box a {
     font-size: 0.98rem;
+  }
+
+  .lux-form-note {
+    font-size: 0.68rem;
   }
 }
 
