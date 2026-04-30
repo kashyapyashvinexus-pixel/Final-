@@ -58,8 +58,8 @@ export default function HeroSection() {
           <p className="eyebrow">Infinity Projects Presents</p>
 
           <h1 className="hero-title">
-            <span>The Future of Residential</span>
-            <span>Excellence</span>
+            <span>The Future of Residential </span>
+            <span> Excellence</span>
           </h1>
 
           <p className="lead body-large">
