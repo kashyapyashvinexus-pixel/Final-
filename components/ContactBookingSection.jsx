@@ -41,132 +41,97 @@ Message: ${form.message || 'No message'}
   };
 
   return (
-    <section className="lux-contact-section">
-      <div className="lux-contact-card">
-        <span className="lux-border-diamond lux-border-diamond-top"></span>
-        <span className="lux-border-diamond lux-border-diamond-bottom"></span>
+    <section className="clean-contact-section">
+      <div className="clean-contact-card">
+        <div className="clean-contact-heading">
+          <p>Get In Touch</p>
+          <h2>Contact Us</h2>
+          <span></span>
+          <h4>
+            Share your details and our team will get in touch with you shortly.
+          </h4>
+        </div>
 
-        <div className="lux-contact-inner">
-          <div className="lux-contact-heading">
-            <div className="lux-eyebrow-wrap">
-              <span></span>
-              <p>Get In Touch</p>
-              <span></span>
-            </div>
-
-            <h2>Contact Us</h2>
-
-            <div className="lux-title-diamond"></div>
-
-            <p>
-              We would love to hear from you. Share your details and our team
-              will get in touch shortly.
-            </p>
-          </div>
-
-          <form className="lux-contact-form" onSubmit={handleSubmit}>
-            <div className="lux-form-two">
-              <label>
-                Full Name
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Enter your full name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-
-              <label>
-                Phone Number
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Enter your phone number"
-                  value={form.phone}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </div>
-
+        <form className="clean-contact-form" onSubmit={handleSubmit}>
+          <div className="clean-form-two">
             <label>
-              Email Address
+              <strong>Full Name</strong>
               <input
-                type="email"
-                name="email"
-                placeholder="Enter your email address"
-                value={form.email}
+                type="text"
+                name="name"
+                placeholder="Enter your full name"
+                value={form.name}
                 onChange={handleChange}
                 required
               />
             </label>
 
-            <div className="lux-form-two">
-              <label>
-                Interested In
-                <input type="text" value="3BHK Apartment" readOnly />
-              </label>
-
-              <label>
-                Budget Range
-                <input type="text" value="₹50L - ₹1.00CR" readOnly />
-              </label>
-            </div>
-
             <label>
-              Message
-              <textarea
-                name="message"
-                placeholder="Type your message here..."
-                value={form.message}
+              <strong>Phone Number</strong>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Enter your phone number"
+                value={form.phone}
                 onChange={handleChange}
-              ></textarea>
+                required
+              />
+            </label>
+          </div>
+
+          <label>
+            <strong>Email Address</strong>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email address"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+          </label>
+
+          <div className="clean-form-two">
+            <label>
+              <strong>Interested In</strong>
+              <input type="text" value="3BHK Apartment" readOnly />
             </label>
 
-            <button type="submit">
-              Send Enquiry <span>→</span>
-            </button>
-          </form>
-
-          <div className="lux-contact-divider">
-            <span></span>
-            <i></i>
-            <span></span>
+            <label>
+              <strong>Budget Range</strong>
+              <input type="text" value="₹50L - ₹1.00CR" readOnly />
+            </label>
           </div>
 
-          <div className="lux-contact-info-row">
-            <div className="lux-contact-info-box">
-              <div className="lux-contact-icon">
-                <Phone size={20} />
-              </div>
-              <div>
-                <small>Call us:</small>
-                <a href="tel:+917572818000">+91 75728 18000</a>
-              </div>
-            </div>
+          <label>
+            <strong>Message (Optional)</strong>
+            <textarea
+              name="message"
+              placeholder="Tell us about your requirement..."
+              value={form.message}
+              onChange={handleChange}
+            ></textarea>
+          </label>
 
-            <div className="lux-contact-info-line"></div>
+          <button type="submit">Send Enquiry</button>
+        </form>
 
-            <div className="lux-contact-info-box">
-              <div className="lux-contact-icon">
-                <Mail size={20} />
-              </div>
-              <div>
-                <small>Email:</small>
-                <a href="mailto:sales@stellavia99.com">
-                  sales@stellavia99.com
-                </a>
-              </div>
-            </div>
-          </div>
+        <div className="clean-contact-info">
+          <a href="tel:+917572818000">
+            <span>
+              <Phone size={18} />
+            </span>
+            +91 75728 18000
+          </a>
 
-          <p className="lux-form-note">
-            RERA Reg. No: PR/GJ/GANDHINAGAR/GANDHINAGAR/Gandhinagar Municipal
-            Corporation/MAA13956/050824/300628. All images are artistic
-            impressions. Actual specifications may vary.
-          </p>
+          <i></i>
+
+          <a href="mailto:sales@stellavia99.com">
+            <span>
+              <Mail size={18} />
+            </span>
+            sales@stellavia99.com
+          </a>
         </div>
       </div>
     </section>
