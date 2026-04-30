@@ -74,7 +74,8 @@ h1,
   line-height: var(--lh-tight);
   letter-spacing: var(--tracking-tight);
   font-weight: 500;
-  max-width: 13ch;
+  /*max-width: 13ch;*/
+  max-width: auto;
   margin: 0;
 }
 .hero-title span {
