@@ -540,7 +540,7 @@ p,
 .brand-logo {
   width: auto;
   /*height: 48px;*/
-  height: 60px;
+  height: 50px;
   object-fit: contain;
   display: block;
 }
