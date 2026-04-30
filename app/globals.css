@@ -132,16 +132,17 @@ h1,
   .hero-layout.hero-layout-pushed {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: flex-start;
     gap: 18px;
-    padding: 120px 20px 32px;
+    padding: 160px 20px 32px;
   }
 
   .hero-copy {
     width: 100%;
     max-width: 100%;
+    margin-top: 10px;
   }
+}
 
   .hero-title {
     font-size: clamp(28px, 8vw, 38px);
