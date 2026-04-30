@@ -2001,23 +2001,36 @@ background:
 }
 
 /* ================================================================================================================ BIG BACKGROUND STELLAVIA TEXT =========================================================*/
+/* ===== PREMIUM STELLAVIA FOOTER ===== */
+
+.luxury-footer {
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 45% 0%, rgba(28, 63, 89, 0.55), transparent 42%),
+    linear-gradient(135deg, #071827 0%, #05111d 48%, #02070c 100%) !important;
+  color: #ffffff !important;
+  padding: 120px 28px 34px !important;
+}
+
+/* BIG BACKGROUND STELLAVIA TEXT - FIXED CUTTING ISSUE */
 .footer-bg-text {
   position: absolute;
-  top: 10px;
+  top: 18px;
   left: 50%;
-  width: 100vw;
-  max-width: none;
-  transform: translateX(-50%) scaleX(1.12);
+  transform: translateX(-50%);
   transform-origin: center;
+  width: auto;
+  max-width: 100%;
   text-align: center;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(8rem, 21vw, 24rem);
-  line-height: 0.75;
-  letter-spacing: -0.09em;
+  font-size: clamp(6rem, 15vw, 17rem);
+  line-height: 0.78;
+  letter-spacing: -0.055em;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.06);
-  pointer-events: none;
   white-space: nowrap;
+  pointer-events: none;
   z-index: 0;
 }
 
@@ -2217,17 +2230,26 @@ background:
   line-height: 1.5;
 }
 
+/* ===== LARGE LAPTOP ===== */
+
+@media (max-width: 1400px) {
+  .footer-bg-text {
+    top: 24px;
+    font-size: clamp(5.8rem, 14.5vw, 14rem);
+    letter-spacing: -0.05em;
+  }
+}
+
 /* ===== TABLET RESPONSIVE ===== */
 
 @media (max-width: 1200px) {
   .luxury-footer {
-    padding: 125px 26px 34px !important;
+    padding: 112px 26px 34px !important;
   }
 
   .footer-bg-text {
-    top: 16px;
-    font-size: clamp(7rem, 22vw, 16rem);
-    transform: translateX(-50%) scaleX(1.16);
+    top: 26px;
+    font-size: clamp(5.4rem, 14vw, 12rem);
   }
 
   .footer-content-grid {
@@ -2259,15 +2281,17 @@ background:
   }
 }
 
+/* ===== SMALL TABLET ===== */
+
 @media (max-width: 900px) {
   .luxury-footer {
-    padding-top: 110px !important;
+    padding-top: 104px !important;
   }
 
   .footer-bg-text {
-    top: 24px;
-    font-size: clamp(6rem, 24vw, 13rem);
-    opacity: 0.9;
+    top: 30px;
+    font-size: clamp(4.8rem, 13.5vw, 9rem);
+    letter-spacing: -0.045em;
   }
 
   .footer-brand-area h3 {
@@ -2284,15 +2308,13 @@ background:
 
 @media (max-width: 650px) {
   .luxury-footer {
-    padding: 92px 18px 28px !important;
+    padding: 88px 18px 28px !important;
   }
 
   .footer-bg-text {
-    top: 34px;
-    width: 100vw;
-    font-size: clamp(4.9rem, 25vw, 8rem);
-    letter-spacing: -0.08em;
-    transform: translateX(-50%) scaleX(1.22);
+    top: 38px;
+    font-size: clamp(3.4rem, 16vw, 5.8rem);
+    letter-spacing: -0.035em;
     color: rgba(255, 255, 255, 0.055);
   }
 
@@ -2364,6 +2386,8 @@ background:
   }
 }
 
+/* ===== SMALL MOBILE ===== */
+
 @media (max-width: 420px) {
   .luxury-footer {
     padding-left: 16px !important;
@@ -2371,9 +2395,9 @@ background:
   }
 
   .footer-bg-text {
-    top: 38px;
-    font-size: 5.3rem;
-    transform: translateX(-50%) scaleX(1.28);
+    top: 40px;
+    font-size: clamp(3rem, 15.5vw, 5.1rem);
+    letter-spacing: -0.025em;
   }
 
   .footer-brand-area h3 {
