@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 
 const slides = [
   {
-    desktop: '/img/JB_CAM_04_FFF.webp',
-    mobile: '/img/JB_CAM_04_FFF.webp',
+    desktop: '/img/ST_CAM_07_FFF-r.jpg.jpeg',
+    mobile: '/img/ST_CAM_07_FFF-r.jpg.jpeg',
   },
   {
     desktop: '/img/JB_CAM_16_FFF.webp',
