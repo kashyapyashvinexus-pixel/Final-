@@ -69,7 +69,8 @@ h1, h2, h3, h4, strong { font-family: var(--font-primary); }
 h1, h2, h3, p { margin-top: 0; }
 h1,
 .hero-title {
-  font-size: var(--h1-size);
+  /*font-size: var(--h1-size);*/
+  font-size: 25px;
   line-height: var(--lh-tight);
   letter-spacing: var(--tracking-tight);
   font-weight: 500;
