@@ -284,6 +284,7 @@ background:
     #29427d 62%,
     #112860 100%
   );
+}
 .hero-card span, .hero-card strong, .hero-card p, .project-stats-card strong, .project-stats-card small { color: var(--white); }
 .hero-card strong { display: block; font-size: 2rem; margin: 8px 0 14px; }
 
