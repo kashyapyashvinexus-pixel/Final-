@@ -518,7 +518,7 @@ p,
 }
 
 .header-shell {
-  height: 64px;
+  height: 84px;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 22px;
@@ -539,8 +539,7 @@ p,
 
 .brand-logo {
   width: auto;
-  /*height: 48px;*/
-  height: 60px;
+  height: 74px;
   object-fit: contain;
   display: block;
 }
@@ -564,7 +563,6 @@ p,
   padding: 10px 16px;
   border-radius: 999px;
   color: #1f1b16;
-  /*font-size: 14px;*/
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -633,7 +631,7 @@ p,
   }
 
   .header-shell {
-    height: 64px;
+    height: 74px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -641,7 +639,7 @@ p,
   }
 
   .brand-logo {
-    height: 48px;
+    height: 58px;
   }
 
   .menu-toggle {
@@ -650,7 +648,7 @@ p,
 
   .site-nav {
     position: fixed;
-    top: 92px;
+    top: 102px;
     left: 14px;
     right: 14px;
     display: none;
@@ -699,18 +697,29 @@ p,
   }
 
   .header-shell {
-    height: 64px;
+    height: 68px;
+    padding: 0 12px 0 16px;
   }
 
   .brand-logo {
-    height: 42px;
+    height: 50px;
   }
 
   .site-nav {
-    top: 86px;
+    top: 92px;
+  }
+
+  .site-nav-center a {
+    font-size: 16px;
+  }
+
+  .nav-cta {
+    padding: 11px 18px;
+    font-size: 13px;
   }
 }
 
+/*============================================================================*/
 
 /* ===== LUXURY AWARD SECTION ===== */
 
