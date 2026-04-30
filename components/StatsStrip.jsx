@@ -33,8 +33,7 @@ export default function StatsStrip() {
           </div>
 
           <p className="lux-desc">
-            Stellavia is honoured for its commitment to quality construction,
-            thoughtful design, timely delivery, and customer satisfaction.
+            Stellavia is proud to be honored as the "Best Affordable Residential Project" by the Honorable Chief Minister of Gujarat, Shri Bhupendra Bhai Patel.
           </p>
         </div>
       </div>
