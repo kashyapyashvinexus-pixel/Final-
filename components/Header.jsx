@@ -48,8 +48,8 @@ export default function Header() {
           <Image
             src="/logo/Stellavia Logo.jpg"
             alt="Stellavia Construction"
-            width={200}
-            height={55}
+            width={280}
+            height={84}
             priority
             className="brand-logo"
           />
