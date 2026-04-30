@@ -55,11 +55,11 @@ export default function HeroSection() {
 
       <div className="hero-layout hero-layout-pushed">
         <div className="hero-copy">
-          <p className="eyebrow">Infinity Projects Presents
-</p>
+          <p className="eyebrow">Infinity Projects Presents</p>
 
           <h1 className="hero-title">
-            The Future of Residential Excellence
+            <span>The Future of Residential</span>
+            <span>Excellence</span>
           </h1>
 
           <p className="lead body-large">
