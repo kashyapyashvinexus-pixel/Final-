@@ -9,10 +9,10 @@ import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '#' },
-  { label: 'Projects', path: '#' },
-  { label: 'Floor Plans', path: '#' },
-  { label: 'Contact', path: '#' }
+  { label: 'About Us', path: '#' },
+  { label: 'Contact Us', path: '#' },
+  { label: 'Brochure', path: '#' },
+  { label: 'News', path: '#' }
 ];
 
 export default function Header() {
