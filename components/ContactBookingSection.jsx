@@ -91,22 +91,27 @@ Message: ${form.message || 'No message'}
               </label>
             </div>
 
-            <div className="lux-form-two">
-              <label>
-                Email Address
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email address"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
+            <label>
+              Email Address
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email address"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+            </label>
 
+            <div className="lux-form-two">
               <label>
                 Interested In
                 <input type="text" value="3BHK Apartment" readOnly />
+              </label>
+
+              <label>
+                Budget Range
+                <input type="text" value="₹50L - ₹1.00CR" readOnly />
               </label>
             </div>
 
@@ -156,10 +161,14 @@ Message: ${form.message || 'No message'}
               </div>
             </div>
           </div>
+
+          <p className="lux-form-note">
+            RERA Reg. No: PR/GJ/GANDHINAGAR/GANDHINAGAR/Gandhinagar Municipal
+            Corporation/MAA13956/050824/300628. All images are artistic
+            impressions. Actual specifications may vary.
+          </p>
         </div>
       </div>
     </section>
   );
 }
-
-
