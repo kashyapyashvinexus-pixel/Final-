@@ -275,15 +275,15 @@ p,
 .hero-card { width: min(420px, 100%); padding: 28px; }
 .glass-card {
  /* background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); backdrop-filter: blur(20px); box-shadow: var(--shadow); border-radius: 28px;*/
-background:  radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.22), transparent 30%),
+background:
+  radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.28), transparent 32%),
   linear-gradient(
     135deg,
-    #536895 0%,
-    #263a72 32%,
-    #10265f 62%,
-    #061747 100%
+    #7a8bb5 0%,
+    #4f659a 32%,
+    #29427d 62%,
+    #112860 100%
   );
-}
 .hero-card span, .hero-card strong, .hero-card p, .project-stats-card strong, .project-stats-card small { color: var(--white); }
 .hero-card strong { display: block; font-size: 2rem; margin: 8px 0 14px; }
 
