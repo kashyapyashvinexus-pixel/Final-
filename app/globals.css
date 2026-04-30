@@ -276,13 +276,13 @@ p,
 .glass-card {
  /* background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); backdrop-filter: blur(20px); box-shadow: var(--shadow); border-radius: 28px;*/
 background:
-  radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.28), transparent 32%),
+  radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.24), transparent 31%),
   linear-gradient(
     135deg,
-    #7a8bb5 0%,
-    #4f659a 32%,
-    #29427d 62%,
-    #112860 100%
+    #6274a2 0%,
+    #344983 32%,
+    #16306b 62%,
+    #081c4d 100%
   );
 }
 .hero-card span, .hero-card strong, .hero-card p, .project-stats-card strong, .project-stats-card small { color: var(--white); }
