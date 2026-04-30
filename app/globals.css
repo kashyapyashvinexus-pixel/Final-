@@ -90,7 +90,7 @@ h1,
 .hero-title {
   margin: 0 0 24px;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(52px, 6vw, 96px);
+  font-size: clamp(38px, 4.5vw, 62px);
   line-height: 0.9;
   letter-spacing: -0.05em;
   color: #fff;
@@ -111,14 +111,14 @@ h1,
   }
 
   .hero-title {
-    font-size: clamp(40px, 7vw, 72px);
+    font-size: clamp(32px, 5vw, 50px);
     line-height: 0.92;
   }
 }
 
 @media (max-width: 767px) {
   .hero-title {
-    font-size: clamp(32px, 9vw, 48px);
+    font-size: clamp(26px, 7vw, 38px);
     line-height: 0.95;
   }
 
