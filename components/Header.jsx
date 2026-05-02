@@ -11,7 +11,7 @@ const navItems = [
   { label: 'Home', path: '/' },
   { label: 'Project', path: '/projects/stellavia' },
   { label: 'About Us', path: '#' },
-  { label: 'Contact Us', path: '/contact/page.js' },
+  { label: 'Contact Us', path: '/app/contact/page.js' },
   { label: 'Brochure', path: '#' },
   { label: 'News', path: '#' }
 ];
