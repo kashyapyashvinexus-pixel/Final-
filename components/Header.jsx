@@ -9,6 +9,7 @@ import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'Home', path: '/' },
+  { label: 'Project', path: '/projects/stellavia' },
   { label: 'About Us', path: '#' },
   { label: 'Contact Us', path: '#' },
   { label: 'Brochure', path: '#' },
