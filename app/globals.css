@@ -1338,6 +1338,12 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   overflow: visible;
 }
 
+/* AMENITIES MAIN HEADING SIZE */
+.amenities-section .section-heading h2 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 1.15;
+}
+
 .amenities-flip-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1531,6 +1537,11 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 /* TABLET */
 @media (max-width: 1024px) {
+  .amenities-section .section-heading h2 {
+    font-size: 2.2rem;
+    line-height: 1.18;
+  }
+
   .amenities-flip-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1555,6 +1566,11 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 /* MOBILE */
 @media (max-width: 600px) {
+  .amenities-section .section-heading h2 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
   .amenities-flip-grid {
     grid-template-columns: 1fr;
     gap: 18px;
