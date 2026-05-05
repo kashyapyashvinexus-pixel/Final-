@@ -24,7 +24,7 @@ export default function ProjectImageSlider() {
   return (
     <section className="project-slider-section">
       <p className="eyebrow">Projects</p>
-      <h2>Stellavia Sample House</h2>
+      <h2>Stellavia Experience Home</h2>
       <p className="project-slider-subtitle">Exterior And Interior Design.</p>
 
       <div className="project-slider">
