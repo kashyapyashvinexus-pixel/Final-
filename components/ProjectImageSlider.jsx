@@ -9,14 +9,14 @@ const projectSliderImages = [
   '/sample house image/26.webp',
   '/sample house image/16.webp',
   '/sample house image/24.webp',
-  '/sample house image/08.webp',
+  {/*  '/sample house image/08.webp',
   '/sample house image/35.webp',
   '/sample house image/19.webp',
   '/sample house image/38.webp',
   '/sample house image/12.webp',
   '/sample house image/39.webp',
   '/sample house image/15.webp',
-  '/sample house image/33.webp',
+  '/sample house image/33.webp',*/}
   
 ];
 
