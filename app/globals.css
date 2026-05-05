@@ -1338,7 +1338,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 .section-block.amenities-section,
 .amenities-section {
   background: linear-gradient(
-    180deg,
+    135deg,
     #f7f7f7 0%,
     #eeeeee 45%,
     #f8f8f8 100%
