@@ -1341,7 +1341,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 /* AMENITIES MAIN HEADING SIZE */
 .amenities-section .section-heading h2 {
  /* font-size: clamp(2rem, 3vw, 2.6rem);*/
-  font-size: 25px;
+  font-size: 32px;
   line-height: 1.15;
 }
 
