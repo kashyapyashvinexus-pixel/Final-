@@ -275,11 +275,11 @@ p,
 .hero-card { width: min(420px, 100%); padding: 28px; }
 .glass-card {
  background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); backdrop-filter: blur(20px); box-shadow: var(--shadow); border-radius: 28px;
-  .hero-card.glass-card span,
+}
+.hero-card.glass-card span,
 .hero-card.glass-card strong,
 .hero-card.glass-card p {
   color: #20274e;
-}
 /*background:
   radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.30), transparent 32%),
   linear-gradient(
