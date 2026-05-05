@@ -285,9 +285,13 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   border-radius: 28px;
 }
 .hero-card.glass-card span,
-.hero-card.glass-card strong,
 .hero-card.glass-card p {
-  color: #20274e;
+  color: #ffffff !important;
+}
+
+.hero-card.glass-card strong {
+  color: #20274e !important;
+}
 /*background:
   radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.30), transparent 32%),
   linear-gradient(
