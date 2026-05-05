@@ -1334,7 +1334,6 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 /* ===== AMENITIES FLIP + IMAGE POPOUT ===== */
 
 /* AMENITIES SECTION */
-.section-block.amenities-section,
 .amenities-section {
   background: linear-gradient(
     180deg,
@@ -1345,7 +1344,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   overflow: visible;
 }
 
-/* AMENITIES HEADING SIZE */
+/* HEADING SIZE */
 .amenities-section .section-heading h2 {
   font-size: clamp(1.85rem, 2.6vw, 2.35rem);
   line-height: 1.16;
@@ -1396,18 +1395,24 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   backface-visibility: hidden;
 }
 
-/* FRONT CARD - TRANSPARENT GLASS EFFECT */
+/* FRONT CARD - SAME AS HERO RIGHT BOTTOM GLASS CARD */
 .amenity-front {
-  background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(24px) saturate(145%);
-  -webkit-backdrop-filter: blur(24px) saturate(145%);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.14), transparent 32%),
+    linear-gradient(
+      135deg,
+      rgba(103, 114, 86, 0.58) 0%,
+      rgba(77, 88, 67, 0.54) 38%,
+      rgba(49, 56, 43, 0.56) 72%,
+      rgba(28, 33, 24, 0.60) 100%
+    );
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
 
-  border: 1px solid rgba(255, 255, 255, 0.48);
-
+  border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.75),
-    inset 0 -1px 0 rgba(32, 39, 78, 0.05);
+    0 22px 55px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
 
   display: flex;
   flex-direction: column;
@@ -1415,51 +1420,57 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   padding: 36px;
 }
 
-/* REMOVE OLD GRADIENT / SHINE */
 .amenity-front::before {
   display: none;
 }
 
-/* INNER GLASS BORDER */
 .amenity-front::after {
   content: "";
   position: absolute;
   inset: 1px;
   border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   pointer-events: none;
 }
 
 .amenity-front span {
   position: relative;
   z-index: 2;
-  color: #c39434;
-  font-size: 46px;
-  margin-bottom: 22px;
-  text-shadow: 0 0 18px rgba(195, 148, 52, 0.25);
+  color: #d1a13b;
+  font-size: 44px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 18px rgba(209, 161, 59, 0.24);
 }
 
 .amenity-front h3 {
   position: relative;
   z-index: 2;
-  color: #20274e;
-  font-size: 1.65rem;
+  color: #ffffff;
+  font-size: 1.55rem;
   line-height: 1.18;
   margin: 0;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* BACK CARD */
 .amenity-back {
   transform: rotateY(180deg);
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.12), transparent 32%),
+    linear-gradient(
+      135deg,
+      rgba(103, 114, 86, 0.52) 0%,
+      rgba(77, 88, 67, 0.48) 38%,
+      rgba(49, 56, 43, 0.50) 72%,
+      rgba(28, 33, 24, 0.54) 100%
+    );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
+  border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow:
     0 22px 60px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .amenity-back img {
@@ -1471,7 +1482,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 .amenity-back-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.42);
+  background: rgba(0, 0, 0, 0.38);
   display: flex;
   align-items: flex-end;
   padding: 24px;
@@ -1498,15 +1509,22 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   transition: all 0.65s ease;
   z-index: 100;
 
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(22px) saturate(140%);
-  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.14), transparent 32%),
+    linear-gradient(
+      135deg,
+      rgba(103, 114, 86, 0.50) 0%,
+      rgba(77, 88, 67, 0.46) 38%,
+      rgba(49, 56, 43, 0.50) 72%,
+      rgba(28, 33, 24, 0.56) 100%
+    );
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
 
-  border: 1px solid rgba(255, 255, 255, 0.36);
-
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow:
-    0 35px 90px rgba(0, 0, 0, 0.48),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    0 35px 90px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 .amenity-flip-card:hover .amenity-popout {
@@ -1524,7 +1542,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.38);
+  background: rgba(0, 0, 0, 0.34);
 }
 
 .amenity-popout h3 {
@@ -1537,20 +1555,19 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   font-size: 1.5rem;
 }
 
-/* HOVER PREMIUM GLOW */
+/* HOVER */
 .amenity-flip-card:hover .amenity-front {
-  border-color: rgba(195, 148, 52, 0.35);
-
+  border-color: rgba(209, 161, 59, 0.26);
   box-shadow:
-    0 28px 75px rgba(0, 0, 0, 0.14),
-    0 0 35px rgba(195, 148, 52, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    0 28px 75px rgba(0, 0, 0, 0.24),
+    0 0 35px rgba(209, 161, 59, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 /* TABLET */
 @media (max-width: 1024px) {
   .amenities-section .section-heading h2 {
-    font-size: 2.05rem;
+    font-size: 2rem;
     line-height: 1.18;
   }
 
@@ -1568,11 +1585,11 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   }
 
   .amenity-front h3 {
-    font-size: 1.5rem;
+    font-size: 1.42rem;
   }
 
   .amenity-front span {
-    font-size: 42px;
+    font-size: 40px;
   }
 }
 
@@ -1603,12 +1620,12 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   }
 
   .amenity-front h3 {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
   }
 
   .amenity-front span {
-    font-size: 38px;
-    margin-bottom: 18px;
+    font-size: 36px;
+    margin-bottom: 16px;
   }
 
   .amenity-popout {
