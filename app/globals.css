@@ -1074,35 +1074,34 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 .sample-slider {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 620px;
+  height: 100svh;
+  min-height: 680px;
   overflow: hidden;
-  background: #f5f2eb;
-  isolation: isolate;
+  background: #050505;
 }
 
 .sample-pin-viewport {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 100vh;
-  min-height: 620px;
+  height: 100%;
   overflow: hidden;
 }
 
 .sample-track {
-  display: flex;
-  width: max-content;
+  position: relative;
+  width: 100%;
   height: 100%;
-  will-change: transform;
+  overflow: hidden;
 }
 
 .sample-slide {
-  position: relative;
-  flex: 0 0 100vw;
-  width: 100vw;
+  position: absolute;
+  inset: 0;
+  width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #f5f2eb;
+  will-change: transform;
 }
 
 .sample-slide picture {
@@ -1118,12 +1117,10 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   object-fit: cover;
   object-position: center;
   user-select: none;
-  transform: scale(1.12);
-  filter: brightness(0.96) contrast(1.06) saturate(1.04);
+  pointer-events: none;
   will-change: transform;
 }
 
-/* Premium overlay */
 .sample-overlay {
   position: absolute;
   inset: 0;
@@ -1132,147 +1129,42 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   background:
     linear-gradient(
       90deg,
-      rgba(7, 12, 22, 0.24) 0%,
-      rgba(7, 12, 22, 0.04) 35%,
-      rgba(7, 12, 22, 0.04) 65%,
-      rgba(7, 12, 22, 0.22) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.04) 0%,
-      rgba(0, 0, 0, 0.02) 45%,
-      rgba(0, 0, 0, 0.28) 100%
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0.02) 38%,
+      rgba(0, 0, 0, 0.08) 100%
     );
 }
 
-/* Luxury shine */
-.sample-slide::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      circle at 18% 15%,
-      rgba(255, 255, 255, 0.14),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 82% 82%,
-      rgba(199, 164, 106, 0.12),
-      transparent 35%
-    );
-  opacity: 0.55;
-}
-
-/* Large Desktop */
-@media (min-width: 1440px) {
-  .sample-slider,
-  .sample-pin-viewport {
-    height: 100vh;
-    min-height: 760px;
-  }
-}
-
-/* Laptop */
-@media (max-width: 1366px) {
-  .sample-slider,
-  .sample-pin-viewport {
-    height: 92vh;
+/* Tablet */
+@media (max-width: 1024px) {
+  .sample-slider {
+    height: 92svh;
     min-height: 620px;
   }
-}
-
-/* Tablet Landscape */
-@media (max-width: 1180px) and (orientation: landscape) {
-  .sample-slider,
-  .sample-pin-viewport {
-    height: 88vh;
-    min-height: 520px;
-  }
-}
-
-/* Tablet Portrait */
-@media (max-width: 1024px) and (orientation: portrait) {
-  .sample-slider,
-  .sample-pin-viewport {
-    height: 78vh;
-    min-height: 600px;
-  }
 
   .sample-img {
     object-position: center;
   }
 }
 
-/* Mobile Landscape */
-@media (max-width: 920px) and (orientation: landscape) {
-  .sample-slider,
-  .sample-pin-viewport {
-    height: 100vh;
-    min-height: 420px;
-  }
-
-  .sample-img {
-    object-fit: cover;
-    object-position: center;
-  }
-}
-
-/* Mobile Portrait */
-@media (max-width: 768px) and (orientation: portrait) {
-  .sample-slider,
-  .sample-pin-viewport {
-    height: 72vh;
+/* Mobile */
+@media (max-width: 768px) {
+  .sample-slider {
+    height: 82svh;
     min-height: 520px;
   }
 
   .sample-img {
-    object-fit: cover;
     object-position: center;
-    transform: scale(1.08);
-  }
-
-  .sample-overlay {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.04) 0%,
-        rgba(0, 0, 0, 0.02) 45%,
-        rgba(0, 0, 0, 0.34) 100%
-      ),
-      linear-gradient(
-        90deg,
-        rgba(7, 12, 22, 0.18) 0%,
-        rgba(7, 12, 22, 0.04) 50%,
-        rgba(7, 12, 22, 0.18) 100%
-      );
-  }
-
-  .sample-slide::after {
-    opacity: 0.42;
   }
 }
 
-/* Small Mobile */
 @media (max-width: 480px) {
-  .sample-slider,
-  .sample-pin-viewport {
-    height: 68vh;
-    min-height: 460px;
+  .sample-slider {
+    height: 78svh;
+    min-height: 480px;
   }
 }
-
-/* Very Small Mobile */
-@media (max-width: 380px) {
-  .sample-slider,
-  .sample-pin-viewport {
-    height: 64vh;
-    min-height: 430px;
-  }
-}
-
 /*======================================================*/
 
 /* ===== AMENITIES FLIP SECTION =====
