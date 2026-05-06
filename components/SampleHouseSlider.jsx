@@ -1,6 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 const slides = [
   {
@@ -22,46 +24,40 @@ const slides = [
 ];
 
 export default function SampleHouseSlider() {
-  const [active, setActive] = useState(0);
-
   useEffect(() => {
     slides.forEach((slide) => {
-      const img = new Image();
-      img.src = slide.desktop;
+      const desktopImg = new Image();
+      desktopImg.src = slide.desktop;
 
       const mobileImg = new Image();
       mobileImg.src = slide.mobile;
     });
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % slides.length);
-    }, 4000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const goToSlide = (index) => {
-    setActive(index);
-  };
-
   return (
     <section className="sample-slider">
-      <div
-        className="sample-track"
-        style={{ transform: `translateX(-${active * 100}%)` }}
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        className="sample-swiper"
+        slidesPerView={1}
+        loop={true}
+        speed={1350}
+        grabCursor={true}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
       >
         {slides.map((slide, index) => (
-          <div
-            className={`sample-slide ${active === index ? 'active' : ''}`}
-            key={index}
-          >
+          <SwiperSlide key={index} className="sample-slide">
             <picture>
               <source media="(max-width: 768px)" srcSet={slide.mobile} />
               <img
                 src={slide.desktop}
-                alt={`Sample House ${index + 1}`}
+                alt={`Stellavia sample house ${index + 1}`}
                 className="sample-img"
                 loading={index === 0 ? 'eager' : 'lazy'}
                 draggable="false"
@@ -69,20 +65,9 @@ export default function SampleHouseSlider() {
             </picture>
 
             <div className="sample-overlay" />
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
-
-      <div className="sample-dots">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={active === index ? 'active' : ''}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
+      </Swiper>
     </section>
   );
 }
