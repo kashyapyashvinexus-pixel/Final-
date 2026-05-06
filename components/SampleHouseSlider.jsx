@@ -133,7 +133,7 @@ export default function SampleHouseSlider() {
           {
             scale: 1,
             /*duration: 2.6,*/
-            duration: 4.5,
+            duration: 5.5,
             ease: 'power2.out',
           },
           0
