@@ -276,7 +276,7 @@ p,
   padding: 0 3vw 5vh;
 
   background:
-    url('/img/JB_CAM_02_FFF.webp') center center / contain no-repeat;
+    url('/img/JB_CAM_02_FFF.webp') center 18% / cover no-repeat;
 
   background-color: #0c0c0c;
 }
@@ -295,6 +295,15 @@ p,
   grid-template-columns: 1.05fr 0.95fr;
   gap: 40px;
   align-items: end;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100vh;
+    padding: 0 5vw 6vh;
+    background-position: center top;
+    background-size: cover;
+  }
 }
 
 .hero-layout-pushed { padding-top: 110px; }
