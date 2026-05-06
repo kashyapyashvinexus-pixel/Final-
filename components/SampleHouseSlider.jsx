@@ -23,6 +23,7 @@ const slides = [
 
 export default function SampleHouseSlider() {
   const [active, setActive] = useState(0);
+  const [prevSlide, setPrevSlide] = useState(null);
 
   useEffect(() => {
     slides.forEach((slide) => {
@@ -36,17 +37,29 @@ export default function SampleHouseSlider() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % slides.length);
-    }, 5200);
+      setActive((current) => {
+        setPrevSlide(current);
+        return (current + 1) % slides.length;
+      });
+    }, 2000);
 
     return () => clearInterval(timer);
   }, []);
+
+  const goToSlide = (index) => {
+    if (index === active) return;
+
+    setPrevSlide(active);
+    setActive(index);
+  };
 
   return (
     <section className="sample-slider">
       {slides.map((slide, index) => (
         <div
-          className={`sample-slide ${active === index ? 'active' : ''}`}
+          className={`sample-slide ${
+            active === index ? 'active' : prevSlide === index ? 'prev' : ''
+          }`}
           key={index}
         >
           <picture>
@@ -67,7 +80,7 @@ export default function SampleHouseSlider() {
           <button
             key={index}
             className={active === index ? 'active' : ''}
-            onClick={() => setActive(index)}
+            onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
