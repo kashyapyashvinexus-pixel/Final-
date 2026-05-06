@@ -1,90 +1,73 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { gsap } from 'gsap';
 import { Menu, X } from 'lucide-react';
 
-const navItems = [
-  { label: 'Home', path: '/' },
-  { label: 'Project', path: '/projects/stellavia' },
-  { label: 'About Us', path: '/about' },
-  { label: 'Contact Us', path: '/contact' },
-  { label: 'Brochure', path: '#' },
-  { label: 'News', path: '#' }
-];
-
 export default function Header() {
-  const headerRef = useRef(null);
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHeaderHidden, setIsHeaderHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    if (!headerRef.current) return;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-    gsap.fromTo(
-      headerRef.current,
-      { y: -100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
-    );
+      if (currentScrollY <= 20) {
+        setIsHeaderHidden(false);
+      } else if (currentScrollY > lastScrollY.current) {
+        // Scroll down = header show
+        setIsHeaderHidden(false);
+      } else {
+        // Scroll up = header hide
+        setIsHeaderHidden(true);
+        setIsMenuOpen(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [open]);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   return (
-    <header ref={headerRef} className="site-header full-bleed">
+    <header className={`site-header ${isHeaderHidden ? 'header-hidden' : ''}`}>
       <div className="header-shell">
-        <Link href="/" className="brand-mark" aria-label="Stellavia Construction Home">
-          <Image
-            /*src="/logo/Stellavia Logo.jpg"*/
-            src="/logo/Stellavia_Blue-gold.png"
-            alt="Stellavia Construction"
-            /*width={280}
-            height={84}*/
-            width={360}
-  height={110}
-            priority
+        <Link href="/" className="brand-mark">
+          <img
+           /* src="/img/logo.png"*/
+            src="/img/Stellavia_Blue-gold.png"
+            alt="Stellavia"
             className="brand-logo"
           />
         </Link>
 
-        <nav className={`site-nav ${open ? 'is-open' : ''}`}>
+        <nav className={`site-nav ${isMenuOpen ? 'is-open' : ''}`}>
           <div className="site-nav-center">
-            {navItems.map((item) => {
-              const active = item.path !== '#' && pathname === item.path;
-
-              return (
-                <Link key={item.label} href={item.path} className={active ? 'active' : ''}>
-                  {item.label}
-                </Link>
-              );
-            })}
+            <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
+            <Link href="/projects" onClick={() => setIsMenuOpen(false)}>Projects</Link>
+            <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           </div>
 
-          <Link href="/contact" className="nav-cta">
-            Book Visit
+          <Link
+            href="/contact"
+            className="nav-cta"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Book A Visit
           </Link>
         </nav>
 
         <button
-          type="button"
           className="menu-toggle"
-          onClick={() => setOpen((prev) => !prev)}
+          type="button"
           aria-label="Toggle menu"
-          aria-expanded={open}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
     </header>
