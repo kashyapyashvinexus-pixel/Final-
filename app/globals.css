@@ -1071,7 +1071,6 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 
 /* ==================================================SAMPLE HOUSE FULL SCREEN SLIDER ===================================================================*/
-
 .sample-slider {
   position: relative;
   width: 100%;
@@ -1079,38 +1078,27 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   min-height: 620px;
   overflow: hidden;
   background: #f5f2eb;
+  isolation: isolate;
 }
 
-.sample-slide {
-  position: absolute;
-  inset: 0;
+/* Moving track */
+.sample-track {
+  display: flex;
   width: 100%;
   height: 100%;
-  opacity: 1;
-
-  /* New slide comes from right */
-  transform: translateX(100%) scale(1.03);
-
-  /* Smooth but not too slow */
-  transition:
-    transform 1.35s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 1.35s cubic-bezier(0.22, 1, 0.36, 1);
-
-  z-index: 1;
-  pointer-events: none;
-  will-change: transform, opacity;
+  transition: transform 1.35s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
-.sample-slide.active {
-  opacity: 1;
-  transform: translateX(0) scale(1);
-  z-index: 3;
-}
-
-.sample-slide.prev {
-  opacity: 1;
-  transform: translateX(-100%) scale(1.02);
-  z-index: 2;
+/* Each slide */
+.sample-slide {
+  position: relative;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #f5f2eb;
 }
 
 .sample-slide picture {
@@ -1126,32 +1114,102 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   object-fit: cover;
   object-position: center;
   user-select: none;
+  transform: scale(1.08);
+  filter: brightness(0.96) contrast(1.05) saturate(1.03);
+  transition:
+    transform 5.5s ease,
+    filter 1.3s ease;
+}
+
+.sample-slide.active .sample-img {
+  transform: scale(1);
+  filter: brightness(1) contrast(1.08) saturate(1.05);
+}
+
+/* Premium soft overlay */
+.sample-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 12, 22, 0.24) 0%,
+      rgba(7, 12, 22, 0.04) 35%,
+      rgba(7, 12, 22, 0.04) 65%,
+      rgba(7, 12, 22, 0.22) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.06) 0%,
+      rgba(0, 0, 0, 0.02) 45%,
+      rgba(0, 0, 0, 0.28) 100%
+    );
+}
+
+/* Luxury shine */
+.sample-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 18% 15%,
+      rgba(255, 255, 255, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 82% 82%,
+      rgba(199, 164, 106, 0.12),
+      transparent 35%
+    );
+  opacity: 0.55;
 }
 
 /* Dots */
 .sample-dots {
   position: absolute;
   left: 50%;
-  bottom: clamp(18px, 4vw, 42px);
+  bottom: clamp(20px, 4vw, 42px);
   transform: translateX(-50%);
   display: flex;
+  align-items: center;
   gap: 10px;
   z-index: 10;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
 }
 
 .sample-dots button {
-  width: 34px;
+  width: 28px;
   height: 4px;
   border: 0;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.42);
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition:
+    width 0.45s ease,
+    background 0.45s ease,
+    transform 0.45s ease;
+}
+
+.sample-dots button:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: scaleY(1.25);
 }
 
 .sample-dots button.active {
-  width: 52px;
-  background: #ffffff;
+  width: 56px;
+  background: linear-gradient(90deg, #ffffff 0%, #d5b27a 100%);
 }
 
 /* Large Desktop */
@@ -1201,6 +1259,11 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
     object-fit: cover;
     object-position: center;
   }
+
+  .sample-dots {
+    bottom: 18px;
+    padding: 8px 12px;
+  }
 }
 
 /* Mobile Portrait */
@@ -1210,33 +1273,53 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
     min-height: 520px;
   }
 
-  .sample-slide {
-    transform: translateX(100%) scale(1.03);
-    transition:
-      transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
-      opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .sample-slide.active {
-    transform: translateX(0) scale(1);
-  }
-
-  .sample-slide.prev {
-    transform: translateX(-100%) scale(1.02);
+  .sample-track {
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .sample-img {
     object-fit: cover;
     object-position: center;
+    transform: scale(1.06);
+  }
+
+  .sample-slide.active .sample-img {
+    transform: scale(1);
+  }
+
+  .sample-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.04) 0%,
+        rgba(0, 0, 0, 0.02) 45%,
+        rgba(0, 0, 0, 0.34) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(7, 12, 22, 0.18) 0%,
+        rgba(7, 12, 22, 0.04) 50%,
+        rgba(7, 12, 22, 0.18) 100%
+      );
+  }
+
+  .sample-slide::after {
+    opacity: 0.42;
+  }
+
+  .sample-dots {
+    bottom: 16px;
+    gap: 8px;
+    padding: 8px 11px;
   }
 
   .sample-dots button {
-    width: 24px;
+    width: 22px;
     height: 3px;
   }
 
   .sample-dots button.active {
-    width: 38px;
+    width: 40px;
   }
 }
 
@@ -1255,6 +1338,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
     min-height: 430px;
   }
 }
+
 /*======================================================*/
 
 /* ===== AMENITIES FLIP SECTION =====
