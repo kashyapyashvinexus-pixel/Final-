@@ -50,8 +50,10 @@ export default function Header() {
             /*src="/logo/Stellavia Logo.jpg"*/
             src="/logo/Stellavia_Blue-gold.png"
             alt="Stellavia Construction"
-            width={280}
-            height={84}
+            /*width={280}
+            height={84}*/
+            width={360}
+  height={110}
             priority
             className="brand-logo"
           />
