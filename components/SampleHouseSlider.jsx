@@ -27,7 +27,7 @@ export default function SampleHouseSlider() {
   const slideRefs = useRef([]);
   const imageRefs = useRef([]);
   const activeRef = useRef(0);
-  const intervalRef = useRef(null);
+  const timerRef = useRef(null);
   const isAnimatingRef = useRef(false);
 
   useEffect(() => {
@@ -49,9 +49,12 @@ export default function SampleHouseSlider() {
         if (!slide) return;
 
         gsap.set(slide, {
-          xPercent: index === 0 ? 0 : 100,
-          autoAlpha: index === 0 ? 1 : 0,
           zIndex: index === 0 ? 3 : 1,
+          autoAlpha: index === 0 ? 1 : 0,
+          clipPath:
+            index === 0
+              ? 'inset(0% 0% 0% 0%)'
+              : 'inset(0% 100% 0% 0%)',
         });
       });
 
@@ -59,7 +62,7 @@ export default function SampleHouseSlider() {
         if (!img) return;
 
         gsap.set(img, {
-          scale: index === 0 ? 1 : 1.08,
+          scale: index === 0 ? 1 : 1.04,
         });
       });
 
@@ -80,36 +83,33 @@ export default function SampleHouseSlider() {
         gsap.killTweensOf([currentSlide, nextSlide, nextImg]);
 
         gsap.set(currentSlide, {
-          xPercent: 0,
+          zIndex: 2,
           autoAlpha: 1,
-          zIndex: 3,
+          clipPath: 'inset(0% 0% 0% 0%)',
         });
 
         gsap.set(nextSlide, {
-          xPercent: -100,
-          autoAlpha: 1,
           zIndex: 4,
+          autoAlpha: 1,
+          clipPath: 'inset(0% 100% 0% 0%)',
         });
 
         gsap.set(nextImg, {
-          scale: 1.08,
+          scale: 1.04,
         });
 
         const tl = gsap.timeline({
-          defaults: {
-            ease: 'power4.inOut',
-          },
           onComplete: () => {
             gsap.set(currentSlide, {
-              xPercent: 100,
-              autoAlpha: 0,
               zIndex: 1,
+              autoAlpha: 0,
+              clipPath: 'inset(0% 100% 0% 0%)',
             });
 
             gsap.set(nextSlide, {
-              xPercent: 0,
-              autoAlpha: 1,
               zIndex: 3,
+              autoAlpha: 1,
+              clipPath: 'inset(0% 0% 0% 0%)',
             });
 
             activeRef.current = nextIndex;
@@ -118,19 +118,11 @@ export default function SampleHouseSlider() {
         });
 
         tl.to(
-          currentSlide,
-          {
-            xPercent: 100,
-            duration: 1.45,
-          },
-          0
-        );
-
-        tl.to(
           nextSlide,
           {
-            xPercent: 0,
-            duration: 1.45,
+            clipPath: 'inset(0% 0% 0% 0%)',
+            duration: 1.55,
+            ease: 'power3.inOut',
           },
           0
         );
@@ -139,18 +131,18 @@ export default function SampleHouseSlider() {
           nextImg,
           {
             scale: 1,
-            duration: 1.8,
-            ease: 'power3.out',
+            duration: 1.9,
+            ease: 'power2.out',
           },
           0
         );
       };
 
-      intervalRef.current = setInterval(goToNextSlide, 5000);
+      timerRef.current = setInterval(goToNextSlide, 5000);
     }, section);
 
     return () => {
-      clearInterval(intervalRef.current);
+      clearInterval(timerRef.current);
       ctx.revert();
     };
   }, []);
