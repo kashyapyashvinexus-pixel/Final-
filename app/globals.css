@@ -1081,19 +1081,25 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   isolation: isolate;
 }
 
-.sample-swiper {
+.sample-pin-viewport {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  min-height: 620px;
+  overflow: hidden;
 }
 
-.sample-swiper .swiper-wrapper {
-  width: 100%;
+.sample-track {
+  display: flex;
+  width: max-content;
   height: 100%;
+  will-change: transform;
 }
 
 .sample-slide {
   position: relative;
-  width: 100%;
+  flex: 0 0 100vw;
+  width: 100vw;
   height: 100%;
   overflow: hidden;
   background: #f5f2eb;
@@ -1112,23 +1118,9 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   object-fit: cover;
   object-position: center;
   user-select: none;
-  transform: scale(1.08);
-  filter: brightness(0.96) contrast(1.05) saturate(1.03);
-  transition:
-    transform 5.5s ease,
-    filter 1.35s ease;
-}
-
-/* Active image slow zoom like premium real estate websites */
-.sample-swiper .swiper-slide-active .sample-img {
-  transform: scale(1);
-  filter: brightness(1) contrast(1.08) saturate(1.05);
-}
-
-/* Previous and next slides stay slightly zoomed */
-.sample-swiper .swiper-slide-prev .sample-img,
-.sample-swiper .swiper-slide-next .sample-img {
-  transform: scale(1.06);
+  transform: scale(1.12);
+  filter: brightness(0.96) contrast(1.06) saturate(1.04);
+  will-change: transform;
 }
 
 /* Premium overlay */
@@ -1140,10 +1132,10 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   background:
     linear-gradient(
       90deg,
-      rgba(7, 12, 22, 0.22) 0%,
+      rgba(7, 12, 22, 0.24) 0%,
       rgba(7, 12, 22, 0.04) 35%,
       rgba(7, 12, 22, 0.04) 65%,
-      rgba(7, 12, 22, 0.2) 100%
+      rgba(7, 12, 22, 0.22) 100%
     ),
     linear-gradient(
       180deg,
@@ -1153,7 +1145,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
     );
 }
 
-/* Luxury soft shine */
+/* Luxury shine */
 .sample-slide::after {
   content: "";
   position: absolute;
@@ -1174,53 +1166,10 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   opacity: 0.55;
 }
 
-/* Swiper dots */
-.sample-swiper .swiper-pagination {
-  position: absolute;
-  left: 50%;
-  bottom: clamp(22px, 4vw, 46px);
-  transform: translateX(-50%);
-  width: auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 20;
-
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.13);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
-}
-
-.sample-swiper .swiper-pagination-bullet {
-  width: 28px;
-  height: 4px;
-  margin: 0 !important;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.42);
-  opacity: 1;
-  transition:
-    width 0.45s ease,
-    background 0.45s ease,
-    transform 0.45s ease;
-}
-
-.sample-swiper .swiper-pagination-bullet:hover {
-  background: rgba(255, 255, 255, 0.75);
-  transform: scaleY(1.25);
-}
-
-.sample-swiper .swiper-pagination-bullet-active {
-  width: 56px;
-  background: linear-gradient(90deg, #ffffff 0%, #d5b27a 100%);
-}
-
 /* Large Desktop */
 @media (min-width: 1440px) {
-  .sample-slider {
+  .sample-slider,
+  .sample-pin-viewport {
     height: 100vh;
     min-height: 760px;
   }
@@ -1228,7 +1177,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 /* Laptop */
 @media (max-width: 1366px) {
-  .sample-slider {
+  .sample-slider,
+  .sample-pin-viewport {
     height: 92vh;
     min-height: 620px;
   }
@@ -1236,7 +1186,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 /* Tablet Landscape */
 @media (max-width: 1180px) and (orientation: landscape) {
-  .sample-slider {
+  .sample-slider,
+  .sample-pin-viewport {
     height: 88vh;
     min-height: 520px;
   }
@@ -1244,7 +1195,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 /* Tablet Portrait */
 @media (max-width: 1024px) and (orientation: portrait) {
-  .sample-slider {
+  .sample-slider,
+  .sample-pin-viewport {
     height: 78vh;
     min-height: 600px;
   }
@@ -1256,7 +1208,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 /* Mobile Landscape */
 @media (max-width: 920px) and (orientation: landscape) {
-  .sample-slider {
+  .sample-slider,
+  .sample-pin-viewport {
     height: 100vh;
     min-height: 420px;
   }
@@ -1265,16 +1218,12 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
     object-fit: cover;
     object-position: center;
   }
-
-  .sample-swiper .swiper-pagination {
-    bottom: 18px;
-    padding: 8px 12px;
-  }
 }
 
 /* Mobile Portrait */
 @media (max-width: 768px) and (orientation: portrait) {
-  .sample-slider {
+  .sample-slider,
+  .sample-pin-viewport {
     height: 72vh;
     min-height: 520px;
   }
@@ -1282,11 +1231,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   .sample-img {
     object-fit: cover;
     object-position: center;
-    transform: scale(1.06);
-  }
-
-  .sample-swiper .swiper-slide-active .sample-img {
-    transform: scale(1);
+    transform: scale(1.08);
   }
 
   .sample-overlay {
@@ -1308,26 +1253,12 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   .sample-slide::after {
     opacity: 0.42;
   }
-
-  .sample-swiper .swiper-pagination {
-    bottom: 16px;
-    gap: 8px;
-    padding: 8px 11px;
-  }
-
-  .sample-swiper .swiper-pagination-bullet {
-    width: 22px;
-    height: 3px;
-  }
-
-  .sample-swiper .swiper-pagination-bullet-active {
-    width: 40px;
-  }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
-  .sample-slider {
+  .sample-slider,
+  .sample-pin-viewport {
     height: 68vh;
     min-height: 460px;
   }
@@ -1335,7 +1266,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 /* Very Small Mobile */
 @media (max-width: 380px) {
-  .sample-slider {
+  .sample-slider,
+  .sample-pin-viewport {
     height: 64vh;
     min-height: 430px;
   }
