@@ -699,7 +699,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   position: relative;
   padding: 10px 16px;
   border-radius: 999px;
-  color: #20274e;
+  /*color: #20274e;*/
+  color: #000000;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -710,7 +711,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 .site-nav-center a:hover,
 .site-nav-center a.active {
-  color: #20274e;
+/*color: #20274e;*/
+  color: #000000;
   background: rgba(32, 39, 78, 0.1);
 }
 
