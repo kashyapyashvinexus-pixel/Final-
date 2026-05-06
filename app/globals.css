@@ -1119,7 +1119,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 /* ==================================================SAMPLE HOUSE FULL SCREEN SLIDER ===================================================================*/
 /* ================================
    Sample House Auto Slider
-   Piramal Style Smooth Wipe
+   Constant Speed Smooth Reveal
 ================================ */
 
 .sample-slider {
@@ -1152,36 +1152,45 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   width: 100%;
   height: 100%;
   overflow: hidden;
-  will-change: clip-path;
   backface-visibility: hidden;
   transform: translateZ(0);
 }
 
-.sample-slide picture {
+.sample-reveal {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: width;
+}
+
+.sample-reveal picture {
   display: block;
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 
 .sample-img {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: block;
   object-fit: cover;
   object-position: center;
   user-select: none;
   pointer-events: none;
-  will-change: transform;
   backface-visibility: hidden;
   transform: translateZ(0);
 }
 
-/* Soft premium dark overlay */
 .sample-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
+  width: 100vw;
   background:
     linear-gradient(
       90deg,
@@ -1191,7 +1200,6 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
     );
 }
 
-/* Optional subtle luxury vignette */
 .sample-slide::after {
   content: '';
   position: absolute;
@@ -1201,8 +1209,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   background:
     radial-gradient(
       circle at center,
-      rgba(0, 0, 0, 0) 45%,
-      rgba(0, 0, 0, 0.16) 100%
+      rgba(0, 0, 0, 0) 48%,
+      rgba(0, 0, 0, 0.14) 100%
     );
 }
 
