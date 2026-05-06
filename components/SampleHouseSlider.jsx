@@ -25,6 +25,7 @@ const slides = [
 export default function SampleHouseSlider() {
   const sectionRef = useRef(null);
   const slideRefs = useRef([]);
+  const revealRefs = useRef([]);
   const imageRefs = useRef([]);
   const activeRef = useRef(0);
   const timerRef = useRef(null);
@@ -51,18 +52,22 @@ export default function SampleHouseSlider() {
         gsap.set(slide, {
           zIndex: index === 0 ? 3 : 1,
           autoAlpha: index === 0 ? 1 : 0,
-          clipPath:
-            index === 0
-              ? 'inset(0% 0% 0% 0%)'
-              : 'inset(0% 100% 0% 0%)',
         });
       });
 
-      imageRefs.current.forEach((img, index) => {
+      revealRefs.current.forEach((reveal, index) => {
+        if (!reveal) return;
+
+        gsap.set(reveal, {
+          width: index === 0 ? '100%' : '0%',
+        });
+      });
+
+      imageRefs.current.forEach((img) => {
         if (!img) return;
 
         gsap.set(img, {
-          scale: index === 0 ? 1 : 1.05,
+          scale: 1,
         });
       });
 
@@ -74,28 +79,26 @@ export default function SampleHouseSlider() {
 
         const currentSlide = slideRefs.current[currentIndex];
         const nextSlide = slideRefs.current[nextIndex];
-        const nextImg = imageRefs.current[nextIndex];
+        const nextReveal = revealRefs.current[nextIndex];
 
-        if (!currentSlide || !nextSlide || !nextImg) return;
+        if (!currentSlide || !nextSlide || !nextReveal) return;
 
         isAnimatingRef.current = true;
 
-        gsap.killTweensOf([currentSlide, nextSlide, nextImg]);
+        gsap.killTweensOf([currentSlide, nextSlide, nextReveal]);
 
         gsap.set(currentSlide, {
           zIndex: 2,
           autoAlpha: 1,
-          clipPath: 'inset(0% 0% 0% 0%)',
         });
 
         gsap.set(nextSlide, {
           zIndex: 4,
           autoAlpha: 1,
-          clipPath: 'inset(0% 100% 0% 0%)',
         });
 
-        gsap.set(nextImg, {
-          scale: 1.05,
+        gsap.set(nextReveal, {
+          width: '0%',
         });
 
         const tl = gsap.timeline({
@@ -103,13 +106,15 @@ export default function SampleHouseSlider() {
             gsap.set(currentSlide, {
               zIndex: 1,
               autoAlpha: 0,
-              clipPath: 'inset(0% 100% 0% 0%)',
             });
 
             gsap.set(nextSlide, {
               zIndex: 3,
               autoAlpha: 1,
-              clipPath: 'inset(0% 0% 0% 0%)',
+            });
+
+            gsap.set(nextReveal, {
+              width: '100%',
             });
 
             activeRef.current = nextIndex;
@@ -117,31 +122,14 @@ export default function SampleHouseSlider() {
           },
         });
 
-        tl.to(
-          nextSlide,
-          {
-            clipPath: 'inset(0% 0% 0% 0%)',
-            /*duration: 2.2,*/
-            duration: 6,
-            ease: 'power4.inOut',
-          },
-          0
-        );
-
-        tl.to(
-          nextImg,
-          {
-            scale: 1,
-            /*duration: 2.6,*/
-            duration: 6,
-            ease: 'power2.out',
-          },
-          0
-        );
+        tl.to(nextReveal, {
+          width: '100%',
+          duration: 6.5,
+          ease: 'none',
+        });
       };
 
-      /*timerRef.current = setInterval(goToNextSlide, 6500);*/
-      timerRef.current = setInterval(goToNextSlide, 8000);
+      timerRef.current = setInterval(goToNextSlide, 10000);
     }, section);
 
     return () => {
@@ -162,21 +150,28 @@ export default function SampleHouseSlider() {
                 slideRefs.current[index] = el;
               }}
             >
-              <picture>
-                <source media="(max-width: 768px)" srcSet={slide.mobile} />
-                <img
-                  ref={(el) => {
-                    imageRefs.current[index] = el;
-                  }}
-                  src={slide.desktop}
-                  alt={`Stellavia sample house ${index + 1}`}
-                  className="sample-img"
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  draggable="false"
-                />
-              </picture>
+              <div
+                className="sample-reveal"
+                ref={(el) => {
+                  revealRefs.current[index] = el;
+                }}
+              >
+                <picture>
+                  <source media="(max-width: 768px)" srcSet={slide.mobile} />
+                  <img
+                    ref={(el) => {
+                      imageRefs.current[index] = el;
+                    }}
+                    src={slide.desktop}
+                    alt={`Stellavia sample house ${index + 1}`}
+                    className="sample-img"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    draggable="false"
+                  />
+                </picture>
 
-              <div className="sample-overlay" />
+                <div className="sample-overlay" />
+              </div>
             </div>
           ))}
         </div>
