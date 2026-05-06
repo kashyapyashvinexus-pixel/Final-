@@ -656,7 +656,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 .header-shell {
   width: 100%;
   max-width: none;
-  height: 84px;
+  /*height: 84px;*/
+  height:100px;
   margin: 0;
   padding: 0 34px;
   display: grid;
@@ -676,7 +677,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 .brand-logo {
   width: auto;
-  height: 74px;
+  /*height: 74px;*/
+  height: 92px;
   object-fit: contain;
   display: block;
 }
