@@ -1071,6 +1071,11 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 
 /* ==================================================SAMPLE HOUSE FULL SCREEN SLIDER ===================================================================*/
+/* ================================
+   Sample House Auto Slider
+   Piramal Style Smooth Wipe
+================================ */
+
 .sample-slider {
   position: relative;
   width: 100%;
@@ -1102,6 +1107,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   height: 100%;
   overflow: hidden;
   will-change: clip-path;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .sample-slide picture {
@@ -1119,19 +1126,38 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   user-select: none;
   pointer-events: none;
   will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
+/* Soft premium dark overlay */
 .sample-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.12) 0%,
-    rgba(0, 0, 0, 0.02) 45%,
-    rgba(0, 0, 0, 0.08) 100%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.16) 0%,
+      rgba(0, 0, 0, 0.04) 42%,
+      rgba(0, 0, 0, 0.10) 100%
+    );
+}
+
+/* Optional subtle luxury vignette */
+.sample-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0) 45%,
+      rgba(0, 0, 0, 0.16) 100%
+    );
 }
 
 /* Tablet */
@@ -1139,6 +1165,10 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   .sample-slider {
     height: 92svh;
     min-height: 620px;
+  }
+
+  .sample-img {
+    object-position: center;
   }
 }
 
@@ -1152,12 +1182,27 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   .sample-img {
     object-position: center;
   }
+
+  .sample-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.14) 0%,
+        rgba(0, 0, 0, 0.04) 45%,
+        rgba(0, 0, 0, 0.10) 100%
+      );
+  }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
   .sample-slider {
     height: 78svh;
     min-height: 480px;
+  }
+
+  .sample-img {
+    object-position: center;
   }
 }
 /*======================================================*/
