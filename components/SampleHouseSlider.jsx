@@ -122,7 +122,7 @@ export default function SampleHouseSlider() {
           {
             clipPath: 'inset(0% 0% 0% 0%)',
             /*duration: 2.2,*/
-            duration: 4,
+            duration: 6,
             ease: 'power4.inOut',
           },
           0
@@ -133,7 +133,7 @@ export default function SampleHouseSlider() {
           {
             scale: 1,
             /*duration: 2.6,*/
-            duration: 5.5,
+            duration: 6,
             ease: 'power2.out',
           },
           0
@@ -141,7 +141,7 @@ export default function SampleHouseSlider() {
       };
 
       /*timerRef.current = setInterval(goToNextSlide, 6500);*/
-      timerRef.current = setInterval(goToNextSlide, 8000);
+      timerRef.current = setInterval(goToNextSlide, 12000);
     }, section);
 
     return () => {
