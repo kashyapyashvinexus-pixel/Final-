@@ -62,7 +62,7 @@ export default function SampleHouseSlider() {
         if (!img) return;
 
         gsap.set(img, {
-          scale: index === 0 ? 1 : 1.04,
+          scale: index === 0 ? 1 : 1.05,
         });
       });
 
@@ -95,7 +95,7 @@ export default function SampleHouseSlider() {
         });
 
         gsap.set(nextImg, {
-          scale: 1.04,
+          scale: 1.05,
         });
 
         const tl = gsap.timeline({
@@ -121,8 +121,8 @@ export default function SampleHouseSlider() {
           nextSlide,
           {
             clipPath: 'inset(0% 0% 0% 0%)',
-            duration: 1.55,
-            ease: 'power3.inOut',
+            duration: 2.2,
+            ease: 'power4.inOut',
           },
           0
         );
@@ -131,14 +131,14 @@ export default function SampleHouseSlider() {
           nextImg,
           {
             scale: 1,
-            duration: 1.9,
+            duration: 2.6,
             ease: 'power2.out',
           },
           0
         );
       };
 
-      timerRef.current = setInterval(goToNextSlide, 5000);
+      timerRef.current = setInterval(goToNextSlide, 6500);
     }, section);
 
     return () => {
