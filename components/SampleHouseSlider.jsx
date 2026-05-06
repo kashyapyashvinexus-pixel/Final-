@@ -122,7 +122,7 @@ export default function SampleHouseSlider() {
           {
             clipPath: 'inset(0% 0% 0% 0%)',
             /*duration: 2.2,*/
-            duration: 3.2,
+            duration: 4,
             ease: 'power4.inOut',
           },
           0
@@ -133,7 +133,7 @@ export default function SampleHouseSlider() {
           {
             scale: 1,
             /*duration: 2.6,*/
-            duration: 3.8,
+            duration: 4.5,
             ease: 'power2.out',
           },
           0
