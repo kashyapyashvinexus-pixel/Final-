@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const slides = [
   {
@@ -24,7 +24,12 @@ const slides = [
 ];
 
 export default function SampleHouseSlider() {
+  const sectionRef = useRef(null);
+  const trackRef = useRef(null);
+
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     slides.forEach((slide) => {
       const desktopImg = new Image();
       desktopImg.src = slide.desktop;
@@ -32,42 +37,82 @@ export default function SampleHouseSlider() {
       const mobileImg = new Image();
       mobileImg.src = slide.mobile;
     });
+
+    const section = sectionRef.current;
+    const track = trackRef.current;
+
+    if (!section || !track) return;
+
+    const ctx = gsap.context(() => {
+      const getScrollAmount = () => {
+        const trackWidth = track.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        return Math.max(0, trackWidth - viewportWidth);
+      };
+
+      gsap.to(track, {
+        x: () => -getScrollAmount(),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: () => `+=${getScrollAmount()}`,
+          pin: true,
+          scrub: 1.2,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      gsap.fromTo(
+        '.sample-img',
+        {
+          scale: 1.12,
+        },
+        {
+          scale: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top top',
+            end: () => `+=${getScrollAmount()}`,
+            scrub: 1.2,
+            invalidateOnRefresh: true,
+          },
+        }
+      );
+
+      ScrollTrigger.refresh();
+    }, section);
+
+    return () => {
+      ctx.revert();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
-    <section className="sample-slider">
-      <Swiper
-        modules={[Autoplay, Pagination]}
-        className="sample-swiper"
-        slidesPerView={1}
-        loop={true}
-        speed={1350}
-        grabCursor={true}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index} className="sample-slide">
-            <picture>
-              <source media="(max-width: 768px)" srcSet={slide.mobile} />
-              <img
-                src={slide.desktop}
-                alt={`Stellavia sample house ${index + 1}`}
-                className="sample-img"
-                loading={index === 0 ? 'eager' : 'lazy'}
-                draggable="false"
-              />
-            </picture>
+    <section className="sample-slider" ref={sectionRef}>
+      <div className="sample-pin-viewport">
+        <div className="sample-track" ref={trackRef}>
+          {slides.map((slide, index) => (
+            <div className="sample-slide" key={index}>
+              <picture>
+                <source media="(max-width: 768px)" srcSet={slide.mobile} />
+                <img
+                  src={slide.desktop}
+                  alt={`Stellavia sample house ${index + 1}`}
+                  className="sample-img"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  draggable="false"
+                />
+              </picture>
 
-            <div className="sample-overlay" />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+              <div className="sample-overlay" />
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
