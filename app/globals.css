@@ -1101,7 +1101,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   width: 100%;
   height: 100%;
   overflow: hidden;
-  will-change: transform;
+  will-change: clip-path;
 }
 
 .sample-slide picture {
@@ -1126,13 +1126,12 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.18) 0%,
-      rgba(0, 0, 0, 0.02) 38%,
-      rgba(0, 0, 0, 0.08) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.02) 45%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
 }
 
 /* Tablet */
@@ -1140,10 +1139,6 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   .sample-slider {
     height: 92svh;
     min-height: 620px;
-  }
-
-  .sample-img {
-    object-position: center;
   }
 }
 
