@@ -1086,18 +1086,30 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transform: scale(1.08);
+  opacity: 1;
+
+  /* New slide comes from right */
+  transform: translateX(100%) scale(1.03);
+
+  /* Smooth but not too slow */
   transition:
-    opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 3.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1.35s cubic-bezier(0.22, 1, 0.36, 1);
+
   z-index: 1;
   pointer-events: none;
+  will-change: transform, opacity;
 }
 
 .sample-slide.active {
   opacity: 1;
-  transform: scale(1);
+  transform: translateX(0) scale(1);
+  z-index: 3;
+}
+
+.sample-slide.prev {
+  opacity: 1;
+  transform: translateX(-100%) scale(1.02);
   z-index: 2;
 }
 
@@ -1124,7 +1136,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
-  z-index: 5;
+  z-index: 10;
 }
 
 .sample-dots button {
@@ -1199,14 +1211,18 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   }
 
   .sample-slide {
-    transform: scale(1.05);
+    transform: translateX(100%) scale(1.03);
     transition:
-      opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 3s cubic-bezier(0.22, 1, 0.36, 1);
+      transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .sample-slide.active {
-    transform: scale(1);
+    transform: translateX(0) scale(1);
+  }
+
+  .sample-slide.prev {
+    transform: translateX(-100%) scale(1.02);
   }
 
   .sample-img {
@@ -1239,7 +1255,6 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
     min-height: 430px;
   }
 }
-
 /*======================================================*/
 
 /* ===== AMENITIES FLIP SECTION =====
@@ -1333,7 +1348,6 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 /* ===== AMENITIES FLIP + IMAGE POPOUT ===== */
 
-/* AMENITIES SECTION */
 /* AMENITIES SECTION */
 .section-block.amenities-section,
 .amenities-section {
@@ -2074,7 +2088,7 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   padding: 135px 28px 34px !important;
 }
 
-/* ================================================================================================================ BIG BACKGROUND STELLAVIA TEXT =========================================================*/
+/* ============================================================================================== BIG BACKGROUND STELLAVIA TEXT ===========================================================================================*/
 /* ===== PREMIUM STELLAVIA FOOTER ===== */
 
 .luxury-footer {
