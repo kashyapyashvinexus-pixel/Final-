@@ -141,7 +141,7 @@ export default function SampleHouseSlider() {
       };
 
       /*timerRef.current = setInterval(goToNextSlide, 6500);*/
-      timerRef.current = setInterval(goToNextSlide, 12000);
+      timerRef.current = setInterval(goToNextSlide, 8000);
     }, section);
 
     return () => {
