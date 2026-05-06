@@ -23,7 +23,6 @@ const slides = [
 
 export default function SampleHouseSlider() {
   const [active, setActive] = useState(0);
-  const [prevSlide, setPrevSlide] = useState(null);
 
   useEffect(() => {
     slides.forEach((slide) => {
@@ -37,43 +36,42 @@ export default function SampleHouseSlider() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setActive((current) => {
-        setPrevSlide(current);
-        return (current + 1) % slides.length;
-      });
-    }, 2000);
+      setActive((prev) => (prev + 1) % slides.length);
+    }, 4000);
 
     return () => clearInterval(timer);
   }, []);
 
   const goToSlide = (index) => {
-    if (index === active) return;
-
-    setPrevSlide(active);
     setActive(index);
   };
 
   return (
     <section className="sample-slider">
-      {slides.map((slide, index) => (
-        <div
-          className={`sample-slide ${
-            active === index ? 'active' : prevSlide === index ? 'prev' : ''
-          }`}
-          key={index}
-        >
-          <picture>
-            <source media="(max-width: 768px)" srcSet={slide.mobile} />
-            <img
-              src={slide.desktop}
-              alt={`Sample House ${index + 1}`}
-              className="sample-img"
-              loading={index === 0 ? 'eager' : 'lazy'}
-              draggable="false"
-            />
-          </picture>
-        </div>
-      ))}
+      <div
+        className="sample-track"
+        style={{ transform: `translateX(-${active * 100}%)` }}
+      >
+        {slides.map((slide, index) => (
+          <div
+            className={`sample-slide ${active === index ? 'active' : ''}`}
+            key={index}
+          >
+            <picture>
+              <source media="(max-width: 768px)" srcSet={slide.mobile} />
+              <img
+                src={slide.desktop}
+                alt={`Sample House ${index + 1}`}
+                className="sample-img"
+                loading={index === 0 ? 'eager' : 'lazy'}
+                draggable="false"
+              />
+            </picture>
+
+            <div className="sample-overlay" />
+          </div>
+        ))}
+      </div>
 
       <div className="sample-dots">
         {slides.map((_, index) => (
