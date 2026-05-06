@@ -121,7 +121,8 @@ export default function SampleHouseSlider() {
           nextSlide,
           {
             clipPath: 'inset(0% 0% 0% 0%)',
-            duration: 2.2,
+            /*duration: 2.2,*/
+            duration: 2.8,
             ease: 'power4.inOut',
           },
           0
@@ -131,14 +132,16 @@ export default function SampleHouseSlider() {
           nextImg,
           {
             scale: 1,
-            duration: 2.6,
+            /*duration: 2.6,*/
+            duration: 3.2,
             ease: 'power2.out',
           },
           0
         );
       };
 
-      timerRef.current = setInterval(goToNextSlide, 6500);
+      /*timerRef.current = setInterval(goToNextSlide, 6500);*/
+      timerRef.current = setInterval(goToNextSlide, 7500);
     }, section);
 
     return () => {
