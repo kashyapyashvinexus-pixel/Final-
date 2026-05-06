@@ -1,6 +1,8 @@
 import './globals.css';
 import LayoutShell from '@/components/LayoutShell';
 import MouseGlow from '@/components/MouseGlow';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 export const metadata = {
   metadataBase: new URL('https://stellavia.vercel.app'),
