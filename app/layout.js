@@ -1,6 +1,8 @@
 import './globals.css';
 import LayoutShell from '@/components/LayoutShell';
 import MouseGlow from '@/components/MouseGlow';
+import PerformanceFix from '@/components/PerformanceFix';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -48,6 +50,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <PerformanceFix />
+
         <MouseGlow />
 
         <LayoutShell>{children}</LayoutShell>
