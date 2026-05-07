@@ -2500,84 +2500,73 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 /*=============================Hero Video Section====================================*/
 
-/* ===== VIDEO SECTION (NO TEXT) ===== */
-
-/* =====================================================
-   HERO YOUTUBE VIDEO SECTION
-   Same design, smoother scroll performance
-===================================================== */
-
 .hero-video-section {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
   background: #000;
-  contain: layout paint;
 }
 
 .hero-bg-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-
-  width: 100vw;
-  height: 56.25vw;
-
-  min-width: 177.78vh;
-  min-height: 100vh;
-
-  transform: translate3d(-50%, -50%, 0);
-  border: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
   z-index: 1;
-  pointer-events: none;
-  backface-visibility: hidden;
 }
 
-.hero-video-placeholder {
-  background: #000;
-}
-
+/* Light overlay only, because heavy overlay can make video look dull */
 .hero-video-section::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.18) 0%,
-    rgba(0, 0, 0, 0.08) 45%,
-    rgba(0, 0, 0, 0.28) 100%
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0.04) 45%,
+    rgba(0, 0, 0, 0.16) 100%
   );
   z-index: 2;
   pointer-events: none;
 }
 
+.hero-video-section,
+.hero-video-section video {
+  margin: 0;
+  padding: 0;
+}
+
+/* Tablet */
 @media (max-width: 1024px) {
   .hero-video-section {
     height: 80vh;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .hero-video-section {
     height: 65vh;
   }
 }
 
+/* Small mobile */
 @media (max-width: 480px) {
   .hero-video-section {
     height: 60vh;
   }
 }
 
+/* Landscape mobile */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero-video-section {
     height: 100vh;
   }
 }
-
-
 
 /* ===== PROJECT IMAGE SLIDER ===== */
 
