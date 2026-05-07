@@ -1,12 +1,13 @@
 export default function HeroVideoSection() {
   return (
     <section className="hero-video-section">
-      <video className="hero-bg-video" autoPlay muted loop playsInline>
-        <source
-          src="/video/Stellavia Video.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <iframe
+        className="hero-bg-video"
+        src="youtube.com/watch?si=lbxlu8xC-s9LSOKI&v=FjzMUbXBCnE&feature=youtu.be"
+        title="Stellavia Video"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowFullScreen
+      ></iframe>
     </section>
   );
 }
