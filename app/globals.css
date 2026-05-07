@@ -2085,26 +2085,18 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
     radial-gradient(circle at 45% 0%, rgba(28, 63, 89, 0.55), transparent 42%),
     linear-gradient(135deg, #071827 0%, #05111d 48%, #02070c 100%) !important;
   color: #ffffff !important;
-  padding: 135px 28px 34px !important;
-}
-
-/* ============================================================================================== BIG BACKGROUND STELLAVIA TEXT ===========================================================================================*/
-/* ===== PREMIUM STELLAVIA FOOTER ===== */
-
-.luxury-footer {
-  position: relative !important;
-  overflow: hidden !important;
-  background:
-    radial-gradient(circle at 45% 0%, rgba(28, 63, 89, 0.55), transparent 42%),
-    linear-gradient(135deg, #071827 0%, #05111d 48%, #02070c 100%) !important;
-  color: #ffffff !important;
   padding: 120px 28px 34px !important;
 }
 
-/* BIG BACKGROUND STELLAVIA TEXT - FIXED CUTTING ISSUE */
+/* ==============================================================================================
+   BIG BACKGROUND STELLAVIA TEXT
+============================================================================================== */
+
+/* BIG BACKGROUND STELLAVIA TEXT - NOW AT BOTTOM */
 .footer-bg-text {
   position: absolute;
-  top: 18px;
+  top: auto;
+  bottom: 42px;
   left: 50%;
   transform: translateX(-50%);
   transform-origin: center;
@@ -2322,7 +2314,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 @media (max-width: 1400px) {
   .footer-bg-text {
-    top: 24px;
+    top: auto;
+    bottom: 48px;
     font-size: clamp(5.8rem, 14.5vw, 14rem);
     letter-spacing: -0.05em;
   }
@@ -2336,7 +2329,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   }
 
   .footer-bg-text {
-    top: 26px;
+    top: auto;
+    bottom: 58px;
     font-size: clamp(5.4rem, 14vw, 12rem);
   }
 
@@ -2377,7 +2371,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   }
 
   .footer-bg-text {
-    top: 30px;
+    top: auto;
+    bottom: 68px;
     font-size: clamp(4.8rem, 13.5vw, 9rem);
     letter-spacing: -0.045em;
   }
@@ -2400,7 +2395,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   }
 
   .footer-bg-text {
-    top: 38px;
+    top: auto;
+    bottom: 90px;
     font-size: clamp(3.4rem, 16vw, 5.8rem);
     letter-spacing: -0.035em;
     color: rgba(255, 255, 255, 0.055);
@@ -2483,7 +2479,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
   }
 
   .footer-bg-text {
-    top: 40px;
+    top: auto;
+    bottom: 95px;
     font-size: clamp(3rem, 15.5vw, 5.1rem);
     letter-spacing: -0.025em;
   }
