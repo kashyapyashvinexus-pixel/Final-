@@ -63,9 +63,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="lead body-large">
-            Where sophisticated premium living meets smart affordability. 140
-            thoughtfully designed homes crafted for families who refuse to
-            compromise.
+            Stellavia — where 140 luminous residences bring elegance, space, and serenity within reach, without compromise..
           </p>
 
           <div className="hero-actions">
