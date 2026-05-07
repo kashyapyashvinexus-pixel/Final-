@@ -1,7 +1,6 @@
 import './globals.css';
 import LayoutShell from '@/components/LayoutShell';
 import MouseGlow from '@/components/MouseGlow';
-import PerformanceFix from '@/components/PerformanceFix';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
