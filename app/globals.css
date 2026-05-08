@@ -275,12 +275,9 @@ p,
 .hero-section {
   min-height: 100vh;
   position: relative;
-  display: flex;
-  align-items: stretch;
-  padding: 0;
+  overflow: hidden;
   background: url('/img/stellavia front.webp') center 18% / cover no-repeat;
   background-color: #0c0c0c;
-  overflow: hidden;
 }
 
 .hero-overlay {
@@ -295,20 +292,19 @@ p,
   z-index: 2;
   width: 100%;
   min-height: 100vh;
-  max-width: 1440px;
-  margin: 0 auto;
   display: flex;
   align-items: flex-end;
-  padding: 140px 5vw 7vh;
+  justify-content: flex-end;
+  padding: 140px 6vw 6vh 6vw;
 }
 
-/* RIGHT SIDE BOX */
+/* right alignment */
 .hero-layout-right,
 .hero-layout-right-only {
   justify-content: flex-end;
 }
 
-/* LEFT SIDE BOX */
+/* if in future you need left */
 .hero-layout-left {
   justify-content: flex-start;
 }
@@ -318,32 +314,31 @@ p,
 }
 
 .hero-visual {
-  width: auto;
-  min-height: auto;
+  width: 100%;
   display: flex;
-  align-items: flex-end;
   justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .hero-card {
   width: min(430px, 100%);
   padding: 30px;
   border-radius: 28px;
+  margin-right: 0;
 }
 
 .glass-card {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.22),
-      rgba(255, 255, 255, 0.06)
-    );
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.07)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.24);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   box-shadow:
-    0 24px 80px rgba(0, 0, 0, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    0 24px 80px rgba(0, 0, 0, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
 }
 
 .hero-card.glass-card span {
@@ -371,17 +366,28 @@ p,
   margin: 0;
 }
 
-/* TABLET + MOBILE */
+/* tablet */
+@media (max-width: 1024px) {
+  .hero-layout {
+    padding: 130px 4vw 5vh 4vw;
+  }
+
+  .hero-card {
+    width: min(400px, 100%);
+    padding: 26px;
+  }
+}
+
+/* mobile */
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 100vh;
     background-position: center top;
     background-size: cover;
   }
 
   .hero-layout {
     min-height: 100vh;
-    padding: 120px 20px 34px;
+    padding: 120px 20px 32px;
     justify-content: center;
   }
 
