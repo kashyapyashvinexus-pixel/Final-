@@ -44,7 +44,7 @@ export default function HeroSection() {
     <section ref={heroRef} className="hero-section full-bleed">
       <div className="hero-overlay" />
 
-      <div className="hero-layout hero-layout-pushed hero-layout-right-only">
+      <div className="hero-layout hero-layout-pushed hero-layout-right">
         <motion.div
           ref={cardRef}
           className="hero-visual hover-panel"
