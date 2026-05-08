@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { gsap } from 'gsap';
 import { motion } from 'framer-motion';
 
@@ -11,14 +10,6 @@ export default function HeroSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.hero-copy > *', {
-        y: 48,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: 'power3.out',
-      });
-
       gsap.from('.hero-card', {
         scale: 1.08,
         opacity: 0,
@@ -53,50 +44,7 @@ export default function HeroSection() {
     <section ref={heroRef} className="hero-section full-bleed">
       <div className="hero-overlay" />
 
-      <div className="hero-layout hero-layout-pushed">
-        {
-        <div className="hero-copy">
-          <p className="eyebrow"></p>
-
-          <h1 className="hero-title">
-            <span className="title-line-1"></span>
-            <span className="title-line-2"></span>
-          </h1>
-
-          <p className="lead body-large">
-            {/*Stellavia — where 140 luminous residences bring elegance, space, and serenity within reach, without compromise..*/}
-          </p>
-
-          {/*<div className="hero-actions">
-            <Link href="/" className="primary-btn">
-              Explore Projects
-            </Link>
-
-            <Link href="/" className="ghost-btn">
-              View Floor Plans
-            </Link>
-          </div>
-        </div>*/}
-
-        {/*
-        <motion.div
-          ref={cardRef}
-          className="hero-visual hover-panel"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.1, delay: 0.2 }}
-        >
-          <div className="hero-card glass-card">
-            <span>Signature Launch</span>
-            <strong>Stellavia</strong>
-            <p>
-              Luxury apartment towers with skyline amenities and elegant urban
-              planning.
-            </p>
-          </div>
-        </motion.div>
-        */}
-
+      <div className="hero-layout hero-layout-pushed hero-layout-right-only">
         <motion.div
           ref={cardRef}
           className="hero-visual hover-panel"
@@ -106,7 +54,9 @@ export default function HeroSection() {
         >
           <div className="hero-card glass-card">
             <span>Infinity Projects Presents</span>
+
             <strong>The Future of Residential Excellence</strong>
+
             <p>
               Stellavia offers 140 luminous residences blending elegance,
               spacious living, serenity, and comfort seamlessly.
