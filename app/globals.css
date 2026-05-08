@@ -3067,6 +3067,9 @@ p,
   padding: clamp(55px, 7vw, 90px) clamp(18px, 4vw, 60px) clamp(55px, 7vw, 80px);
   background: var(--white);
   overflow: hidden;
+  contain: layout paint;
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
 }
 
 .project-gallery-section .eyebrow {
@@ -3095,13 +3098,13 @@ p,
   margin: 0 0 clamp(28px, 4vw, 48px);
 }
 
-/* Gallery Layout */
+/* Static Gallery Layout */
 .project-bento-gallery {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: clamp(170px, 16vw, 260px);
-  gap: clamp(12px, 1.6vw, 24px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: clamp(160px, 15vw, 240px);
+  gap: clamp(12px, 1.4vw, 20px);
 }
 
 .project-bento-card {
@@ -3109,8 +3112,9 @@ p,
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: clamp(18px, 2vw, 30px);
+  border-radius: clamp(16px, 1.8vw, 26px);
   background: #ddd;
+  contain: layout paint;
 }
 
 .project-bento-card img {
@@ -3120,11 +3124,6 @@ p,
   object-fit: cover;
   user-select: none;
   pointer-events: none;
-  transition: transform 1.2s ease;
-}
-
-.project-bento-card:hover img {
-  transform: scale(1.07);
 }
 
 /* Gallery different sizes */
@@ -3133,28 +3132,8 @@ p,
   grid-row: span 2;
 }
 
-.project-bento-card.card-2 {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-.project-bento-card.card-3 {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
 .project-bento-card.card-4 {
   grid-column: span 2;
-  grid-row: span 1;
-}
-
-.project-bento-card.card-5 {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-.project-bento-card.card-6 {
-  grid-column: span 1;
   grid-row: span 1;
 }
 
@@ -3182,8 +3161,8 @@ p,
 /* Tablet */
 @media (max-width: 1024px) {
   .project-bento-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 260px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 250px;
   }
 
   .project-bento-card.card-1,
@@ -3191,6 +3170,7 @@ p,
   .project-bento-card.card-7,
   .project-bento-card.card-8 {
     grid-column: span 2;
+    grid-row: span 1;
   }
 }
 
@@ -3198,6 +3178,7 @@ p,
 @media (max-width: 768px) {
   .project-gallery-section {
     padding: 52px 18px 56px;
+    contain-intrinsic-size: 1800px;
   }
 
   .project-gallery-section h2 {
@@ -3207,7 +3188,7 @@ p,
 
   .project-bento-gallery {
     grid-template-columns: 1fr;
-    grid-auto-rows: 280px;
+    grid-auto-rows: 260px;
     gap: 14px;
   }
 
@@ -3232,14 +3213,13 @@ p,
   }
 
   .project-bento-gallery {
-    grid-auto-rows: 255px;
+    grid-auto-rows: 235px;
   }
 
   .project-bento-card {
     border-radius: 20px;
   }
 }
-
 
 
 /* ===== FLOATING WHATSAPP BUTTON ===== */
