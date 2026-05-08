@@ -54,20 +54,20 @@ export default function HeroSection() {
       <div className="hero-overlay" />
 
       <div className="hero-layout hero-layout-pushed">
-        {/*
+        {
         <div className="hero-copy">
-          <p className="eyebrow">Infinity Projects Presents</p>
+          <p className="eyebrow"></p>
 
           <h1 className="hero-title">
-            <span className="title-line-1">The Future of </span>
-            <span className="title-line-2">Residential Excellence</span>
+            <span className="title-line-1"></span>
+            <span className="title-line-2"></span>
           </h1>
 
           <p className="lead body-large">
-            Stellavia — where 140 luminous residences bring elegance, space, and serenity within reach, without compromise..
+            {/*Stellavia — where 140 luminous residences bring elegance, space, and serenity within reach, without compromise..*/}
           </p>
 
-          <div className="hero-actions">
+          {/*<div className="hero-actions">
             <Link href="/" className="primary-btn">
               Explore Projects
             </Link>
@@ -76,8 +76,7 @@ export default function HeroSection() {
               View Floor Plans
             </Link>
           </div>
-        </div>
-        */}
+        </div>*/}
 
         {/*
         <motion.div
