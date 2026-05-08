@@ -90,7 +90,8 @@ h1,
 .hero-title {
   margin: 0 0 24px;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(38px, 4.5vw, 62px);
+  /*font-size: clamp(38px, 4.5vw, 62px);*/
+  font-size: 42px;
   font-color:#000;
   line-height: 0.9;
   letter-spacing: -0.05em;
@@ -161,8 +162,7 @@ h1,
 
   .lead.body-large {
     max-width: 100%;
-    /*font-size: 15px;*/
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1.55;
   }
 
@@ -218,7 +218,8 @@ p,
 }
 .lead,
 .body-large {
-  font-size: var(--body-lg);
+  /*font-size: var(--body-lg);*/
+  font-size: 25px;
   line-height: 1.6;
   max-width: 62ch;
 }
