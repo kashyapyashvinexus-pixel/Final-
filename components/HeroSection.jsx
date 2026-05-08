@@ -53,7 +53,7 @@ export default function HeroSection() {
     <section ref={heroRef} className="hero-section full-bleed">
       <div className="hero-overlay" />
 
-      <div className="hero-layout hero-layout-pushed">
+      {/*<div className="hero-layout hero-layout-pushed">
         <div className="hero-copy">
           <p className="eyebrow">Infinity Projects Presents</p>
 
@@ -75,7 +75,8 @@ export default function HeroSection() {
               View Floor Plans
             </Link>
           </div>
-        </div>
+        </div>*/}
+      
 
         {/* <motion.div
           ref={cardRef}
@@ -104,10 +105,19 @@ export default function HeroSection() {
             <span>Signature Launch</span>
             <strong>The Future of Residential Excellence</strong>
             <p>
-              Stellavia — where 140 luminous residences bring elegance, space, and serenity within reach, without compromise.
+              Stellavia offers 140 luminous residences blending elegance, spacious living, serenity, and comfort seamlessly.
             </p>
           </div>
         </motion.div>
+      <div className="hero-actions">
+            <Link href="/" className="primary-btn">
+              Explore Projects
+            </Link>
+
+            <Link href="/" className="ghost-btn">
+              View Floor Plans
+            </Link>
+          </div>
       </div>
     </section>
   );
