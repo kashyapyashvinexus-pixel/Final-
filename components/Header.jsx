@@ -61,7 +61,8 @@ export default function Header() {
       <div className="header-shell">
         <Link href="/" className="brand-mark" aria-label="Stellavia Construction Home">
           <Image
-            src="/logo/Stellavia_Blue-gold.png"
+            /*src="/logo/Stellavia_Blue-gold.png"*/
+            src="/logo/Stellavia_Blue-gold logo.png"
             alt="Stellavia Construction"
             width={360}
             height={110}
