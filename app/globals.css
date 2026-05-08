@@ -2778,7 +2778,7 @@ p,
   }
 }*/
 
-/*==============================================================================new image slider==================================================================*/
+/*==============================================================================new image slider==================================================================
 .project-slider-section {
   width: 100%;
   padding: clamp(55px, 7vw, 90px) 0 clamp(55px, 7vw, 80px) clamp(18px, 4vw, 60px);
@@ -2878,7 +2878,7 @@ p,
   text-decoration: none;
 }
 
-/* Tablet */
+/* Tablet 
 @media (max-width: 1024px) {
   .project-slider-card {
     width: 48vw;
@@ -2890,7 +2890,7 @@ p,
   }
 }
 
-/* Mobile */
+/* Mobile
 @media (max-width: 768px) {
   .project-slider-section {
     padding-left: 18px;
@@ -2911,7 +2911,7 @@ p,
   }
 }
 
-/* Small Mobile */
+/* Small Mobile
 @media (max-width: 480px) {
   .project-slider-section {
     padding-top: 48px;
@@ -2929,7 +2929,8 @@ p,
     gap: 14px;
     animation-duration: 70s;
   }
-}
+}*/
+
 
 /*==============================================================Glide slider code===================================================================
 
@@ -3059,7 +3060,7 @@ p,
 }
 ========================================================================================================*/
 
-/*=====================================================================================project gallery=====================================================*/
+/*=====================================================================================project image gallery=====================================================*/
 
 .project-gallery-section {
   width: 100%;
@@ -3094,33 +3095,77 @@ p,
   margin: 0 0 clamp(28px, 4vw, 48px);
 }
 
-.project-photo-gallery {
+/* Gallery Layout */
+.project-bento-gallery {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(14px, 1.8vw, 26px);
+  grid-auto-rows: clamp(170px, 16vw, 260px);
+  gap: clamp(12px, 1.6vw, 24px);
 }
 
-.project-gallery-card {
+.project-bento-card {
+  position: relative;
   width: 100%;
-  height: clamp(210px, 22vw, 360px);
-  border-radius: clamp(18px, 2vw, 30px);
+  height: 100%;
   overflow: hidden;
+  border-radius: clamp(18px, 2vw, 30px);
   background: #ddd;
 }
 
-.project-gallery-card img {
+.project-bento-card img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
   user-select: none;
   pointer-events: none;
-  transition: transform 1.1s ease;
+  transition: transform 1.2s ease;
 }
 
-.project-gallery-card:hover img {
-  transform: scale(1.06);
+.project-bento-card:hover img {
+  transform: scale(1.07);
+}
+
+/* Gallery different sizes */
+.project-bento-card.card-1 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.project-bento-card.card-2 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-3 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-4 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-5 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-6 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-7 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-8 {
+  grid-column: span 2;
+  grid-row: span 1;
 }
 
 .see-projects-link {
@@ -3136,12 +3181,16 @@ p,
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .project-photo-gallery {
+  .project-bento-gallery {
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 260px;
   }
 
-  .project-gallery-card {
-    height: 330px;
+  .project-bento-card.card-1,
+  .project-bento-card.card-4,
+  .project-bento-card.card-7,
+  .project-bento-card.card-8 {
+    grid-column: span 2;
   }
 }
 
@@ -3156,14 +3205,23 @@ p,
     letter-spacing: -0.04em;
   }
 
-  .project-photo-gallery {
-    grid-template-columns: repeat(2, 1fr);
+  .project-bento-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 280px;
     gap: 14px;
   }
 
-  .project-gallery-card {
-    height: 230px;
-    border-radius: 18px;
+  .project-bento-card,
+  .project-bento-card.card-1,
+  .project-bento-card.card-2,
+  .project-bento-card.card-3,
+  .project-bento-card.card-4,
+  .project-bento-card.card-5,
+  .project-bento-card.card-6,
+  .project-bento-card.card-7,
+  .project-bento-card.card-8 {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 }
 
@@ -3173,12 +3231,11 @@ p,
     padding: 48px 16px 52px;
   }
 
-  .project-photo-gallery {
-    grid-template-columns: 1fr;
+  .project-bento-gallery {
+    grid-auto-rows: 255px;
   }
 
-  .project-gallery-card {
-    height: 280px;
+  .project-bento-card {
     border-radius: 20px;
   }
 }
