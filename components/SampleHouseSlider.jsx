@@ -124,12 +124,14 @@ export default function SampleHouseSlider() {
 
         tl.to(nextReveal, {
           width: '100%',
-          duration: 6.5,
+          {/*duration: 6.5,*/}
+        duration: 5,
           ease: 'none',
         });
       };
 
-      timerRef.current = setInterval(goToNextSlide, 10000);
+      {/*timerRef.current = setInterval(goToNextSlide, 10000);*/}
+      timerRef.current = setInterval(goToNextSlide, 8500);
     }, section);
 
     return () => {
