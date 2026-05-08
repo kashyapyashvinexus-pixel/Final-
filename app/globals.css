@@ -2778,7 +2778,7 @@ p,
   }
 }*/
 
-/*==============================================================================new image slider==================================================================
+/*==============================================================================new image slider==================================================================*/
 .project-slider-section {
   width: 100%;
   padding: clamp(55px, 7vw, 90px) 0 clamp(55px, 7vw, 80px) clamp(18px, 4vw, 60px);
@@ -2878,7 +2878,7 @@ p,
   text-decoration: none;
 }
 
-/* Tablet 
+/* Tablet */
 @media (max-width: 1024px) {
   .project-slider-card {
     width: 48vw;
@@ -2890,7 +2890,7 @@ p,
   }
 }
 
-/* Mobile
+/* Mobile*/
 @media (max-width: 768px) {
   .project-slider-section {
     padding-left: 18px;
@@ -2911,7 +2911,7 @@ p,
   }
 }
 
-/* Small Mobile
+/* Small Mobile*/
 @media (max-width: 480px) {
   .project-slider-section {
     padding-top: 48px;
