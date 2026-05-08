@@ -2686,7 +2686,9 @@ p,
     height: 29px;
   }
 }
+
 /* ====================================================================================================Project Image Slider==================================*/
+
 .project-slider-section {
   width: 100%;
   padding: clamp(55px, 7vw, 90px) 0 clamp(55px, 7vw, 80px)
@@ -2854,7 +2856,185 @@ p,
   }
 }
 
+/* ====================================================================================================Project Image Gallery==================================*/
 
+.project-gallery-section {
+  width: 100%;
+  padding: clamp(55px, 7vw, 90px) clamp(18px, 4vw, 60px) clamp(55px, 7vw, 80px);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.project-gallery-section .eyebrow {
+  font-size: clamp(11px, 1vw, 13px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9b7a45;
+  margin: 0;
+}
+
+.project-gallery-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 7vw, 92px);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  margin: 20px 0 8px;
+  color: #171717;
+  max-width: 1100px;
+}
+
+.project-gallery-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2vw, 28px);
+  line-height: 1.25;
+  color: #4d453d;
+  margin: 0 0 clamp(28px, 4vw, 48px);
+}
+
+/* Gallery Layout */
+.project-bento-gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: clamp(170px, 16vw, 260px);
+  gap: clamp(12px, 1.6vw, 24px);
+}
+
+.project-bento-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: clamp(18px, 2vw, 30px);
+  background: #ddd;
+}
+
+.project-bento-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+  transition: transform 1.2s ease;
+}
+
+.project-bento-card:hover img {
+  transform: scale(1.07);
+}
+
+/* Gallery different sizes */
+.project-bento-card.card-1 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.project-bento-card.card-2 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-3 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-4 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-5 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-6 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-7 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.project-bento-card.card-8 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.see-projects-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: clamp(26px, 4vw, 42px);
+  color: #111;
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .project-bento-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 260px;
+  }
+
+  .project-bento-card.card-1,
+  .project-bento-card.card-4,
+  .project-bento-card.card-7,
+  .project-bento-card.card-8 {
+    grid-column: span 2;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project-gallery-section {
+    padding: 52px 18px 56px;
+  }
+
+  .project-gallery-section h2 {
+    font-size: clamp(38px, 12vw, 62px);
+    letter-spacing: -0.04em;
+  }
+
+  .project-bento-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 280px;
+    gap: 14px;
+  }
+
+  .project-bento-card,
+  .project-bento-card.card-1,
+  .project-bento-card.card-2,
+  .project-bento-card.card-3,
+  .project-bento-card.card-4,
+  .project-bento-card.card-5,
+  .project-bento-card.card-6,
+  .project-bento-card.card-7,
+  .project-bento-card.card-8 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .project-gallery-section {
+    padding: 48px 16px 52px;
+  }
+
+  .project-bento-gallery {
+    grid-auto-rows: 255px;
+  }
+
+  .project-bento-card {
+    border-radius: 20px;
+  }
+}
 
 /* ==================================================================================================== SINGLE PROJECT PAGE WITHOUT HEADER/FOOTER ======================================================================================================== */
 
