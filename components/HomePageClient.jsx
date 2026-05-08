@@ -10,6 +10,7 @@ import AmenitiesFlip from './AmenitiesFlip';
 import ScrollOverlapGallery from './ScrollOverlapGallery';
 import HeroVideoSection from './HeroVideoSection';
 import ProjectImageSlider from './ProjectImageSlider';
+import ProjectGlideSlider from './ProjectGlideSlider';
 import StrategicallyConnectedSection from './StrategicallyConnectedSection';
 import ContactBookingSection from './ContactBookingSection';
 
@@ -31,6 +32,7 @@ export default function HomePageClient() {
       <HeroVideoSection />
 
       <ProjectImageSlider />
+      <ProjectGlideSlider />
      
       <StrategicallyConnectedSection />
 
