@@ -109,15 +109,6 @@ export default function HeroSection() {
             </p>
           </div>
         </motion.div>
-      <div className="hero-actions">
-            <Link href="/" className="primary-btn">
-              Explore Projects
-            </Link>
-
-            <Link href="/" className="ghost-btn">
-              View Floor Plans
-            </Link>
-          </div>
       </div>
     </section>
   );
