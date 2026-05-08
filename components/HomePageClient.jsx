@@ -33,7 +33,7 @@ export default function HomePageClient() {
 
       {/* <ProjectImageSlider />*/}
 
-      <ProjectImageSlider />
+      <ProjectGlideSlider />
       
       <StrategicallyConnectedSection />
 
