@@ -91,9 +91,10 @@ h1,
   margin: 0 0 24px;
   font-family: 'Playfair Display', serif;
   font-size: clamp(38px, 4.5vw, 62px);
+  font-color:#000;
   line-height: 0.9;
   letter-spacing: -0.05em;
-  color: #000;
+  color: #fff;
 }
 
 .hero-title .title-line-1,
@@ -149,6 +150,7 @@ h1,
     line-height: 0.95;
     letter-spacing: -0.03em;
     margin: 0 0 14px;
+
   }
 
   .hero-title .title-line-1,
