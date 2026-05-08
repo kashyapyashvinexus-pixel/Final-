@@ -38,8 +38,8 @@ export default function ProjectGlideSlider() {
         ))}
       </div>
 
-      <Link href="/projects" className="see-projects-link">
-        See All Projects →
+      <Link href="/projects/stellavia" className="see-projects-link">
+        See Project →
       </Link>
     </section>
   );
