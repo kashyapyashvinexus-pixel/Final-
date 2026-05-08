@@ -124,8 +124,7 @@ export default function SampleHouseSlider() {
 
         tl.to(nextReveal, {
           width: '100%',
-          {/*duration: 6.5,*/}
-        duration: 5,
+          duration: 5,
           ease: 'none',
         });
       };
