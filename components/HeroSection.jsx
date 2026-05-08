@@ -77,7 +77,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <motion.div
+        {/* <motion.div
           ref={cardRef}
           className="hero-visual hover-panel"
           initial={{ opacity: 0, y: 30 }}
@@ -90,6 +90,21 @@ export default function HeroSection() {
             <p>
               Luxury apartment towers with skyline amenities and elegant urban
               planning.
+            </p>
+          </div>
+        </motion.div>*/}
+        <motion.div
+          ref={cardRef}
+          className="hero-visual hover-panel"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, delay: 0.2 }}
+        >
+          <div className="hero-card glass-card">
+            <span>Signature Launch</span>
+            <strong>The Future of Residential Excellence</strong>
+            <p>
+              Stellavia — where 140 luminous residences bring elegance, space, and serenity within reach, without compromise.
             </p>
           </div>
         </motion.div>
