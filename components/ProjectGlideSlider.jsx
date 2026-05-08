@@ -24,9 +24,9 @@ export default function ProjectGlideSlider() {
         Exterior And Interior Design.
       </p>
 
-      <div className="project-photo-gallery">
+      <div className="project-bento-gallery">
         {projectGalleryImages.map((image, index) => (
-          <div className="project-gallery-card" key={image}>
+          <div className={`project-bento-card card-${index + 1}`} key={image}>
             <img
               src={image}
               alt={`Stellavia Project ${index + 1}`}
