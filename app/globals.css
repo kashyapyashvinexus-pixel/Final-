@@ -1803,7 +1803,8 @@ background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); ba
 
 .clean-contact-section {
   width: 100%;
-  padding: 80px 24px;
+  /*padding: 80px 24px;*/
+  padding: 100px 24px;
   background: #f8f4ec;
   display: flex;
   justify-content: center;
