@@ -977,7 +977,8 @@ p,
 .lux-award-section {
   width: 100%;
   padding: 70px 0;
-  background: linear-gradient(180deg, #ffffff 0%, #f8f5ef 100%);
+  /*background: linear-gradient(180deg, #ffffff 0%, #f8f5ef 100%);*/
+  background: #12243A;
   display: flex;
   justify-content: center;
   overflow: hidden;
