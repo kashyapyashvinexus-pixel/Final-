@@ -4530,3 +4530,369 @@ p,
     border-radius: 14px;
   }
 }
+
+/*===============================AWARD SLIDER SECTION=======================================*/
+
+/* ===== AWARD SLIDER SECTION ===== */
+
+.award-slider-section {
+  width: 100%;
+  padding: 80px 0;
+  background: #12243a;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.award-slider-card {
+  width: calc(100% - 110px);
+  max-width: 1500px;
+  min-height: 520px;
+  padding: 58px 84px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 46px;
+
+  background: #ffffff;
+  border: 1px solid rgba(184, 137, 55, 0.65);
+
+  box-shadow:
+    0 38px 95px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.award-slider-card::before {
+  content: "";
+  position: absolute;
+  inset: 17px;
+  border-radius: 36px;
+  border: 1px solid rgba(184, 137, 55, 0.34);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.award-diamond {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #b88937;
+  font-size: 18px;
+  z-index: 5;
+}
+
+.award-top {
+  top: 10px;
+}
+
+.award-bottom {
+  bottom: 10px;
+}
+
+/* Main slide layout */
+.award-slide {
+  position: relative;
+  z-index: 4;
+  min-height: 420px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+
+  animation: awardFade 0.65s ease both;
+}
+
+@keyframes awardFade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Left image */
+.award-image-area {
+  width: 42%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.award-main-image {
+  width: 100%;
+  max-width: 430px;
+  height: 360px;
+  object-fit: contain;
+  display: block;
+  border-radius: 34px;
+  filter: drop-shadow(0 28px 35px rgba(120, 78, 22, 0.24));
+}
+
+/* Right content */
+.award-content-area {
+  width: 58%;
+  text-align: left;
+}
+
+.award-label {
+  color: #a77a32 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.88rem;
+  font-weight: 800;
+  margin: 0 0 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.award-label::before {
+  content: "";
+  width: 54px;
+  height: 1px;
+  background: #b88937;
+  display: inline-block;
+}
+
+.award-content-area h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #151515 !important;
+  font-size: clamp(2.6rem, 4.3vw, 5.4rem);
+  line-height: 0.96;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  margin: 0 0 26px;
+}
+
+.award-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 560px;
+  margin-bottom: 26px;
+}
+
+.award-line span {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #b88937, transparent);
+}
+
+.award-line i {
+  color: #b88937;
+  font-style: normal;
+  font-size: 13px;
+}
+
+.award-desc {
+  color: #333 !important;
+  font-size: 1.12rem;
+  line-height: 1.72;
+  max-width: 760px;
+  margin: 0;
+}
+
+/* Navigation arrows */
+.award-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 8;
+
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(184, 137, 55, 0.45);
+  background: #ffffff;
+  color: #12243a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+  transition: all 0.3s ease;
+}
+
+.award-nav:hover {
+  background: #b88937;
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.06);
+}
+
+.award-prev {
+  left: 28px;
+}
+
+.award-next {
+  right: 28px;
+}
+
+/* Dots */
+.award-dots {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.award-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(184, 137, 55, 0.38);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.award-dot.active {
+  width: 34px;
+  background: #b88937;
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width: 1100px) {
+  .award-slider-card {
+    width: calc(100% - 60px);
+    padding: 52px 56px;
+  }
+
+  .award-slide {
+    gap: 44px;
+  }
+
+  .award-main-image {
+    max-width: 350px;
+    height: 300px;
+  }
+
+  .award-content-area h2 {
+    font-size: clamp(2.3rem, 4.8vw, 4rem);
+  }
+
+  .award-desc {
+    font-size: 1rem;
+  }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 900px) {
+  .award-slider-section {
+    padding: 42px 0;
+  }
+
+  .award-slider-card {
+    width: calc(100% - 32px);
+    min-height: auto;
+    padding: 46px 24px 38px;
+    border-radius: 32px;
+  }
+
+  .award-slider-card::before {
+    inset: 12px;
+    border-radius: 24px;
+  }
+
+  .award-slide {
+    min-height: auto;
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .award-image-area,
+  .award-content-area {
+    width: 100%;
+  }
+
+  .award-main-image {
+    max-width: 260px;
+    height: auto;
+    border-radius: 24px;
+  }
+
+  .award-content-area {
+    text-align: center;
+  }
+
+  .award-label {
+    justify-content: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+  }
+
+  .award-label::before {
+    display: none;
+  }
+
+  .award-content-area h2 {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+    line-height: 1;
+    margin-bottom: 22px;
+  }
+
+  .award-line {
+    margin: 0 auto 22px;
+  }
+
+  .award-desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .award-nav {
+    width: 38px;
+    height: 38px;
+    font-size: 28px;
+  }
+
+  .award-prev {
+    left: 14px;
+  }
+
+  .award-next {
+    right: 14px;
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width: 480px) {
+  .award-slider-card {
+    width: calc(100% - 24px);
+    padding: 42px 20px 34px;
+    border-radius: 28px;
+  }
+
+  .award-main-image {
+    max-width: 230px;
+  }
+
+  .award-content-area h2 {
+    font-size: 2.15rem;
+  }
+
+  .award-desc {
+    font-size: 0.92rem;
+  }
+
+  .award-nav {
+    top: 34%;
+  }
+}
