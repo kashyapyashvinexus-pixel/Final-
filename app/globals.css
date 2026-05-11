@@ -983,40 +983,48 @@ p,
   overflow: hidden;
 }
 
-.lux-award-card {
+/* Main 2 Card Grid */
+.lux-awards-grid {
   width: calc(100% - 110px);
   max-width: 1500px;
-  min-height: 390px;
-  padding: 58px 84px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+}
+
+/* Single Award Card */
+.lux-award-card {
+  min-height: 540px;
+  padding: 42px 40px;
   position: relative;
   overflow: hidden;
-  border-radius: 46px;
+  border-radius: 42px;
 
-  display: grid;
-  grid-template-columns: 38% 62%;
-  align-items: center;
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
 
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.82), rgba(255,255,255,0.42)),
-    radial-gradient(circle at 18% 55%, rgba(213,162,62,0.22), transparent 40%);
+    linear-gradient(135deg, rgba(255,255,255,0.88), rgba(255,255,255,0.46)),
+    radial-gradient(circle at 18% 20%, rgba(213,162,62,0.22), transparent 42%);
 
-  border: 1px solid rgba(184, 137, 55, 0.65);
+  border: 1px solid rgba(184, 137, 55, 0.62);
 
   backdrop-filter: blur(26px);
   -webkit-backdrop-filter: blur(26px);
 
   box-shadow:
-    0 38px 95px rgba(0,0,0,0.18),
+    0 32px 80px rgba(0,0,0,0.14),
     inset 0 1px 0 rgba(255,255,255,0.95);
 }
 
 .lux-award-card::before {
   content: "";
   position: absolute;
-  inset: 17px;
-  border-radius: 36px;
-  border: 1px solid rgba(184, 137, 55, 0.36);
+  inset: 15px;
+  border-radius: 32px;
+  border: 1px solid rgba(184, 137, 55, 0.32);
   pointer-events: none;
   z-index: 2;
 }
@@ -1026,7 +1034,12 @@ p,
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.52) 48%, transparent 64%),
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      rgba(255,255,255,0.5) 48%,
+      transparent 64%
+    ),
     radial-gradient(circle at 10% 85%, rgba(255,255,255,0.55), transparent 28%);
   pointer-events: none;
   z-index: 1;
@@ -1037,85 +1050,74 @@ p,
   left: 50%;
   transform: translateX(-50%);
   color: #b88937;
-  font-size: 18px;
+  font-size: 16px;
   z-index: 4;
 }
 
 .lux-top {
-  top: 10px;
+  top: 9px;
 }
 
 .lux-bottom {
-  bottom: 10px;
+  bottom: 9px;
 }
 
-.lux-award-left,
+.lux-award-image-box,
 .lux-award-content {
   position: relative;
   z-index: 5;
 }
 
-.lux-award-left {
+/* Image */
+.lux-award-image-box {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 280px;
-  overflow: visible;
 }
 
 .lux-award-image {
-  width: 360px;
-  height: auto;
-  max-width: 100%;
+  width: 100%;
+  max-width: 330px;
+  height: 240px;
   object-fit: contain;
   display: block;
   position: relative;
   z-index: 10;
-  filter: drop-shadow(0 28px 35px rgba(120, 78, 22, 0.28));
-  border-radius: 36px;
+  filter: drop-shadow(0 24px 32px rgba(120, 78, 22, 0.24));
+  border-radius: 30px;
 }
 
+/* Content */
 .lux-award-content {
-  text-align: left;
+  text-align: center;
 }
 
 .lux-award-label {
   color: #a77a32 !important;
   text-transform: uppercase;
-  letter-spacing: 0.28em;
-  font-size: 0.92rem;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
   font-weight: 800;
-  margin-bottom: 18px;
-
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.lux-award-label span {
-  width: 54px;
-  height: 1px;
-  background: #b88937;
-  display: inline-block;
+  margin: 0 0 16px;
 }
 
 .lux-award-content h3 {
   font-family: Georgia, "Times New Roman", serif;
   color: #151515 !important;
-  /*font-size: clamp(3.5rem, 5.2vw, 6.4rem);*/
-  font-size: clamp(2.4rem, 3.5vw, 4.2rem);
-  line-height: 0.96;
+  font-size: clamp(2.1rem, 3vw, 3.7rem);
+  line-height: 0.98;
   font-weight: 500;
   letter-spacing: -0.045em;
-  margin-bottom: 24px;
+  margin: 0 0 22px;
 }
 
 .lux-line {
   display: flex;
   align-items: center;
   gap: 12px;
-  max-width: 560px;
-  margin-bottom: 24px;
+  max-width: 420px;
+  margin: 0 auto 22px;
 }
 
 .lux-line span {
@@ -1127,59 +1129,99 @@ p,
 .lux-line i {
   color: #b88937;
   font-style: normal;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .lux-desc {
   color: #333 !important;
-  font-size: 1.13rem;
-  line-height: 1.72;
-  max-width: 760px;
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 560px;
+  margin: 0 auto;
 }
+
+/* ===== TABLET ===== */
+
+@media (max-width: 1100px) {
+  .lux-awards-grid {
+    width: calc(100% - 60px);
+    gap: 24px;
+  }
+
+  .lux-award-card {
+    padding: 38px 28px;
+    min-height: 520px;
+  }
+
+  .lux-award-image {
+    max-width: 280px;
+    height: 220px;
+  }
+
+  .lux-award-content h3 {
+    font-size: 2.4rem;
+  }
+}
+
+/* ===== MOBILE ===== */
 
 @media (max-width: 900px) {
   .lux-award-section {
     padding: 38px 0;
   }
 
-  .lux-award-card {
+  .lux-awards-grid {
     width: calc(100% - 32px);
-    min-height: auto;
-    padding: 44px 24px;
     grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: center;
+    gap: 26px;
+  }
+
+  .lux-award-card {
+    min-height: auto;
+    padding: 42px 24px;
     border-radius: 32px;
   }
 
-  .lux-award-content {
-    text-align: center;
-  }
-
-  .lux-award-label {
-    justify-content: center;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-  }
-
-  .lux-award-label span {
-    display: none;
-  }
-
-  .lux-award-content h3 {
-    font-size: 2.8rem;
-  }
-
-  .lux-line {
-    margin: 0 auto 22px;
-  }
-
-  .lux-desc {
-    font-size: 0.96rem;
+  .lux-award-card::before {
+    inset: 12px;
+    border-radius: 24px;
   }
 
   .lux-award-image {
-    width: 240px;
+    max-width: 250px;
+    height: auto;
+    border-radius: 24px;
+  }
+
+  .lux-award-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+  }
+
+  .lux-award-content h3 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .lux-desc {
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width: 480px) {
+  .lux-awards-grid {
+    width: calc(100% - 24px);
+  }
+
+  .lux-award-card {
+    padding: 38px 20px;
+    border-radius: 28px;
+  }
+
+  .lux-award-content h3 {
+    font-size: 2.1rem;
   }
 }
 /*==============*/
