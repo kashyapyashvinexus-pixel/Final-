@@ -1335,27 +1335,27 @@ p,
 
 /* ===== AMENITIES FLIP SECTION ===== */
 
-/* AMENITIES SECTION */
+/* AMENITIES SECTION - COMPACT VERSION */
 .section-block.amenities-section,
 .amenities-section {
   position: relative;
   width: 100%;
-  padding: clamp(70px, 8vw, 110px) clamp(18px, 4vw, 70px);
+  padding: clamp(42px, 5vw, 64px) clamp(18px, 4vw, 60px);
   overflow: hidden;
   background:
-    radial-gradient(circle at 85% 8%, rgba(216, 196, 159, 0.26), transparent 32%),
-    radial-gradient(circle at 8% 35%, rgba(216, 196, 159, 0.22), transparent 28%),
+    radial-gradient(circle at 85% 8%, rgba(216, 196, 159, 0.22), transparent 30%),
+    radial-gradient(circle at 8% 35%, rgba(216, 196, 159, 0.18), transparent 26%),
     linear-gradient(135deg, #fbf7ee 0%, #f6efe2 48%, #faf7ef 100%) !important;
 }
 
 /* SOFT LEAF BACKGROUND */
 .amenities-bg-leaf {
   position: absolute;
-  left: -35px;
-  top: 190px;
-  width: 240px;
-  height: 320px;
-  opacity: 0.22;
+  left: -45px;
+  top: 140px;
+  width: 210px;
+  height: 280px;
+  opacity: 0.18;
   pointer-events: none;
   background:
     radial-gradient(ellipse at 35% 25%, rgba(155, 122, 69, 0.18) 0 30%, transparent 31%),
@@ -1369,20 +1369,20 @@ p,
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 880px;
-  margin: 0 auto clamp(42px, 5vw, 70px);
+  max-width: 760px;
+  margin: 0 auto clamp(26px, 3vw, 36px);
 }
 
 .amenities-eyebrow-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
-  margin-bottom: 5px;
+  gap: 14px;
+  margin-bottom: 4px;
 }
 
 .amenities-eyebrow-wrap span {
-  width: 110px;
+  width: 88px;
   height: 1px;
   background: rgba(155, 122, 69, 0.55);
 }
@@ -1390,35 +1390,35 @@ p,
 .amenities-eyebrow-wrap p {
   margin: 0;
   color: #9b7a45;
-  font-size: clamp(12px, 1.1vw, 15px);
+  font-size: clamp(10px, 0.9vw, 13px);
   line-height: 1;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   font-weight: 600;
 }
 
 .amenities-diamond {
   color: #b89250;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .amenities-heading h2 {
   margin: 0;
   color: #221c17;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(42px, 5.3vw, 78px);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.04em;
   font-weight: 500;
 }
 
 .amenities-subtitle {
-  margin: 24px auto 0;
+  margin: 16px auto 0;
   color: rgba(34, 28, 23, 0.68);
-  font-size: clamp(15px, 1.5vw, 20px);
-  line-height: 1.55;
+  font-size: clamp(13px, 1.2vw, 16px);
+  line-height: 1.45;
   font-weight: 400;
 }
 
@@ -1426,20 +1426,20 @@ p,
 .amenities-card-grid {
   position: relative;
   z-index: 2;
-  width: min(100%, 1360px);
+  width: min(100%, 1280px);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 2vw, 28px);
+  gap: clamp(14px, 1.6vw, 22px);
 }
 
 .amenity-card {
   background: rgba(255, 252, 246, 0.92);
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(155, 122, 69, 0.16);
   box-shadow:
-    0 18px 45px rgba(80, 62, 36, 0.13),
+    0 14px 35px rgba(80, 62, 36, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
@@ -1452,7 +1452,7 @@ p,
 
 .amenity-card-image {
   width: 100%;
-  height: clamp(220px, 19vw, 315px);
+  height: clamp(150px, 14vw, 210px);
   overflow: hidden;
   background: #e9dfcf;
 }
@@ -1467,11 +1467,11 @@ p,
 /* BOTTOM TITLE STRIP */
 .amenity-card-content {
   position: relative;
-  min-height: 86px;
+  min-height: 58px;
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 22px 30px;
+  gap: 16px;
+  padding: 14px 22px;
   background: rgba(255, 252, 246, 0.96);
 }
 
@@ -1479,12 +1479,12 @@ p,
 .amenity-card-content::before {
   content: "";
   position: absolute;
-  top: -22px;
+  top: -18px;
   right: 0;
-  width: 48%;
-  height: 24px;
+  width: 45%;
+  height: 20px;
   background: rgba(255, 252, 246, 0.96);
-  border-top-left-radius: 28px;
+  border-top-left-radius: 24px;
   pointer-events: none;
 }
 
@@ -1493,10 +1493,10 @@ p,
   z-index: 2;
   color: #b18443;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(20px, 1.8vw, 27px);
+  font-size: clamp(17px, 1.4vw, 22px);
   line-height: 1;
-  min-width: 44px;
-  padding-right: 22px;
+  min-width: 34px;
+  padding-right: 14px;
   border-right: 1px solid rgba(155, 122, 69, 0.34);
 }
 
@@ -1506,8 +1506,8 @@ p,
   margin: 0;
   color: #221c17;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(20px, 1.8vw, 28px);
-  line-height: 1.18;
+  font-size: clamp(17px, 1.45vw, 23px);
+  line-height: 1.15;
   font-weight: 500;
 }
 
@@ -1515,25 +1515,21 @@ p,
 @media (max-width: 1024px) {
   .section-block.amenities-section,
   .amenities-section {
-    padding: 75px 24px;
-  }
-
-  .amenities-heading {
-    margin-bottom: 42px;
+    padding: 56px 24px;
   }
 
   .amenities-card-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
+    gap: 20px;
   }
 
   .amenity-card-image {
-    height: 260px;
+    height: 220px;
   }
 
   .amenity-card-content {
-    min-height: 78px;
-    padding: 20px 24px;
+    min-height: 64px;
+    padding: 16px 22px;
   }
 }
 
@@ -1541,30 +1537,34 @@ p,
 @media (max-width: 640px) {
   .section-block.amenities-section,
   .amenities-section {
-    padding: 62px 16px;
+    padding: 48px 16px;
+  }
+
+  .amenities-heading {
+    margin-bottom: 28px;
   }
 
   .amenities-eyebrow-wrap {
-    gap: 12px;
+    gap: 10px;
   }
 
   .amenities-eyebrow-wrap span {
-    width: 58px;
+    width: 48px;
   }
 
   .amenities-eyebrow-wrap p {
-    font-size: 11px;
-    letter-spacing: 0.24em;
+    font-size: 10px;
+    letter-spacing: 0.22em;
   }
 
   .amenities-heading h2 {
-    font-size: clamp(34px, 10vw, 46px);
+    font-size: clamp(31px, 9vw, 42px);
     line-height: 1.05;
   }
 
   .amenities-subtitle {
-    margin-top: 18px;
-    font-size: 14px;
+    margin-top: 14px;
+    font-size: 13px;
   }
 
   .amenities-subtitle br,
@@ -1574,42 +1574,42 @@ p,
 
   .amenities-card-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
 
   .amenity-card {
-    border-radius: 20px;
+    border-radius: 18px;
   }
 
   .amenity-card-image {
-    height: 235px;
+    height: 210px;
   }
 
   .amenity-card-content {
-    min-height: 74px;
-    gap: 18px;
-    padding: 18px 22px;
+    min-height: 60px;
+    gap: 15px;
+    padding: 15px 20px;
   }
 
   .amenity-card-content span {
-    font-size: 21px;
-    min-width: 38px;
-    padding-right: 16px;
+    font-size: 19px;
+    min-width: 34px;
+    padding-right: 14px;
   }
 
   .amenity-card-content h3 {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
 /* SMALL MOBILE */
 @media (max-width: 420px) {
   .amenity-card-image {
-    height: 210px;
+    height: 190px;
   }
 
   .amenity-card-content h3 {
-    font-size: 20px;
+    font-size: 19px;
   }
 }
 /*==============================*/
