@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 import HeroSection from './HeroSection';
-import StatsStrip from './StatsStrip';
-import AwardSlider from './AwardSlider';
+{/*import StatsStrip from './StatsStrip';
+import AwardSlider from './AwardSlider';*/}
+import AwardShowcaseSection from './AwardShowcaseSection';
 import SampleHouseSlider from './SampleHouseSlider';
 import AmenitiesFlip from './AmenitiesFlip';
 import ScrollOverlapGallery from './ScrollOverlapGallery';
@@ -22,8 +23,9 @@ export default function HomePageClient() {
     <>
       <HeroSection />
 
-      <StatsStrip />
-      <AwardSlider />
+      {/*  <StatsStrip />
+      <AwardSlider />*/}
+      <AwardShowcaseSection />
 
       <SampleHouseSlider />
 
