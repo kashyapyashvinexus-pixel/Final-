@@ -1335,331 +1335,281 @@ p,
 
 /* ===== AMENITIES FLIP SECTION ===== */
 
-/* ===== AMENITIES HOVER POPUP SECTION ===== */
-
-/* ===== AMENITIES FLIP + IMAGE POPOUT ===== */
-
 /* AMENITIES SECTION */
 .section-block.amenities-section,
 .amenities-section {
-  background: linear-gradient(
-    135deg,
-    #f7f7f7 0%,
-    #eeeeee 45%,
-    #f8f8f8 100%
-  ) !important;
-  overflow: visible;
-}
-
-/* AMENITIES HEADING SIZE */
-.amenities-section .section-heading h2 {
-  font-size: clamp(1.85rem, 2.6vw, 2.35rem);
-  line-height: 1.16;
-}
-
-.amenities-section .section-heading p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* AMENITIES GRID */
-.amenities-flip-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-  overflow: visible;
-}
-
-.amenity-flip-card {
-  position: relative;
-  height: 260px;
-  perspective: 1200px;
-  overflow: visible;
-  z-index: 1;
-}
-
-.amenity-flip-card:hover {
-  z-index: 50;
-}
-
-.amenity-flip-inner {
   position: relative;
   width: 100%;
-  height: 100%;
-  transition: transform 0.75s ease;
-  transform-style: preserve-3d;
-}
-
-.amenity-flip-card:hover .amenity-flip-inner {
-  transform: rotateY(180deg);
-}
-
-.amenity-front,
-.amenity-back {
-  position: absolute;
-  inset: 0;
-  border-radius: 26px;
+  padding: clamp(70px, 8vw, 110px) clamp(18px, 4vw, 70px);
   overflow: hidden;
-  backface-visibility: hidden;
+  background:
+    radial-gradient(circle at 85% 8%, rgba(216, 196, 159, 0.26), transparent 32%),
+    radial-gradient(circle at 8% 35%, rgba(216, 196, 159, 0.22), transparent 28%),
+    linear-gradient(135deg, #fbf7ee 0%, #f6efe2 48%, #faf7ef 100%) !important;
 }
 
-/* FRONT CARD - SAME AS HERO BOTTOM GLASS CARD */
-.amenity-front {
+/* SOFT LEAF BACKGROUND */
+.amenities-bg-leaf {
+  position: absolute;
+  left: -35px;
+  top: 190px;
+  width: 240px;
+  height: 320px;
+  opacity: 0.22;
+  pointer-events: none;
   background:
-    radial-gradient(
-      circle at 12% 12%,
-      rgba(255, 255, 255, 0.12),
-      transparent 32%
-    ),
-    linear-gradient(
-      135deg,
-      rgba(103, 114, 86, 0.34) 0%,
-      rgba(77, 88, 67, 0.30) 38%,
-      rgba(49, 56, 43, 0.32) 72%,
-      rgba(28, 33, 24, 0.36) 100%
-    );
+    radial-gradient(ellipse at 35% 25%, rgba(155, 122, 69, 0.18) 0 30%, transparent 31%),
+    radial-gradient(ellipse at 60% 45%, rgba(155, 122, 69, 0.16) 0 28%, transparent 29%),
+    radial-gradient(ellipse at 32% 65%, rgba(155, 122, 69, 0.14) 0 26%, transparent 27%);
+  filter: blur(1px);
+}
 
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
+/* HEADING */
+.amenities-heading {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto clamp(42px, 5vw, 70px);
+}
 
-  border: 1px solid rgba(255, 255, 255, 0.16);
-
-  box-shadow:
-    0 22px 55px rgba(0, 0, 0, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 0.16);
-
+.amenities-eyebrow-wrap {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 36px;
+  gap: 18px;
+  margin-bottom: 5px;
 }
 
-/* REMOVE OLD WHITE SHINE */
-.amenity-front::before {
-  display: none;
+.amenities-eyebrow-wrap span {
+  width: 110px;
+  height: 1px;
+  background: rgba(155, 122, 69, 0.55);
 }
 
-/* INNER GLASS BORDER */
-.amenity-front::after {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  pointer-events: none;
+.amenities-eyebrow-wrap p {
+  margin: 0;
+  color: #9b7a45;
+  font-size: clamp(12px, 1.1vw, 15px);
+  line-height: 1;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.amenity-front span {
+.amenities-diamond {
+  color: #b89250;
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.amenities-heading h2 {
+  margin: 0;
+  color: #221c17;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 5.3vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+.amenities-subtitle {
+  margin: 24px auto 0;
+  color: rgba(34, 28, 23, 0.68);
+  font-size: clamp(15px, 1.5vw, 20px);
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+/* CARD GRID */
+.amenities-card-grid {
   position: relative;
   z-index: 2;
-  color: #d1a13b;
-  font-size: 46px;
-  margin-bottom: 22px;
-  text-shadow: 0 0 18px rgba(209, 161, 59, 0.28);
+  width: min(100%, 1360px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 28px);
 }
 
-.amenity-front h3 {
-  position: relative;
-  z-index: 2;
-  color: #ffffff;
-  font-size: 1.65rem;
-  line-height: 1.18;
-  margin: 0;
-  font-weight: 700;
-}
-
-/* BACK CARD */
-.amenity-back {
-  transform: rotateY(180deg);
-
-  background:
-    radial-gradient(
-      circle at 12% 12%,
-      rgba(255, 255, 255, 0.10),
-      transparent 32%
-    ),
-    linear-gradient(
-      135deg,
-      rgba(103, 114, 86, 0.30) 0%,
-      rgba(77, 88, 67, 0.28) 38%,
-      rgba(49, 56, 43, 0.30) 72%,
-      rgba(28, 33, 24, 0.34) 100%
-    );
-
-  backdrop-filter: blur(18px) saturate(135%);
-  -webkit-backdrop-filter: blur(18px) saturate(135%);
-
-  border: 1px solid rgba(255, 255, 255, 0.14);
-
-  box-shadow:
-    0 22px 60px rgba(0, 0, 0, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-}
-
-.amenity-back img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.amenity-back-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.38);
-  display: flex;
-  align-items: flex-end;
-  padding: 24px;
-}
-
-.amenity-back-overlay h3 {
-  color: #ffffff;
-  font-size: 1.4rem;
-  margin: 0;
-}
-
-/* POPOUT IMAGE */
-.amenity-popout {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: min(540px, 90vw);
-  height: 360px;
-  border-radius: 30px;
+.amenity-card {
+  background: rgba(255, 252, 246, 0.92);
+  border-radius: 24px;
   overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0.65) rotateY(-18deg);
-  transition: all 0.65s ease;
-  z-index: 100;
-
-  background:
-    radial-gradient(
-      circle at 12% 12%,
-      rgba(255, 255, 255, 0.12),
-      transparent 32%
-    ),
-    linear-gradient(
-      135deg,
-      rgba(103, 114, 86, 0.28) 0%,
-      rgba(77, 88, 67, 0.26) 38%,
-      rgba(49, 56, 43, 0.28) 72%,
-      rgba(28, 33, 24, 0.32) 100%
-    );
-
-  backdrop-filter: blur(22px) saturate(140%);
-  -webkit-backdrop-filter: blur(22px) saturate(140%);
-
-  border: 1px solid rgba(255, 255, 255, 0.16);
-
+  border: 1px solid rgba(155, 122, 69, 0.16);
   box-shadow:
-    0 35px 90px rgba(0, 0, 0, 0.36),
-    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    0 18px 45px rgba(80, 62, 36, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
-.amenity-flip-card:hover .amenity-popout {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+/* NO HOVER EFFECT */
+.amenity-card,
+.amenity-card img,
+.amenity-card-content {
+  transition: none;
 }
 
-.amenity-popout img {
+.amenity-card-image {
+  width: 100%;
+  height: clamp(220px, 19vw, 315px);
+  overflow: hidden;
+  background: #e9dfcf;
+}
+
+.amenity-card-image img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
 }
 
-.amenity-popout::after {
+/* BOTTOM TITLE STRIP */
+.amenity-card-content {
+  position: relative;
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 30px;
+  background: rgba(255, 252, 246, 0.96);
+}
+
+/* CURVED FEEL LIKE REFERENCE */
+.amenity-card-content::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.34);
+  top: -22px;
+  right: 0;
+  width: 48%;
+  height: 24px;
+  background: rgba(255, 252, 246, 0.96);
+  border-top-left-radius: 28px;
+  pointer-events: none;
 }
 
-.amenity-popout h3 {
-  position: absolute;
-  left: 26px;
-  bottom: 24px;
+.amenity-card-content span {
+  position: relative;
   z-index: 2;
-  color: #ffffff;
-  margin: 0;
-  font-size: 1.55rem;
+  color: #b18443;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 1.8vw, 27px);
+  line-height: 1;
+  min-width: 44px;
+  padding-right: 22px;
+  border-right: 1px solid rgba(155, 122, 69, 0.34);
 }
 
-/* HOVER EFFECT */
-.amenity-flip-card:hover .amenity-front {
-  border-color: rgba(209, 161, 59, 0.28);
-
-  box-shadow:
-    0 28px 75px rgba(0, 0, 0, 0.22),
-    0 0 35px rgba(209, 161, 59, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+.amenity-card-content h3 {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #221c17;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 1.8vw, 28px);
+  line-height: 1.18;
+  font-weight: 500;
 }
 
 /* TABLET */
 @media (max-width: 1024px) {
-  .amenities-section .section-heading h2 {
-    font-size: 2rem;
-    line-height: 1.18;
+  .section-block.amenities-section,
+  .amenities-section {
+    padding: 75px 24px;
   }
 
-  .amenities-flip-grid {
+  .amenities-heading {
+    margin-bottom: 42px;
+  }
+
+  .amenities-card-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
   }
 
-  .amenity-flip-card {
-    height: 250px;
+  .amenity-card-image {
+    height: 260px;
   }
 
-  .amenity-popout {
-    width: min(470px, 86vw);
-    height: 320px;
-  }
-
-  .amenity-front h3 {
-    font-size: 1.45rem;
-  }
-
-  .amenity-front span {
-    font-size: 42px;
+  .amenity-card-content {
+    min-height: 78px;
+    padding: 20px 24px;
   }
 }
 
 /* MOBILE */
-@media (max-width: 600px) {
-  .amenities-section .section-heading h2 {
-    font-size: 1.65rem;
-    line-height: 1.2;
+@media (max-width: 640px) {
+  .section-block.amenities-section,
+  .amenities-section {
+    padding: 62px 16px;
   }
 
-  .amenities-section .section-heading p {
-    font-size: 0.92rem;
+  .amenities-eyebrow-wrap {
+    gap: 12px;
   }
 
-  .amenities-flip-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  .amenities-eyebrow-wrap span {
+    width: 58px;
   }
 
-  .amenity-flip-card {
-    height: 230px;
-    overflow: hidden;
+  .amenities-eyebrow-wrap p {
+    font-size: 11px;
+    letter-spacing: 0.24em;
   }
 
-  .amenity-front {
-    padding: 30px;
-    border-radius: 22px;
+  .amenities-heading h2 {
+    font-size: clamp(34px, 10vw, 46px);
+    line-height: 1.05;
   }
 
-  .amenity-front h3 {
-    font-size: 1.35rem;
+  .amenities-subtitle {
+    margin-top: 18px;
+    font-size: 14px;
   }
 
-  .amenity-front span {
-    font-size: 38px;
-    margin-bottom: 18px;
-  }
-
-  .amenity-popout {
+  .amenities-subtitle br,
+  .amenities-heading h2 br {
     display: none;
+  }
+
+  .amenities-card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .amenity-card {
+    border-radius: 20px;
+  }
+
+  .amenity-card-image {
+    height: 235px;
+  }
+
+  .amenity-card-content {
+    min-height: 74px;
+    gap: 18px;
+    padding: 18px 22px;
+  }
+
+  .amenity-card-content span {
+    font-size: 21px;
+    min-width: 38px;
+    padding-right: 16px;
+  }
+
+  .amenity-card-content h3 {
+    font-size: 22px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px) {
+  .amenity-card-image {
+    height: 210px;
+  }
+
+  .amenity-card-content h3 {
+    font-size: 20px;
   }
 }
 /*==============================*/
