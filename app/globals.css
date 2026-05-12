@@ -1336,6 +1336,7 @@ p,
 /* ===== AMENITIES FLIP SECTION ===== */
 
 /* AMENITIES SECTION - COMPACT VERSION */
+/* AMENITIES SECTION - COMPACT WITH BIGGER IMAGES */
 .section-block.amenities-section,
 .amenities-section {
   position: relative;
@@ -1452,7 +1453,7 @@ p,
 
 .amenity-card-image {
   width: 100%;
-  height: clamp(150px, 14vw, 210px);
+  height: clamp(175px, 16vw, 245px);
   overflow: hidden;
   background: #e9dfcf;
 }
@@ -1524,7 +1525,7 @@ p,
   }
 
   .amenity-card-image {
-    height: 220px;
+    height: 245px;
   }
 
   .amenity-card-content {
@@ -1582,7 +1583,7 @@ p,
   }
 
   .amenity-card-image {
-    height: 210px;
+    height: 225px;
   }
 
   .amenity-card-content {
@@ -1605,7 +1606,7 @@ p,
 /* SMALL MOBILE */
 @media (max-width: 420px) {
   .amenity-card-image {
-    height: 190px;
+    height: 205px;
   }
 
   .amenity-card-content h3 {
