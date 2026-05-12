@@ -1,3 +1,5 @@
+'use client';
+
 const awards = [
   {
     image: "/sample house image/01.webp",
