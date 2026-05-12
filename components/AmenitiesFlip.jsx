@@ -1,47 +1,51 @@
 const amenities = [
   { title: 'Children Play Area', image: '/img/ST_CAM_05_FFF.webp' },
   { title: 'Gymnasium', image: '/img/IMG_4238.webp' },
-  { title: 'Landscaped Garden', image: '/img/ST_CAM_03_FFF.webp' },
-  { title: 'Club House', image: '/img/IMG_4239.webp' },
+  { title: 'Multi Purpose Hall', image: '/img/IMG_4239.webp' },
   { title: 'Indoor Games', image: '/img/IMG_4239.webp' },
   { title: 'Security System', image: '/img/IMG_4236.webp' },
   { title: 'Basement Parking', image: '/img/IMG_4240.webp' },
-  { title: 'Lift', image: '/img/JB_CAM_FFF_FOYER.webp' },
 ];
 
 export default function AmenitiesFlip() {
   return (
     <section className="section-block amenities-section">
-      <div className="section-heading">
-        <p className="eyebrow">Curated For You</p>
-        <h2>Where Every Comfort Has Been Curated amenities</h2>
-        <p>
-          Every detail designed to enrich every moment from sunrise yoga to evening gatherings, from children's laughter to quiet contemplation.
+      <div className="amenities-bg-leaf"></div>
+
+      <div className="amenities-heading">
+        <div className="amenities-eyebrow-wrap">
+          <span></span>
+          <p>Curated For You</p>
+          <span></span>
+        </div>
+
+        <div className="amenities-diamond">◇</div>
+
+        <h2>
+          Where Every Comfort
+          <br />
+          Has Been Curated
+        </h2>
+
+        <p className="amenities-subtitle">
+          Thoughtfully designed amenities that bring ease, elegance
+          <br />
+          and a better lifestyle to every day.
         </p>
       </div>
 
-      <div className="amenities-flip-grid">
-        {amenities.map((item) => (
-          <div className="amenity-flip-card" key={item.title}>
-            <div className="amenity-flip-inner">
-              <div className="amenity-front">
-                <span>✦</span>
-                <h3>{item.title}</h3>
-              </div>
-
-              <div className="amenity-back">
-                <img src={item.image} alt={item.title} />
-                <div className="amenity-back-overlay">
-                  <h3>{item.title}</h3>
-                </div>
-              </div>
+      <div className="amenities-card-grid">
+        {amenities.map((item, index) => (
+          <article className="amenity-card" key={item.title}>
+            <div className="amenity-card-image">
+              <img src={item.image} alt={item.title} />
             </div>
 
-            <div className="amenity-popout">
-              <img src={item.image} alt={item.title} />
+            <div className="amenity-card-content">
+              <span>{String(index + 1).padStart(2, '0')}</span>
               <h3>{item.title}</h3>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
