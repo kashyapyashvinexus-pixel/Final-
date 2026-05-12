@@ -17,47 +17,47 @@ export default function AwardShowcaseSection() {
   return (
     <section className="award-showcase-section">
       <div className="award-showcase-card">
-        <span className="award-decor award-decor-top"></span>
-        <span className="award-decor award-decor-bottom"></span>
+        <span className="award-diamond award-diamond-top"></span>
+        <span className="award-diamond award-diamond-bottom"></span>
 
-        <div className="award-showcase-layout">
-          <div className="award-image-box award-image-left">
+        <div className="award-showcase-inner">
+          <div className="award-image award-image-left">
             <img src={awards[0].image} alt={awards[0].title} />
           </div>
 
-          <div className="award-content-area">
-            <article className="award-content award-content-top">
+          <div className="award-middle-content">
+            <article className="award-info award-info-top">
               <div className="award-label">
                 <span></span>
-                {awards[0].label}
+                <p>{awards[0].label}</p>
               </div>
 
               <h2>{awards[0].title}</h2>
 
-              <div className="award-line">
+              <div className="award-gold-line">
                 <span></span>
               </div>
 
-              <p>{awards[0].desc}</p>
+              <p className="award-desc">{awards[0].desc}</p>
             </article>
 
-            <article className="award-content award-content-bottom">
+            <article className="award-info award-info-bottom">
               <div className="award-label">
                 <span></span>
-                {awards[1].label}
+                <p>{awards[1].label}</p>
               </div>
 
               <h2>{awards[1].title}</h2>
 
-              <div className="award-line">
+              <div className="award-gold-line">
                 <span></span>
               </div>
 
-              <p>{awards[1].desc}</p>
+              <p className="award-desc">{awards[1].desc}</p>
             </article>
           </div>
 
-          <div className="award-image-box award-image-right">
+          <div className="award-image award-image-right">
             <img src={awards[1].image} alt={awards[1].title} />
           </div>
         </div>
