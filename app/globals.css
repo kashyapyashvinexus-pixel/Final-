@@ -287,134 +287,21 @@ p,
   pointer-events: none;
 }
 
-.hero-layout {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 140px 6vw 6vh 6vw;
-}
-
-/* right alignment */
-.hero-layout-right,
-.hero-layout-right-only {
-  justify-content: flex-end;
-}
-
-/* if in future you need left */
-.hero-layout-left {
-  justify-content: flex-start;
-}
-
-.hero-layout-pushed {
-  padding-top: 140px;
-}
-
-.hero-visual {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.hero-card {
-  width: min(430px, 100%);
-  padding: 30px;
-  border-radius: 28px;
-  margin-right: 0;
-}
-
-.glass-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.22),
-    rgba(255, 255, 255, 0.07)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow:
-    0 24px 80px rgba(0, 0, 0, 0.20),
-    inset 0 1px 0 rgba(255, 255, 255, 0.24);
-}
-
-.hero-card.glass-card span {
-  display: block;
-  color: #ffffff !important;
-  font-size: 14px;
-  line-height: 1.4;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.hero-card.glass-card strong {
-  display: block;
-  color: #20274e !important;
-  font-size: clamp(30px, 3vw, 42px);
-  line-height: 1.05;
-  font-weight: 700;
-  margin: 0 0 18px;
-}
-
-.hero-card.glass-card p {
-  color: #ffffff !important;
-  font-size: 16px;
-  line-height: 1.65;
-  margin: 0;
-}
-
 /* tablet */
 @media (max-width: 1024px) {
-  .hero-layout {
-    padding: 130px 4vw 5vh 4vw;
-  }
-
-  .hero-card {
-    width: min(400px, 100%);
-    padding: 26px;
+  .hero-section {
+    min-height: 100vh;
+    background-position: center 18%;
+    background-size: cover;
   }
 }
 
 /* mobile */
 @media (max-width: 768px) {
   .hero-section {
+    min-height: 100vh;
     background-position: center top;
     background-size: cover;
-  }
-
-  .hero-layout {
-    min-height: 100vh;
-    padding: 120px 20px 32px;
-    justify-content: center;
-  }
-
-  .hero-layout-right,
-  .hero-layout-right-only,
-  .hero-layout-left {
-    justify-content: center;
-  }
-
-  .hero-visual {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .hero-card {
-    width: 100%;
-    max-width: 420px;
-    padding: 24px;
-    border-radius: 24px;
-  }
-
-  .hero-card.glass-card strong {
-    font-size: clamp(28px, 8vw, 36px);
-  }
-
-  .hero-card.glass-card p {
-    font-size: 15px;
   }
 }
 .stats-strip { background: var(--dark); padding: 24px 3vw; }
