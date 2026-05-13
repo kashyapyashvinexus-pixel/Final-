@@ -277,7 +277,7 @@ p,
   position: relative;
   overflow: hidden;
   /*background: url('/img/JB_CAM_02_FFF-r.webp') center 18% / cover no-repeat;*/
-  background: url('/img/JB_CAM_02_FFF-r.webp') center 20%/ cover no-repeat;
+  background: url('/img/JB_CAM_02_FFF-r.webp') center 18%/ fit no-repeat;
   background-color: #0c0c0c;
 }
 
