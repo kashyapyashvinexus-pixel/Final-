@@ -648,7 +648,7 @@ p,
   width: 100%;
   padding: 14px 28px;
   /*background: #ffffff;*/
-  background: #ffffffff;
+  background: #ffffff;
   border-bottom: 1px solid rgba(32, 39, 78, 0.08);
   transform: translateY(0);
   transition: transform 0.45s ease;
