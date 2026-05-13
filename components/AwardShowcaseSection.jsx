@@ -2,14 +2,14 @@
 
 const awards = [
   {
-    image: "/sample house image/01.webp",
-    label: "Trusted Residential Project",
-    title: "Premium Living Recognition 2026",
-    desc: "A proud milestone for Stellavia, celebrating thoughtful planning, quality construction, and a lifestyle designed for modern families.",
+    image: "/award-medal.jpg",
+    label: "Awards-Winning Excellence",
+    title: "Times Realty Awards",
+    desc: "Stellavia is proud to be honored as the Best Affordable Residential Project by the Honorable Chief Minister of Gujarat, Shri Bhupendra Bhai Patel.",
   },
   {
-    image: "/sample house image/31.webp",
-    label: "Leaders in Design & Quality",
+    image: "/logo/Jbp with CM.jpeg/",
+    label: "Awards-Winning Excellence",
     title: "Excellence in Architecture Award 2026",
     desc: "Honoring our commitment to innovative design, sustainable building practices, and creating spaces that inspire.",
   },
