@@ -277,7 +277,7 @@ p,
   position: relative;
   overflow: hidden;
   /*background: url('/img/JB_CAM_02_FFF-r.webp') center 18% / cover no-repeat;*/
-  background: url('/img/JB_CAM_02_FFF-r.webp') center 18%/ cover no-repeat;
+  background: url('/img/JB_CAM_02_FFF-r.webp') center 18% / cover no-repeat;
   background-color: #0c0c0c;
 }
 
@@ -647,7 +647,8 @@ p,
   z-index: 999;
   width: 100%;
   padding: 14px 28px;
-  background: #ffffff;
+  /*background: #ffffff;*/
+  background: #ffffffff;
   border-bottom: 1px solid rgba(32, 39, 78, 0.08);
   transform: translateY(0);
   transition: transform 0.45s ease;
