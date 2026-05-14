@@ -324,33 +324,33 @@ export default function StellaviaListingPage() {
           </div>
         )}
 
-        <section className="stellavia-section stellavia-map-section">
-          <div className="stellavia-title-center">
-            <span />
-            <h2>Prime Location</h2>
-            <span />
-          </div>
+       <section className="stellavia-section stellavia-map-section">
+  <div className="stellavia-title-center">
+    <span />
+    <h2>Prime Location</h2>
+    <span />
+  </div>
 
-          <p className="stellavia-map-subtitle">Khoraj, Gandhinagar</p>
+  <p className="stellavia-map-subtitle">Stellavia, Khoraj, Gandhinagar</p>
 
-          <div className="stellavia-map-card">
-            <iframe
-              title="Stellavia Location"
-              src="https://www.google.com/maps?q=Khoraj%20Gandhinagar%20Gujarat&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+  <div className="stellavia-map-card">
+    <iframe
+      title="Stellavia Location"
+      src="https://www.google.com/maps?q=Stellavia%20Khoraj%20Gandhinagar&output=embed"
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    />
 
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Khoraj%20Gandhinagar%20Gujarat"
-              target="_blank"
-              rel="noreferrer"
-              className="stellavia-map-btn"
-            >
-              Open Google Map
-            </a>
-          </div>
-        </section>
+    <a
+      href="https://maps.app.goo.gl/FJ86yKqfjx8teW439"
+      target="_blank"
+      rel="noreferrer"
+      className="stellavia-map-btn"
+    >
+      Open Google Map
+    </a>
+  </div>
+</section>
 
         <section className="stellavia-enquiry" id="enquire">
           <div className="stellavia-enquiry-left">
