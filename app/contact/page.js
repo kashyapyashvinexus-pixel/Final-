@@ -11,33 +11,61 @@ export default function ContactBookingSection() {
     message: '',
   });
 
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState('');
+  const [statusType, setStatusType] = useState('');
+
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const whatsappMessage = `
-Book a Site Visit - Stellavia
+    setLoading(true);
+    setStatus('');
+    setStatusType('');
 
-Full Name: ${form.name}
-Phone Number: ${form.phone}
-Email Address: ${form.email}
-Interested In: 3BHK Apartment
-Budget Range: ₹50L - ₹1.00CR
-Message: ${form.message || 'No message'}
-    `;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          message: form.message,
+          interestedIn: '3BHK Apartment',
+          budgetRange: '₹50L - ₹1.00CR',
+        }),
+      });
 
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://wa.me/917572818000?text=${encodedMessage}`, '_blank');
+      const data = await response.json();
 
-    setForm({
-      name: '',
-      phone: '',
-      email: '',
-      message: '',
-    });
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to send enquiry.');
+      }
+
+      setStatus('Your enquiry has been sent successfully.');
+      setStatusType('success');
+
+      setForm({
+        name: '',
+        phone: '',
+        email: '',
+        message: '',
+      });
+    } catch (error) {
+      setStatus(error.message || 'Something went wrong. Please try again.');
+      setStatusType('error');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -113,7 +141,19 @@ Message: ${form.message || 'No message'}
             ></textarea>
           </label>
 
-          <button type="submit">Send Enquiry</button>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Sending...' : 'Send Enquiry'}
+          </button>
+
+          {status && (
+            <p
+              className={`clean-form-status ${
+                statusType === 'error' ? 'error' : 'success'
+              }`}
+            >
+              {status}
+            </p>
+          )}
         </form>
 
         <div className="clean-contact-info">
@@ -126,11 +166,11 @@ Message: ${form.message || 'No message'}
 
           <i></i>
 
-          <a href="mailto:sales@stellavia99.com">
+          <a href="mailto:infinitystellavia99@gmail.com">
             <span>
               <Mail size={18} />
             </span>
-            sales@stellavia99.com
+            infinitystellavia99@gmail.com
           </a>
         </div>
       </div>
