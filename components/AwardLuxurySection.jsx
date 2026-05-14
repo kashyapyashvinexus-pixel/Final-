@@ -16,7 +16,7 @@ export default function StellaviaAwardSection() {
 
             <div className="stellavia-award-image stellavia-award-image-float">
               <img
-                src="/award-medal.jpg"
+                src="/logo/times property award.webp"
                 alt="Times Realty Awards Ceremony"
               />
             </div>
