@@ -5011,14 +5011,14 @@ p,
   gap: clamp(32px, 3.2vw, 58px);
   align-items: center;
   width: 100%;
-  min-height: clamp(560px, 40vw, 700px);
+  min-height: clamp(640px, 46vw, 780px);
   box-sizing: border-box;
 }
 
-/* Square image box */
+/* Taller image box */
 .exact-awards-img {
   width: min(100%, 390px);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   height: auto;
   min-height: unset;
   border-radius: 14px;
@@ -5046,7 +5046,7 @@ p,
 
 .exact-awards-content {
   position: relative;
-  min-height: clamp(540px, 40vw, 680px);
+  min-height: clamp(610px, 45vw, 750px);
 }
 
 .exact-awards-text {
@@ -5061,7 +5061,7 @@ p,
 
 .exact-awards-text-bottom {
   right: 0;
-  bottom: 3%;
+  bottom: 4%;
 }
 
 .exact-awards-label {
@@ -5129,10 +5129,12 @@ p,
   .exact-awards-layout {
     grid-template-columns: minmax(300px, 0.95fr) minmax(600px, 1.7fr) minmax(300px, 0.95fr);
     gap: clamp(28px, 3vw, 52px);
+    min-height: clamp(650px, 46vw, 790px);
   }
 
   .exact-awards-img {
     width: min(100%, 385px);
+    aspect-ratio: 4 / 5;
   }
 
   .exact-awards-img-left {
@@ -5173,10 +5175,12 @@ p,
   .exact-awards-layout {
     grid-template-columns: minmax(315px, 0.95fr) minmax(640px, 1.75fr) minmax(315px, 0.95fr);
     gap: clamp(30px, 3vw, 54px);
+    min-height: clamp(680px, 47vw, 820px);
   }
 
   .exact-awards-img {
     width: min(100%, 405px);
+    aspect-ratio: 4 / 5;
   }
 
   .exact-awards-img-right {
@@ -5241,7 +5245,7 @@ p,
 
   .exact-awards-img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 5;
     height: auto;
     min-height: unset;
     max-width: none;
@@ -5341,7 +5345,7 @@ p,
 
   .exact-awards-img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 5;
     height: auto;
     min-height: unset;
     max-width: none;
