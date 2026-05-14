@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 import {
   ArrowRight,
   ChevronDown,
@@ -20,6 +22,7 @@ import {
   Star,
   Mail,
   Dumbbell,
+  X,
 } from 'lucide-react';
 
 const propertyStats = [
@@ -143,6 +146,8 @@ const galleryImages = [
 ];
 
 export default function StellaviaListingPage() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <main className="stellavia-listing-page">
       <div className="stellavia-listing-wrap">
@@ -286,12 +291,38 @@ export default function StellaviaListingPage() {
                 className={`stellavia-gallery-item ${image.className || ''}`}
                 key={`${image.src}-${index}`}
                 type="button"
+                onClick={() => setSelectedImage(image)}
               >
                 <img src={image.src} alt={image.alt} />
               </button>
             ))}
           </div>
         </section>
+
+        {selectedImage && (
+          <div
+            className="stellavia-lightbox"
+            role="dialog"
+            aria-modal="true"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button
+              type="button"
+              className="stellavia-lightbox-close"
+              onClick={() => setSelectedImage(null)}
+              aria-label="Close image preview"
+            >
+              <X size={24} />
+            </button>
+
+            <div
+              className="stellavia-lightbox-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img src={selectedImage.src} alt={selectedImage.alt} />
+            </div>
+          </div>
+        )}
 
         <section className="stellavia-section stellavia-map-section">
           <div className="stellavia-title-center">
