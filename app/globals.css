@@ -5640,31 +5640,32 @@ p,
   }
 
   .stellavia-award-inner {
-    padding: 42px 18px;
-    gap: 28px;
+    padding: 42px 18px 46px;
+    gap: 34px;
   }
 
   .stellavia-award-images {
-    min-height: 360px;
+    min-height: 430px;
+    margin-bottom: 8px;
   }
 
   .stellavia-award-image-main {
-    width: 82%;
-    height: 280px;
+    width: 86%;
+    height: 285px;
     left: 0;
+    top: 0;
   }
 
   .stellavia-award-image-float {
-    width: 76%;
-    height: 190px;
+    width: 78%;
+    height: 200px;
     right: 0;
-    /*bottom: 0;*/
-    bottom: -75px;
+    bottom: 0;
   }
 
   .stellavia-award-label-wrap {
     gap: 10px;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
   }
 
   .stellavia-award-label-wrap span {
@@ -5677,16 +5678,17 @@ p,
   }
 
   .stellavia-award-content h2 {
-    font-size: clamp(36px, 11vw, 48px);
+    font-size: clamp(34px, 10vw, 46px);
+    line-height: 1.08;
   }
 
   .stellavia-award-title-line {
-    margin: 24px 0 26px;
+    margin: 22px 0 24px;
   }
 
   .stellavia-award-desc {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 17px;
+    line-height: 1.65;
   }
 
   .stellavia-award-diamond {
