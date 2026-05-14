@@ -5597,14 +5597,30 @@ p,
 @media (max-width: 1100px) {
   .stellavia-award-inner {
     grid-template-columns: 1fr;
-    gap: 38px;
+    gap: 44px;
     min-height: auto;
+    padding: clamp(42px, 6vw, 62px) clamp(24px, 5vw, 48px);
   }
 
   .stellavia-award-images {
-    min-height: 520px;
+    position: relative;
+    min-height: 610px;
     width: min(720px, 100%);
-    margin: 0 auto;
+    margin: 0 auto 10px;
+  }
+
+  .stellavia-award-image-main {
+    width: 78%;
+    height: 410px;
+    top: 0;
+    left: 0;
+  }
+
+  .stellavia-award-image-float {
+    width: 70%;
+    height: 285px;
+    right: 0;
+    bottom: 0;
   }
 
   .stellavia-award-content {
@@ -5622,7 +5638,6 @@ p,
     margin-right: auto;
   }
 }
-
 /* Mobile */
 @media (max-width: 650px) {
   .stellavia-award-section {
