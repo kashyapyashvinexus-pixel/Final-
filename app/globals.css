@@ -5383,3 +5383,23 @@ p,
     font-size: 13.5px;
   }
 }
+
+/*============================================form submission code====================================================*/
+.clean-form-status {
+  margin: 12px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.clean-form-status.success {
+  color: #2f6f45;
+}
+
+.clean-form-status.error {
+  color: #b42318;
+}
+
+.clean-contact-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
