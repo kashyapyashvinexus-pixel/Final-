@@ -7,6 +7,7 @@ import HeroSection from './HeroSection';
 {/*import StatsStrip from './StatsStrip';
 import AwardSlider from './AwardSlider';*/}
 import AwardShowcaseSection from './AwardShowcaseSection';
+import AwardLuxurySection from './AwardLuxurySection';
 import SampleHouseSlider from './SampleHouseSlider';
 import AmenitiesFlip from './AmenitiesFlip';
 import ScrollOverlapGallery from './ScrollOverlapGallery';
@@ -26,6 +27,7 @@ export default function HomePageClient() {
       {/*  <StatsStrip />
       <AwardSlider />*/}
       <AwardShowcaseSection />
+      <AwardLuxurySection />
 
       <SampleHouseSlider />
 
