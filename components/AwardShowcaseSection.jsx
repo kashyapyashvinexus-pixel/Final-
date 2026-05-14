@@ -2,13 +2,13 @@
 
 const awards = [
   {
-    image: "/award-medal.jpg",
+    image: "/logo/Jbp with CM.jpeg",
     label: "Awards-Winning Excellence",
     title: "Times Realty Awards",
     desc: "Stellavia is proud to be honored as the Best Affordable Residential Project by the Honorable Chief Minister of Gujarat, Shri Bhupendra Bhai Patel.",
   },
   {
-    image: "/logo/Jbp with CM.jpeg/",
+    image: "/award-medal.jpg",
     label: "Awards-Winning Excellence",
     title: "Excellence in Architecture Award 2026",
     desc: "Honoring our commitment to innovative design, sustainable building practices, and creating spaces that inspire.",
