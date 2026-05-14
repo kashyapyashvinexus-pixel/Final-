@@ -5505,8 +5505,7 @@ p,
 .stellavia-award-image-main {
   width: 78%;
   height: 430px;
-  /*top: 0;*/
-  top: -10px;
+  top: -35px;
   left: 0;
   border-radius: 14px;
   z-index: 1;
@@ -5516,7 +5515,6 @@ p,
   width: 70%;
   height: 300px;
   right: -6%;
-  /*bottom: 35px;*/
   bottom: -75px;
   border-radius: 14px;
   z-index: 2;
@@ -5613,7 +5611,7 @@ p,
   .stellavia-award-image-main {
     width: 78%;
     height: 410px;
-    top: 0;
+    top: -32px;
     left: 0;
   }
 
@@ -5639,6 +5637,7 @@ p,
     margin-right: auto;
   }
 }
+
 /* Mobile */
 @media (max-width: 650px) {
   .stellavia-award-section {
@@ -5669,7 +5668,7 @@ p,
     width: 86%;
     height: 285px;
     left: 0;
-    top: 0;
+    top: -22px;
   }
 
   .stellavia-award-image-float {
