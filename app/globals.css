@@ -5403,3 +5403,25 @@ p,
   opacity: 0.7;
   cursor: not-allowed;
 }
+
+/*============================================single property page submission code====================================================*/
+
+.stellavia-form-status {
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stellavia-form-status.success {
+  color: #2f6f45;
+}
+
+.stellavia-form-status.error {
+  color: #b42318;
+}
+
+.stellavia-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
