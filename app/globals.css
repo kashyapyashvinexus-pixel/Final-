@@ -5007,7 +5007,7 @@ p,
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(310px, 0.95fr) minmax(600px, 1.65fr) minmax(310px, 0.95fr);
+  grid-template-columns: minmax(320px, 0.95fr) minmax(560px, 1.55fr) minmax(320px, 0.95fr);
   gap: clamp(28px, 3vw, 52px);
   align-items: stretch;
   width: 100%;
@@ -5015,10 +5015,10 @@ p,
   box-sizing: border-box;
 }
 
-/* Direct width + height, no aspect-ratio */
+/* Updated image size - no aspect ratio */
 .exact-awards-img {
-  width: min(100%, 405px);
-  height: clamp(500px, 35vw, 620px);
+  width: min(100%, 460px);
+  height: clamp(500px, 34vw, 610px);
   border-radius: 14px;
   overflow: hidden;
   background: #eee8df;
@@ -5040,7 +5040,11 @@ p,
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
+}
+
+.exact-awards-img-right img {
+  object-position: center center;
 }
 
 .exact-awards-content {
@@ -5126,13 +5130,13 @@ p,
 /* Large Desktop */
 @media (min-width: 1440px) {
   .exact-awards-layout {
-    grid-template-columns: minmax(330px, 0.95fr) minmax(660px, 1.75fr) minmax(330px, 0.95fr);
+    grid-template-columns: minmax(360px, 1fr) minmax(620px, 1.55fr) minmax(360px, 1fr);
     gap: clamp(30px, 3vw, 54px);
     min-height: clamp(690px, 47vw, 830px);
   }
 
   .exact-awards-img {
-    width: min(100%, 430px);
+    width: min(100%, 470px);
     height: clamp(540px, 36vw, 660px);
   }
 
