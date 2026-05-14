@@ -5007,17 +5007,17 @@ p,
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(320px, 0.95fr) minmax(560px, 1.55fr) minmax(320px, 0.95fr);
-  gap: clamp(28px, 3vw, 52px);
+  grid-template-columns: minmax(360px, 1fr) minmax(560px, 1.42fr) minmax(420px, 1.08fr);
+  gap: clamp(26px, 2.7vw, 48px);
   align-items: stretch;
   width: 100%;
   min-height: clamp(650px, 46vw, 790px);
   box-sizing: border-box;
 }
 
-/* Updated image size - no aspect ratio */
+/* Image size - no aspect-ratio */
 .exact-awards-img {
-  width: min(100%, 460px);
+  width: min(100%, 455px);
   height: clamp(500px, 34vw, 610px);
   border-radius: 14px;
   overflow: hidden;
@@ -5032,7 +5032,8 @@ p,
 .exact-awards-img-right {
   justify-self: end;
   align-self: end;
-  margin-right: clamp(18px, 1.8vw, 36px);
+  width: min(100%, 520px);
+  margin-right: clamp(18px, 1.6vw, 32px);
 }
 
 .exact-awards-img img {
@@ -5040,11 +5041,15 @@ p,
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+/* Important: right person will stay inside frame */
+.exact-awards-img-left img {
   object-position: center center;
 }
 
 .exact-awards-img-right img {
-  object-position: center center;
+  object-position: right center;
 }
 
 .exact-awards-content {
@@ -5059,11 +5064,11 @@ p,
 
 .exact-awards-text-top {
   top: 6%;
-  left: -22px;
+  left: -18px;
 }
 
 .exact-awards-text-bottom {
-  right: -18px;
+  right: -12px;
   bottom: 4%;
 }
 
@@ -5130,8 +5135,8 @@ p,
 /* Large Desktop */
 @media (min-width: 1440px) {
   .exact-awards-layout {
-    grid-template-columns: minmax(360px, 1fr) minmax(620px, 1.55fr) minmax(360px, 1fr);
-    gap: clamp(30px, 3vw, 54px);
+    grid-template-columns: minmax(380px, 1fr) minmax(620px, 1.45fr) minmax(450px, 1.1fr);
+    gap: clamp(28px, 2.8vw, 50px);
     min-height: clamp(690px, 47vw, 830px);
   }
 
@@ -5141,15 +5146,16 @@ p,
   }
 
   .exact-awards-img-right {
-    margin-right: clamp(24px, 2vw, 48px);
+    width: min(100%, 540px);
+    margin-right: clamp(20px, 1.8vw, 42px);
   }
 
   .exact-awards-text-top {
-    left: -30px;
+    left: -24px;
   }
 
   .exact-awards-text-bottom {
-    right: -26px;
+    right: -20px;
   }
 }
 
@@ -5200,11 +5206,16 @@ p,
     grid-area: bottom;
   }
 
-  .exact-awards-img {
+  .exact-awards-img,
+  .exact-awards-img-right {
     width: 100%;
     max-width: none;
     height: 460px;
     margin-right: 0;
+  }
+
+  .exact-awards-img-right img {
+    object-position: right center;
   }
 
   .exact-awards-text,
@@ -5298,12 +5309,17 @@ p,
     order: 4;
   }
 
-  .exact-awards-img {
+  .exact-awards-img,
+  .exact-awards-img-right {
     width: 100%;
     max-width: none;
     height: 390px;
     border-radius: 12px;
     margin-right: 0;
+  }
+
+  .exact-awards-img-right img {
+    object-position: right center;
   }
 
   .exact-awards-text,
@@ -5366,7 +5382,8 @@ p,
     gap: 24px;
   }
 
-  .exact-awards-img {
+  .exact-awards-img,
+  .exact-awards-img-right {
     height: 340px;
   }
 
