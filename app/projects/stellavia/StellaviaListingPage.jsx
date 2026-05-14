@@ -400,12 +400,12 @@ export default function StellaviaListingPage() {
             <textarea placeholder="Your Message" />
 
             <div className="stellavia-form-actions">
-              <a href="tel:+919999999999" className="stellavia-call-btn">
+              <a href="tel:+917572818000" className="stellavia-call-btn">
                 Call Now
               </a>
 
               <a
-                href="https://wa.me/919999999999"
+                href="https://wa.me/917572818000"
                 target="_blank"
                 rel="noreferrer"
                 className="stellavia-whatsapp-btn"
