@@ -2910,930 +2910,101 @@ p,
    Stellavia Single Project Page
 ========================= */
 
-.stellavia-listing-page {
-  width: 100%;
-  min-height: 100vh;
-  background: #eef3f7;
-  color: #131830;
-  font-family: inherit;
-  overflow-x: hidden;
-  padding: 50px 0;
-}
+/* =========================
+   Stellavia Gallery Popup
+========================= */
 
-.stellavia-listing-wrap {
-  width: min(1660px, calc(100% - 110px));
-  margin: 0 auto;
-  background: #ffffff;
-  padding: 14px 0 95px;
-}
-
-.stellavia-hero {
-  width: min(1430px, calc(100% - 240px));
-  min-height: 535px;
-  margin: 0 auto;
-  border-radius: 18px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 74px 84px;
-  overflow: hidden;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(15, 21, 44, 0.94),
-      rgba(15, 21, 44, 0.72),
-      rgba(15, 21, 44, 0.42)
-    ),
-    url('/img/JB_CAM_04_FFF.webp') center / cover no-repeat;
-  box-shadow: 0 30px 80px rgba(21, 30, 55, 0.16);
-}
-
-.stellavia-hero::after {
-  content: '';
-  position: absolute;
+.stellavia-lightbox {
+  position: fixed;
   inset: 0;
-  background: radial-gradient(
-    circle at 74% 24%,
-    rgba(255, 255, 255, 0.23),
-    transparent 22%
-  );
-  pointer-events: none;
-}
-
-.stellavia-hero-content,
-.stellavia-price-card {
-  position: relative;
-  z-index: 2;
-}
-
-.stellavia-hero-content {
-  width: min(720px, 100%);
-  color: #ffffff;
-}
-
-.stellavia-eyebrow {
-  margin: 0 0 17px;
-  color: #b99a48;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-
-.stellavia-hero h1 {
-  margin: 0 0 28px;
-  color: #ffffff;
-  font-family: var(--font-heading, 'Playfair Display', Georgia, serif);
-  font-size: clamp(48px, 5vw, 78px);
-  line-height: 0.92;
-  letter-spacing: -0.045em;
-  font-weight: 800;
-}
-
-.stellavia-location-line {
+  z-index: 99999;
+  background: rgba(8, 12, 24, 0.88);
+  backdrop-filter: blur(10px);
   display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-bottom: 22px;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.stellavia-hero-desc {
-  max-width: 760px;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.93);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.72;
-}
-
-.stellavia-hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 36px;
-}
-
-.stellavia-btn {
-  height: 52px;
-  padding: 0 23px;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 13px;
-  border-radius: 11px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 800;
-  transition: 0.3s ease;
+  padding: 28px;
+  animation: stellaviaLightboxFade 0.25s ease;
 }
 
-.stellavia-btn-primary {
-  background: #232858;
-  color: #ffffff;
-  box-shadow: 0 14px 30px rgba(12, 15, 46, 0.28);
-}
-
-.stellavia-btn-outline {
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.36);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.stellavia-btn svg {
-  width: 28px;
-  height: 28px;
-  padding: 7px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.13);
-}
-
-.stellavia-price-card {
-  width: 230px;
-  min-height: 232px;
-  border-radius: 20px;
-  background: #f7f7f8;
-  color: #1a2038;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 34px 32px;
-  text-align: center;
-}
-
-.stellavia-price-card p {
-  margin: 0 0 14px;
-  color: #b99a48;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-}
-
-.stellavia-price-card h3 {
-  margin: 0;
-  font-family: var(--font-heading, 'Playfair Display', Georgia, serif);
-  font-size: 42px;
-  line-height: 0.95;
-  letter-spacing: -0.045em;
-  font-weight: 600;
-}
-
-.stellavia-price-card span {
-  margin-top: 10px;
-  color: #64697b;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.stellavia-price-card div {
-  height: 1px;
-  background: #d8d9df;
-  margin: 22px 0 14px;
-}
-
-.stellavia-price-card small {
-  color: #8d90a0;
-  font-size: 11px;
-}
-
-.stellavia-stats-card {
-  width: min(1270px, calc(100% - 380px));
-  min-height: 112px;
-  margin: -37px auto 84px;
-  position: relative;
-  z-index: 4;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  background: #ffffff;
-  border-radius: 17px;
-  box-shadow: 0 26px 60px rgba(12, 18, 35, 0.11);
-  overflow: hidden;
-}
-
-.stellavia-stat-item {
-  min-height: 112px;
-  padding: 27px 24px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  border-right: 1px solid #e4e5eb;
-}
-
-.stellavia-stat-item:last-child {
-  border-right: 0;
-}
-
-.stellavia-stat-item svg {
-  flex: 0 0 auto;
-  color: #b99a48;
-  stroke-width: 1.6;
-}
-
-.stellavia-stat-item p {
-  margin: 0 0 5px;
-  color: #7b7f8d;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.stellavia-stat-item h4 {
-  margin: 0;
-  color: #151a31;
-  font-size: 14px;
-  line-height: 1.2;
-  font-weight: 900;
-}
-
-.stellavia-stat-item span {
-  display: block;
-  margin-top: 5px;
-  color: #9295a2;
-  font-size: 11px;
-  font-weight: 500;
-}
-
-.stellavia-about,
-.stellavia-section,
-.stellavia-enquiry {
-  width: min(1270px, calc(100% - 380px));
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.stellavia-about {
-  margin-bottom: 88px;
-  display: grid;
-  grid-template-columns: 0.92fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-
-.stellavia-about-image {
-  position: relative;
-  min-height: 338px;
+.stellavia-lightbox-content {
+  width: min(1100px, 100%);
+  max-height: 86vh;
   border-radius: 18px;
   overflow: hidden;
-}
-
-.stellavia-about-image img {
-  width: 100%;
-  height: 338px;
-  display: block;
-  object-fit: cover;
-  border-radius: 18px;
-}
-
-.stellavia-image-badge {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  width: min(330px, calc(100% - 40px));
-  min-height: 72px;
   background: #ffffff;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 16px 20px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+  animation: stellaviaLightboxZoom 0.28s ease;
 }
 
-.stellavia-image-badge svg {
-  color: #b99a48;
-}
-
-.stellavia-image-badge h5 {
-  margin: 0;
-  color: #171a31;
-  font-size: 14px;
-  font-weight: 900;
-}
-
-.stellavia-image-badge p {
-  margin: 4px 0 0;
-  color: #737789;
-  font-size: 12px;
-  line-height: 1.45;
-}
-
-.stellavia-about-content h2,
-.stellavia-enquiry h2 {
-  margin: 0;
-  font-family: var(--font-heading, 'Playfair Display', Georgia, serif);
-  font-size: clamp(36px, 3vw, 50px);
-  line-height: 1.03;
-  letter-spacing: -0.055em;
-  color: #171b34;
-  font-weight: 500;
-}
-
-.stellavia-property-lines {
-  margin-top: 30px;
-}
-
-.stellavia-property-lines p {
-  margin: 0 0 16px;
-  color: #555b6d;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.stellavia-highlight-grid {
-  margin-top: 28px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px 58px;
-}
-
-.stellavia-highlight {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  color: #151a31;
-  font-size: 14px;
-  font-weight: 900;
-}
-
-.stellavia-highlight svg {
-  color: #b99a48;
-  background: #fbf7e9;
-  border-radius: 50%;
-  padding: 2px;
-}
-
-.stellavia-section {
-  margin-bottom: 48px;
-}
-
-.stellavia-title-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 26px;
-  text-align: center;
-}
-
-.stellavia-title-center span {
-  width: 28px;
-  height: 1px;
-  background: #d8c793;
-}
-
-.stellavia-title-center h2 {
-  margin: 0;
-  font-family: var(--font-heading, 'Playfair Display', Georgia, serif);
-  font-size: clamp(32px, 3vw, 42px);
-  line-height: 1;
-  color: #171b34;
-  letter-spacing: -0.055em;
-  font-weight: 500;
-}
-
-.stellavia-amenities-card {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  background: #ffffff;
-  border: 1px solid #ededf2;
-  border-radius: 14px;
-  box-shadow: 0 16px 45px rgba(12, 18, 35, 0.06);
-  overflow: hidden;
-}
-
-.stellavia-amenity {
-  min-height: 94px;
-  padding: 20px 10px;
-  text-align: center;
-  border-right: 1px solid #ededf2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.stellavia-amenity:last-child {
-  border-right: 0;
-}
-
-.stellavia-amenity svg {
-  color: #b99a48;
-  margin-bottom: 12px;
-  stroke-width: 1.7;
-}
-
-.stellavia-amenity h4 {
-  margin: 0;
-  color: #171a31;
-  font-size: 13px;
-  line-height: 1.2;
-  font-weight: 900;
-}
-
-.stellavia-gallery {
-  display: grid;
-  grid-template-columns: 1.18fr 0.85fr 0.85fr 1.04fr;
-  grid-auto-rows: 138px;
-  gap: 14px;
-}
-
-.stellavia-gallery-item {
-  padding: 0;
-  border: 0;
-  display: block;
-  overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
-  background: #f2f2f2;
-}
-
-.stellavia-gallery-item img {
+.stellavia-lightbox-content img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: 0.45s ease;
-}
-
-.stellavia-gallery-item:hover img {
-  transform: scale(1.06);
-}
-
-.stellavia-gallery .gallery-big {
-  grid-row: span 2;
-}
-
-.stellavia-gallery .gallery-wide {
-  grid-column: span 2;
-}
-
-.stellavia-map-section {
-  margin-top: 76px;
-}
-
-.stellavia-map-subtitle {
-  margin: -14px 0 24px;
-  text-align: center;
-  color: #7d8190;
-  font-size: 13px;
-}
-
-.stellavia-map-card {
-  background: #ffffff;
-  border-radius: 5px;
-  padding: 0 0 35px;
-  box-shadow: 0 18px 55px rgba(12, 18, 35, 0.08);
-  overflow: hidden;
-}
-
-.stellavia-map-card iframe {
-  width: 100%;
-  height: 360px;
-  border: 0;
+  max-height: 86vh;
   display: block;
+  object-fit: contain;
+  background: #111731;
 }
 
-.stellavia-map-btn {
+.stellavia-lightbox-close {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  width: 48px;
   height: 48px;
-  margin: 18px 0 0 23px;
-  padding: 0 23px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
-  color: #151a31;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 900;
-  border-radius: 3px;
-  box-shadow: 0 8px 24px rgba(12, 18, 35, 0.07);
-}
-
-.stellavia-enquiry {
-  margin-top: 74px;
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 44px;
-  align-items: center;
-  background: #ffffff;
-  box-shadow: 0 20px 65px rgba(12, 18, 35, 0.08);
-  border: 1px solid #f2f2f4;
-  padding: 34px 24px 34px 20px;
-}
-
-.stellavia-enquiry-left {
-  display: grid;
-  grid-template-columns: 330px 1fr;
-  gap: 28px;
-  align-items: center;
-}
-
-.stellavia-enquiry-left img {
-  width: 100%;
-  height: 180px;
-  border-radius: 14px;
-  object-fit: cover;
-}
-
-.stellavia-enquiry-text {
-  max-width: 405px;
-  margin: 16px 0 20px;
-  color: #6b7080;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.stellavia-trust-points {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 28px;
-}
-
-.stellavia-trust-points span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #151a31;
-  font-size: 12px;
-  font-weight: 900;
-}
-
-.stellavia-trust-points svg {
-  color: #b99a48;
-}
-
-.stellavia-form {
-  width: 100%;
-}
-
-.stellavia-form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px 24px;
-}
-
-.stellavia-form input,
-.stellavia-form textarea {
-  width: 100%;
   border: 0;
-  outline: 0;
-  color: #1a2038;
-  font-family: inherit;
-  font-size: 14px;
-  background: #ffffff;
-  box-shadow: 0 8px 20px rgba(12, 18, 35, 0.05);
-  border-bottom: 1px solid #e6e7ed;
-}
-
-.stellavia-form input {
-  height: 44px;
-  padding: 0 14px;
-}
-
-.stellavia-input-icon {
-  position: relative;
-}
-
-.stellavia-input-icon svg {
-  position: absolute;
-  right: 15px;
-  top: 14px;
-  color: #25bf78;
-}
-
-.stellavia-input-icon input {
-  padding-right: 44px;
-}
-
-.stellavia-form textarea {
-  height: 162px;
-  resize: none;
-  margin-top: 24px;
-  padding: 16px 14px;
-}
-
-.stellavia-form-actions {
-  display: grid;
-  grid-template-columns: 1fr 160px 160px;
-  gap: 14px;
-  margin-top: 28px;
-}
-
-.stellavia-call-btn,
-.stellavia-whatsapp-btn,
-.stellavia-submit-btn {
-  height: 52px;
-  border: 0;
-  border-radius: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 900;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-.stellavia-call-btn {
-  color: #171a31;
-  background: #ffffff;
-  box-shadow: 0 8px 20px rgba(12, 18, 35, 0.05);
-}
-
-.stellavia-whatsapp-btn {
-  color: #ffffff;
-  background: #25c46b;
-  box-shadow: 0 10px 22px rgba(37, 196, 107, 0.23);
-}
-
-.stellavia-submit-btn {
-  color: #ffffff;
-  background: #1d2050;
-  gap: 10px;
-  box-shadow: 0 10px 24px rgba(29, 32, 80, 0.23);
-}
-
-.stellavia-submit-btn svg {
-  width: 27px;
-  height: 27px;
-  padding: 7px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.13);
+  background: #ffffff;
+  color: #111731;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+  z-index: 100000;
+  transition: 0.25s ease;
 }
 
-/* Responsive */
+.stellavia-lightbox-close:hover {
+  transform: scale(1.05);
+}
 
-@media (max-width: 1400px) {
-  .stellavia-listing-wrap {
-    width: min(1500px, calc(100% - 60px));
+@keyframes stellaviaLightboxFade {
+  from {
+    opacity: 0;
   }
 
-  .stellavia-hero,
-  .stellavia-stats-card,
-  .stellavia-about,
-  .stellavia-section,
-  .stellavia-enquiry {
-    width: min(1180px, calc(100% - 90px));
-  }
-
-  .stellavia-hero {
-    padding: 64px 58px;
-  }
-
-  .stellavia-stats-card {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .stellavia-stat-item:nth-child(3) {
-    border-right: 0;
-  }
-
-  .stellavia-stat-item:nth-child(-n + 3) {
-    border-bottom: 1px solid #e4e5eb;
-  }
-
-  .stellavia-amenities-card {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .stellavia-amenity:nth-child(4) {
-    border-right: 0;
-  }
-
-  .stellavia-amenity:nth-child(-n + 4) {
-    border-bottom: 1px solid #ededf2;
-  }
-
-  .stellavia-enquiry-left {
-    grid-template-columns: 260px 1fr;
+  to {
+    opacity: 1;
   }
 }
 
-@media (max-width: 1024px) {
-  .stellavia-listing-page {
-    padding: 30px 0;
+@keyframes stellaviaLightboxZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
   }
 
-  .stellavia-listing-wrap {
-    width: calc(100% - 30px);
-    padding-bottom: 60px;
-  }
-
-  .stellavia-hero,
-  .stellavia-stats-card,
-  .stellavia-about,
-  .stellavia-section,
-  .stellavia-enquiry {
-    width: calc(100% - 40px);
-  }
-
-  .stellavia-hero {
-    min-height: auto;
-    padding: 48px 34px 150px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .stellavia-price-card {
-    position: absolute;
-    right: 34px;
-    bottom: 35px;
-    width: 210px;
-    min-height: 190px;
-    padding: 26px 24px;
-  }
-
-  .stellavia-stats-card {
-    margin-top: -35px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stellavia-stat-item {
-    border-bottom: 1px solid #e4e5eb;
-  }
-
-  .stellavia-stat-item:nth-child(2n) {
-    border-right: 0;
-  }
-
-  .stellavia-stat-item:nth-last-child(-n + 2) {
-    border-bottom: 0;
-  }
-
-  .stellavia-about {
-    grid-template-columns: 1fr;
-  }
-
-  .stellavia-highlight-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .stellavia-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 180px;
-  }
-
-  .stellavia-gallery .gallery-wide {
-    grid-column: span 1;
-  }
-
-  .stellavia-map-card iframe {
-    height: 320px;
-  }
-
-  .stellavia-enquiry {
-    grid-template-columns: 1fr;
-  }
-
-  .stellavia-enquiry-left {
-    grid-template-columns: 300px 1fr;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
 @media (max-width: 640px) {
-  .stellavia-listing-page {
-    padding: 0;
+  .stellavia-lightbox {
+    padding: 16px;
   }
 
-  .stellavia-listing-wrap {
-    width: 100%;
-    padding-top: 0;
+  .stellavia-lightbox-close {
+    top: 16px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
   }
 
-  .stellavia-hero,
-  .stellavia-stats-card,
-  .stellavia-about,
-  .stellavia-section,
-  .stellavia-enquiry {
-    width: calc(100% - 28px);
-  }
-
-  .stellavia-hero {
-    border-radius: 0 0 18px 18px;
-    padding: 42px 22px 245px;
-  }
-
-  .stellavia-hero h1 {
-    font-size: 44px;
-  }
-
-  .stellavia-hero-desc {
-    font-size: 13px;
-  }
-
-  .stellavia-hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .stellavia-btn {
-    width: 100%;
-  }
-
-  .stellavia-price-card {
-    left: 22px;
-    right: 22px;
-    bottom: 28px;
-    width: auto;
-    min-height: 175px;
-  }
-
-  .stellavia-stats-card {
-    grid-template-columns: 1fr;
-    margin-bottom: 58px;
-  }
-
-  .stellavia-stat-item,
-  .stellavia-stat-item:nth-child(2n),
-  .stellavia-stat-item:nth-last-child(-n + 2) {
-    border-right: 0;
-    border-bottom: 1px solid #e4e5eb;
-  }
-
-  .stellavia-stat-item:last-child {
-    border-bottom: 0;
-  }
-
-  .stellavia-about {
-    gap: 30px;
-  }
-
-  .stellavia-about-image img {
-    height: 280px;
-  }
-
-  .stellavia-about-content h2,
-  .stellavia-enquiry h2 {
-    font-size: 34px;
-  }
-
-  .stellavia-highlight-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .stellavia-title-center {
-    gap: 12px;
-  }
-
-  .stellavia-title-center h2 {
-    font-size: 31px;
-  }
-
-  .stellavia-amenities-card {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stellavia-amenity,
-  .stellavia-amenity:nth-child(4),
-  .stellavia-amenity:nth-child(-n + 4) {
-    border-right: 1px solid #ededf2;
-    border-bottom: 1px solid #ededf2;
-  }
-
-  .stellavia-amenity:nth-child(2n) {
-    border-right: 0;
-  }
-
-  .stellavia-amenity:nth-last-child(-n + 2) {
-    border-bottom: 0;
-  }
-
-  .stellavia-gallery {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 220px;
-  }
-
-  .stellavia-gallery .gallery-big,
-  .stellavia-gallery .gallery-wide {
-    grid-row: auto;
-    grid-column: auto;
-  }
-
-  .stellavia-map-card iframe {
-    height: 260px;
-  }
-
-  .stellavia-enquiry {
-    padding: 18px;
-  }
-
-  .stellavia-enquiry-left {
-    grid-template-columns: 1fr;
-  }
-
-  .stellavia-enquiry-left img {
-    height: 220px;
-  }
-
-  .stellavia-form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stellavia-form-actions {
-    grid-template-columns: 1fr;
+  .stellavia-lightbox-content {
+    border-radius: 12px;
   }
 }
 /* ==========================================================================================================================================
