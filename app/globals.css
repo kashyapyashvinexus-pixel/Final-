@@ -4974,6 +4974,7 @@ p,
   background: #fffdf9;
   border-radius: clamp(34px, 4vw, 64px);
   box-shadow: 0 28px 85px rgba(0, 0, 0, 0.18);
+  box-sizing: border-box;
 }
 
 .exact-awards-border {
@@ -5006,15 +5007,17 @@ p,
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(360px, 1.05fr) minmax(560px, 1.35fr) minmax(360px, 1.05fr);
-  gap: clamp(48px, 5vw, 92px);
+  grid-template-columns: minmax(300px, 0.95fr) minmax(560px, 1.65fr) minmax(300px, 0.95fr);
+  gap: clamp(32px, 3.2vw, 58px);
   align-items: center;
-  min-height: clamp(590px, 42vw, 720px);
+  width: 100%;
+  min-height: clamp(560px, 40vw, 700px);
+  box-sizing: border-box;
 }
 
-/* Updated square image */
+/* Square image box */
 .exact-awards-img {
-  width: 100%;
+  width: min(100%, 390px);
   aspect-ratio: 1 / 1;
   height: auto;
   min-height: unset;
@@ -5023,12 +5026,13 @@ p,
   background: #eee8df;
 }
 
-/* Left image top, right image bottom on desktop */
 .exact-awards-img-left {
+  justify-self: start;
   align-self: start;
 }
 
 .exact-awards-img-right {
+  justify-self: end;
   align-self: end;
 }
 
@@ -5042,7 +5046,7 @@ p,
 
 .exact-awards-content {
   position: relative;
-  min-height: clamp(560px, 42vw, 700px);
+  min-height: clamp(540px, 40vw, 680px);
 }
 
 .exact-awards-text {
@@ -5120,15 +5124,15 @@ p,
   color: rgba(16, 32, 51, 0.72);
 }
 
-/* Desktop only adjustment - keep tablet/mobile balanced */
+/* Desktop */
 @media (min-width: 992px) {
   .exact-awards-layout {
-    grid-template-columns: minmax(380px, 1.08fr) minmax(650px, 1.5fr) minmax(380px, 1.08fr);
-    gap: clamp(34px, 3.6vw, 66px);
+    grid-template-columns: minmax(300px, 0.95fr) minmax(600px, 1.7fr) minmax(300px, 0.95fr);
+    gap: clamp(28px, 3vw, 52px);
   }
 
   .exact-awards-img {
-    max-width: 430px;
+    width: min(100%, 385px);
   }
 
   .exact-awards-img-left {
@@ -5139,16 +5143,17 @@ p,
   .exact-awards-img-right {
     justify-self: end;
     align-self: end;
+    margin-right: clamp(18px, 1.8vw, 36px);
   }
 
   .exact-awards-text-top {
     top: 6%;
-    left: -38px;
+    left: -22px;
     max-width: 560px;
   }
 
   .exact-awards-text-bottom {
-    right: -38px;
+    right: -18px;
     bottom: 4%;
     max-width: 560px;
   }
@@ -5163,23 +5168,27 @@ p,
   }
 }
 
-/* Large desktop little more spacious */
+/* Large Desktop */
 @media (min-width: 1440px) {
   .exact-awards-layout {
-    grid-template-columns: minmax(410px, 1.08fr) minmax(720px, 1.55fr) minmax(410px, 1.08fr);
-    gap: clamp(38px, 3.8vw, 72px);
+    grid-template-columns: minmax(315px, 0.95fr) minmax(640px, 1.75fr) minmax(315px, 0.95fr);
+    gap: clamp(30px, 3vw, 54px);
   }
 
   .exact-awards-img {
-    max-width: 455px;
+    width: min(100%, 405px);
+  }
+
+  .exact-awards-img-right {
+    margin-right: clamp(24px, 2vw, 48px);
   }
 
   .exact-awards-text-top {
-    left: -46px;
+    left: -30px;
   }
 
   .exact-awards-text-bottom {
-    right: -46px;
+    right: -26px;
   }
 }
 
@@ -5235,6 +5244,8 @@ p,
     aspect-ratio: 1 / 1;
     height: auto;
     min-height: unset;
+    max-width: none;
+    margin-right: 0;
   }
 
   .exact-awards-text,
@@ -5272,7 +5283,7 @@ p,
   }
 }
 
-/* Mobile - clean stacked layout */
+/* Mobile */
 @media (max-width: 767px) {
   .exact-awards-section {
     padding: 48px 12px;
@@ -5333,7 +5344,9 @@ p,
     aspect-ratio: 1 / 1;
     height: auto;
     min-height: unset;
+    max-width: none;
     border-radius: 12px;
+    margin-right: 0;
   }
 
   .exact-awards-text,
