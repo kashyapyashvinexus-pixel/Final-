@@ -9,8 +9,8 @@ const awards = [
   },
   {
     image: "/logo/times property award.webp",
-    label: "Times Property Award",
-    title: "Excellence in Architecture Award 2026",
+    label: "Awards-Winning Excellence",
+    title: "Times Property Award",
     desc: "Honoring our commitment to innovative design, sustainable building practices, and creating spaces that inspire.",
   },
 ];
