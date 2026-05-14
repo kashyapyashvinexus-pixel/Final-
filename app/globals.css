@@ -5505,7 +5505,8 @@ p,
 .stellavia-award-image-main {
   width: 78%;
   height: 430px;
-  top: 0;
+  /*top: 0;*/
+  top: -10px;
   left: 0;
   border-radius: 14px;
   z-index: 1;
@@ -5516,7 +5517,7 @@ p,
   height: 300px;
   right: -6%;
   /*bottom: 35px;*/
-  bottom: -95px;
+  bottom: -75px;
   border-radius: 14px;
   z-index: 2;
 }
