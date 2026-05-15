@@ -2033,9 +2033,10 @@ p,
   margin-left: calc(50% - 50vw) !important;
   margin-right: calc(50% - 50vw) !important;
   overflow: hidden !important;
-  background:
+  /*background:
     radial-gradient(circle at 45% 0%, rgba(28, 63, 89, 0.55), transparent 42%),
-    linear-gradient(135deg, #071827 0%, #05111d 48%, #02070c 100%) !important;
+    linear-gradient(135deg, #071827 0%, #05111d 48%, #02070c 100%) !important;*/
+  background: #0c1d4e;
   color: #ffffff !important;
   padding: 120px 28px 34px !important;
 }
@@ -5072,7 +5073,8 @@ p,
 .exact-awards-section {
   width: 100%;
   padding: clamp(70px, 8vw, 110px) clamp(16px, 4vw, 56px);
-  background: #10243a;
+  /*background: #10243a;*/
+  background: #0c1d4e;
   overflow: hidden;
 }
 
@@ -5619,7 +5621,8 @@ p,
 /*====================================================================NEW AWARD CODE=======================================================*/
 .stellavia-award-section {
   width: 100%;
-  background: #10243a;
+  /*background: #10243a;*/
+  background: #0c1d4e;
   padding: clamp(55px, 7vw, 95px) clamp(16px, 4vw, 60px);
   overflow: hidden;
 }
