@@ -5727,3 +5727,80 @@ p,
     height: 13px;
   }
 }
+
+/*==================================================smooth scrolling for home page project slider================================================*/
+
+/* =========================================
+   Smooth Scroll Fix For Project Sliders Only
+   Paste this at the bottom of globals.css
+========================================= */
+
+.home-page-smooth {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.slider-loading-space {
+  width: 100%;
+  min-height: 320px;
+  background: #f8f4ec;
+}
+
+/* ProjectImageSlider + ProjectGlideSlider wrapper fix */
+.project-slider-section,
+.project-glide-section,
+.glide-section {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Slider track performance fix */
+.project-slider-track,
+.project-glide-track,
+.glide__track,
+.glide__slides {
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Slider card safety */
+.project-slider-card,
+.project-glide-card,
+.glide__slide {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Image optimization inside sliders */
+.project-slider-card img,
+.project-glide-card img,
+.glide__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Prevent slider from creating unwanted horizontal scroll */
+.project-slider-section *,
+.project-glide-section *,
+.glide-section * {
+  box-sizing: border-box;
+}
+
+/* Mobile smoothness */
+@media (max-width: 768px) {
+  .slider-loading-space {
+    min-height: 240px;
+  }
+
+  .project-slider-section,
+  .project-glide-section,
+  .glide-section {
+    overflow-x: hidden;
+  }
+}
