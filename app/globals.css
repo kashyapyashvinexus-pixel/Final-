@@ -1342,10 +1342,11 @@ p,
   width: 100%;
   padding: clamp(42px, 5vw, 64px) clamp(18px, 4vw, 60px);
   overflow: hidden;
-  background:
+  /*background:
     radial-gradient(circle at 85% 8%, rgba(216, 196, 159, 0.22), transparent 30%),
     radial-gradient(circle at 8% 35%, rgba(216, 196, 159, 0.18), transparent 26%),
-    linear-gradient(135deg, #fbf7ee 0%, #f6efe2 48%, #faf7ef 100%) !important;
+    linear-gradient(135deg, #fbf7ee 0%, #f6efe2 48%, #faf7ef 100%) !important;*/
+  background: #ffffff;
 }
 
 /* SOFT LEAF BACKGROUND */
