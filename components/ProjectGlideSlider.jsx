@@ -21,7 +21,7 @@ export default function ProjectGlideSlider() {
       <h2>Stellavia Dream Home</h2>
 
       <p className="project-gallery-subtitle">
-        Exterior And Interior Design.
+        Exterior Design.
       </p>
 
       <div className="project-bento-gallery">
