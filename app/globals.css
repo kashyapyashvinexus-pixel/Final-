@@ -5510,6 +5510,70 @@ p,
     font-size: 13.5px;
   }
 }
+
+/* Laptop screen fix */
+@media (min-width: 992px) and (max-width: 1366px) {
+  .exact-awards-section {
+    padding: 60px 18px;
+  }
+
+  .exact-awards-box {
+    width: 100%;
+    padding: 42px 34px;
+    border-radius: 42px;
+  }
+
+  .exact-awards-layout {
+    grid-template-columns: 360px 1fr 380px;
+    gap: 28px;
+    min-height: 560px;
+  }
+
+  .exact-awards-img {
+    width: 100%;
+    height: 470px;
+  }
+
+  .exact-awards-img-right {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .exact-awards-content {
+    min-height: 540px;
+  }
+
+  .exact-awards-text {
+    max-width: 430px;
+  }
+
+  .exact-awards-text-top {
+    top: 2%;
+    left: 0;
+  }
+
+  .exact-awards-text-bottom {
+    right: 0;
+    bottom: 3%;
+  }
+
+  .exact-awards-text h2 {
+    font-size: 42px;
+    line-height: 1.05;
+  }
+
+  .exact-awards-desc {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .exact-awards-line {
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+
+
 /*============================================form submission code====================================================*/
 .clean-form-status {
   margin: 12px 0 0;
