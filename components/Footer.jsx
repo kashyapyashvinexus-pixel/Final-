@@ -35,16 +35,16 @@ export default function Footer() {
             <Link href="/">
               Home <span>→</span>
             </Link>
-            <Link href="/">
+            <Link href="/about">
               About <span>→</span>
             </Link>
-            <Link href="/">
+            <Link href="/projects/stellavia">
               Projects <span>→</span>
             </Link>
-            <Link href="/">
-              Floor Plans <span>→</span>
+            <Link href="/brochure/STELLAVIA BROCHURE.pdf">
+              Brochure <span>→</span>
             </Link>
-            <Link href="/">
+            <Link href="/contact">
               Contact <span>→</span>
             </Link>
           </div>
