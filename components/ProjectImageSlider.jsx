@@ -84,7 +84,7 @@ export default function ProjectImageSlider() {
       <h2>Stellavia Dream Home</h2>
 
       <p className="project-slider-subtitle">
-        Exterior And Interior Design.
+        Interior Design.
       </p>
 
       <div className="project-slider-area">
