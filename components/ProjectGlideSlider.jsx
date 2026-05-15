@@ -3,14 +3,14 @@
 import Link from 'next/link';
 
 const projectGalleryImages = [
-  '/sample house image/01.webp',
-  '/sample house image/31.webp',
-  '/sample house image/06.webp',
-  '/sample house image/29.webp',
-  '/sample house image/07.webp',
-  '/sample house image/26.webp',
-  '/sample house image/16.webp',
-  '/sample house image/24.webp',
+  '/img/JB_CAM_02_FFF-r.webp',
+  '/img/JB_CAM_02_NIGHT_FFF-r.webp',
+  '/img/JB_CAM_04_FFF-r.webp',
+  '/img/JB_CAM_05_FFF-r.webp',
+  '/img/JB_CAM_16_FFF-r.webp',
+  '/img/JB_CAM_17_FFF-r.webp',
+  '/img/ST_CAM_01_FFF-r.webp',
+  '/img/ST_CAM_02_FFF-r.webp',
 ];
 
 export default function ProjectGlideSlider() {
