@@ -1748,10 +1748,11 @@ p,
   /*padding: 80px 24px;*/
   padding: 100px 24px;
   /*background: #f8f4ec;*/
-   background:
+  background: #0c1d4e;
+  /* background:
     radial-gradient(circle at 45% 0%, rgba(28, 63, 89, 0.55), transparent 42%),
     linear-gradient(135deg, #071827 0%, #05111d 48%, #02070c 100%) !important;
-  color: #ffffff;
+  color: #ffffff;*/
   display: flex;
   justify-content: center;
   overflow: hidden;
