@@ -82,9 +82,9 @@ export default function Footer() {
               Khoraj, Ahmedabad
             </a>
 
-            <a href="mailto:sales@stellavia.com">
+            <a href="mailto:infinitystellavia99@gmail.com">
               <Mail size={24} />
-              sales@stellavia.com
+              infinitystellavia99@gmail.com
             </a>
 
             <a href="tel:+917572818000">
