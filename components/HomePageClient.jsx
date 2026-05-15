@@ -1,36 +1,38 @@
 'use client';
 
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import dynamic from 'next/dynamic';
 
 import HeroSection from './HeroSection';
-{/*import StatsStrip from './StatsStrip';
-import AwardSlider from './AwardSlider';*/}
 import AwardShowcaseSection from './AwardShowcaseSection';
 import AwardLuxurySection from './AwardLuxurySection';
 import SampleHouseSlider from './SampleHouseSlider';
 import AmenitiesFlip from './AmenitiesFlip';
 import ScrollOverlapGallery from './ScrollOverlapGallery';
 import HeroVideoSection from './HeroVideoSection';
-import ProjectImageSlider from './ProjectImageSlider';
-import ProjectGlideSlider from './ProjectGlideSlider';
 import StrategicallyConnectedSection from './StrategicallyConnectedSection';
 import ContactBookingSection from './ContactBookingSection';
 
 import { homeGallery } from '@/data/projects';
 
+const ProjectImageSlider = dynamic(() => import('./ProjectImageSlider'), {
+  ssr: false,
+  loading: () => <div className="slider-loading-space" />,
+});
+
+const ProjectGlideSlider = dynamic(() => import('./ProjectGlideSlider'), {
+  ssr: false,
+  loading: () => <div className="slider-loading-space" />,
+});
+
 export default function HomePageClient() {
   return (
-    <>
+    <main className="home-page-smooth">
       <HeroSection />
 
-      {/*  <StatsStrip />
-      <AwardSlider />*/}
       <AwardShowcaseSection />
       <AwardLuxurySection />
 
       <SampleHouseSlider />
-
       <AmenitiesFlip />
 
       <ScrollOverlapGallery images={homeGallery.slice(0, 5)} />
@@ -39,10 +41,9 @@ export default function HomePageClient() {
 
       <ProjectImageSlider />
       <ProjectGlideSlider />
-     
-      <StrategicallyConnectedSection />
 
+      <StrategicallyConnectedSection />
       <ContactBookingSection />
-    </>
+    </main>
   );
 }
