@@ -3241,14 +3241,16 @@ p,
 .stellavia-stat-item p {
   margin: 0 0 5px;
   color: #7b7f8d;
-  font-size: 12px;
+  /*font-size: 12px;*/
+  font-size: 14px;
   font-weight: 600;
 }
 
 .stellavia-stat-item h4 {
   margin: 0;
   color: #151a31;
-  font-size: 14px;
+ /* font-size: 14px;*/
+  font-size: 16px;
   line-height: 1.2;
   font-weight: 900;
 }
@@ -3257,7 +3259,8 @@ p,
   display: block;
   margin-top: 5px;
   color: #9295a2;
-  font-size: 11px;
+  /*font-size: 11px;*/
+  font-size: 13px;
   font-weight: 500;
 }
 
