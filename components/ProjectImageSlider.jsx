@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const projectSliderImages = [
   '/sample house image/01.webp',
@@ -15,69 +15,94 @@ const projectSliderImages = [
 
 export default function ProjectImageSlider() {
   const sliderRef = useRef(null);
-  const isHoveringRef = useRef(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateButtons = () => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+    setCanScrollLeft(slider.scrollLeft > 10);
+    setCanScrollRight(slider.scrollLeft < maxScrollLeft - 10);
+  };
+
+  const getScrollAmount = () => {
+    const slider = sliderRef.current;
+    if (!slider) return 320;
+
+    const card = slider.querySelector('.project-slider-card');
+    if (!card) return 320;
+
+    const styles = window.getComputedStyle(slider);
+    const gap = parseFloat(styles.gap || '0');
+
+    return card.offsetWidth + gap;
+  };
+
+  const scrollSlider = (direction) => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    slider.scrollBy({
+      left: direction === 'left' ? -getScrollAmount() : getScrollAmount(),
+      behavior: 'smooth',
+    });
+  };
 
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
 
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion) return;
+    updateButtons();
 
-    const getSlideStep = () => {
-      const card = slider.querySelector('.project-slider-card');
-      if (!card) return 300;
+    slider.addEventListener('scroll', updateButtons);
+    window.addEventListener('resize', updateButtons);
 
-      const sliderStyle = window.getComputedStyle(slider);
-      const gap = parseFloat(sliderStyle.columnGap || sliderStyle.gap || '0');
-
-      return card.getBoundingClientRect().width + gap;
+    return () => {
+      slider.removeEventListener('scroll', updateButtons);
+      window.removeEventListener('resize', updateButtons);
     };
-
-    const autoSlide = () => {
-      if (isHoveringRef.current) return;
-
-      const step = getSlideStep();
-      const maxScroll = slider.scrollWidth - slider.clientWidth;
-
-      if (slider.scrollLeft + step >= maxScroll - 20) {
-        slider.scrollTo({
-          left: 0,
-          behavior: 'smooth',
-        });
-      } else {
-        slider.scrollBy({
-          left: step,
-          behavior: 'smooth',
-        });
-      }
-    };
-
-    const interval = setInterval(autoSlide, 3500);
-
-    return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="project-slider-section">
-      <p className="eyebrow">Projects</p>
+      <div className="project-slider-header">
+        <div>
+          <p className="eyebrow">Projects</p>
 
-      <h2>Stellavia Dream Home</h2>
+          <h2>Stellavia Dream Home</h2>
 
-      <p className="project-slider-subtitle">
-        Exterior And Interior Design.
-      </p>
+          <p className="project-slider-subtitle">
+            Exterior And Interior Design.
+          </p>
+        </div>
 
-      <div
-        ref={sliderRef}
-        className="project-slider"
-        onMouseEnter={() => {
-          isHoveringRef.current = true;
-        }}
-        onMouseLeave={() => {
-          isHoveringRef.current = false;
-        }}
-      >
+        <div className="project-slider-arrows">
+          <button
+            type="button"
+            className="project-arrow-btn"
+            onClick={() => scrollSlider('left')}
+            disabled={!canScrollLeft}
+            aria-label="Previous project"
+          >
+            ←
+          </button>
+
+          <button
+            type="button"
+            className="project-arrow-btn"
+            onClick={() => scrollSlider('right')}
+            disabled={!canScrollRight}
+            aria-label="Next project"
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+      <div ref={sliderRef} className="project-slider">
         {projectSliderImages.map((image, index) => (
           <div className="project-slider-card" key={`${image}-${index}`}>
             <img
