@@ -22,9 +22,9 @@ export default function AmenitiesFlip() {
         <div className="amenities-diamond">◇</div>
 
         <h2>
-          Where Every Comfort
+          Where Every Comfort 
           <br />
-          Has Been Curated
+          Has Curated
         </h2>
 
         <p className="amenities-subtitle">
