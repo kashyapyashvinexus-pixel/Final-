@@ -1349,7 +1349,7 @@ p,
   background: #ffffff;
 }
 
-/* SOFT LEAF BACKGROUND */
+/* SOFT LEAF BACKGROUND 
 .amenities-bg-leaf {
   position: absolute;
   left: -45px;
@@ -1363,7 +1363,7 @@ p,
     radial-gradient(ellipse at 60% 45%, rgba(155, 122, 69, 0.16) 0 28%, transparent 29%),
     radial-gradient(ellipse at 32% 65%, rgba(155, 122, 69, 0.14) 0 26%, transparent 27%);
   filter: blur(1px);
-}
+}*/
 
 /* HEADING */
 .amenities-heading {
