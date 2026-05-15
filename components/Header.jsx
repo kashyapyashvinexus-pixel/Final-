@@ -11,7 +11,7 @@ const navItems = [
   { label: 'Project', path: '/projects/stellavia' },
   { label: 'About Us', path: '/about' },
   { label: 'Contact Us', path: '/contact' },
-  { label: 'Brochure', path: '#' },
+  { label: 'Brochure', path: '/brochure/STELLAVIA BROCHURE.pdf' },
   { label: 'News', path: '#' }
 ];
 
