@@ -2591,27 +2591,23 @@ p,
   margin: 0 0 clamp(28px, 4vw, 48px);
 }
 
-/* Slider wrapper */
+/* Light native slider */
 .project-slider {
   width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Smooth left moving track */
-.project-slider-track {
   display: flex;
-  align-items: stretch;
   gap: clamp(16px, 2vw, 28px);
-  width: max-content;
-  animation: projectSliderMove 42s linear infinite;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  padding: 4px clamp(18px, 4vw, 60px) 22px 0;
+  scrollbar-width: none;
 }
 
-/* Optional: pause on hover */
-.project-slider:hover .project-slider-track {
-  animation-play-state: paused;
+.project-slider::-webkit-scrollbar {
+  display: none;
 }
 
 .project-slider-card {
@@ -2621,7 +2617,8 @@ p,
   border-radius: 26px;
   overflow: hidden;
   background: #f5f1ea;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.12);
+  scroll-snap-align: start;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
 }
 
 .project-slider-card img {
@@ -2632,18 +2629,6 @@ p,
   object-position: center;
   user-select: none;
   -webkit-user-drag: none;
-  transform: scale(1.01);
-}
-
-/* Because images are duplicated in JSX, move only 50% */
-@keyframes projectSliderMove {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
 }
 
 .see-projects-link {
@@ -2693,9 +2678,9 @@ p,
     max-width: 90%;
   }
 
-  .project-slider-track {
+  .project-slider {
     gap: 16px;
-    animation-duration: 34s;
+    padding-right: 18px;
   }
 
   .project-slider-card {
@@ -2711,6 +2696,10 @@ p,
     padding-left: 16px;
   }
 
+  .project-slider {
+    padding-right: 16px;
+  }
+
   .project-slider-card {
     width: 82vw;
     height: 112vw;
@@ -2719,8 +2708,8 @@ p,
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .project-slider-track {
-    animation: none;
+  .project-slider {
+    scroll-behavior: auto;
   }
 }
 
