@@ -135,7 +135,7 @@ export default function ProjectImageSlider() {
         ))}
       </div>
 
-      <a href="/projects" className="see-projects-link">
+      <a href="/projects/stellavia" className="see-projects-link">
         See All Projects →
       </a>
     </section>
