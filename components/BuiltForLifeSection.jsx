@@ -35,11 +35,11 @@ export default function BuiltForLifeSection() {
 
         <div className="built-life-media">
           <div className="built-image built-image-main">
-            <img src="/img/project-main.webp" alt="Stellavia residential tower" />
+            <img src="/img/JB_CAM_02_FFF-r.webp" alt="Stellavia residential tower" />
           </div>
 
           <div className="built-image built-image-small">
-            <img src="/img/project-side.webp" alt="Premium apartment tower" />
+            <img src="/img/JB_CAM_04_FFF-r.webp" alt="Premium apartment tower" />
           </div>
 
           <div className="built-years-box">
