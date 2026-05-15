@@ -2565,6 +2565,14 @@ p,
   overflow: hidden;
 }
 
+.project-slider-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-right: clamp(18px, 4vw, 60px);
+}
+
 .project-slider-section .eyebrow {
   font-size: clamp(11px, 1vw, 13px);
   letter-spacing: 0.18em;
@@ -2591,7 +2599,45 @@ p,
   margin: 0 0 clamp(28px, 4vw, 48px);
 }
 
-/* Light native slider */
+/* Arrow buttons */
+.project-slider-arrows {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: clamp(30px, 4vw, 50px);
+}
+
+.project-arrow-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(23, 23, 23, 0.14);
+  background: #ffffff;
+  color: #171717;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.project-arrow-btn:hover {
+  background: #171717;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.project-arrow-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Lightweight slider */
 .project-slider {
   width: 100%;
   display: flex;
@@ -2601,8 +2647,7 @@ p,
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  overscroll-behavior-x: contain;
-  padding: 4px clamp(18px, 4vw, 60px) 22px 0;
+  padding: 4px clamp(18px, 4vw, 60px) 24px 0;
   scrollbar-width: none;
 }
 
@@ -2618,7 +2663,7 @@ p,
   overflow: hidden;
   background: #f5f1ea;
   scroll-snap-align: start;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.1);
 }
 
 .project-slider-card img {
@@ -2634,7 +2679,7 @@ p,
 .see-projects-link {
   display: inline-flex;
   align-items: center;
-  margin-top: clamp(28px, 4vw, 46px);
+  margin-top: clamp(24px, 3vw, 38px);
   color: #171717;
   font-size: 14px;
   letter-spacing: 0.08em;
@@ -2668,6 +2713,11 @@ p,
     padding: 55px 0 60px 18px;
   }
 
+  .project-slider-header {
+    display: block;
+    padding-right: 18px;
+  }
+
   .project-slider-section h2 {
     font-size: clamp(42px, 13vw, 64px);
     max-width: 95%;
@@ -2676,6 +2726,17 @@ p,
   .project-slider-subtitle {
     font-size: 20px;
     max-width: 90%;
+    margin-bottom: 24px;
+  }
+
+  .project-slider-arrows {
+    margin-bottom: 22px;
+  }
+
+  .project-arrow-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
   }
 
   .project-slider {
@@ -2696,6 +2757,10 @@ p,
     padding-left: 16px;
   }
 
+  .project-slider-header {
+    padding-right: 16px;
+  }
+
   .project-slider {
     padding-right: 16px;
   }
@@ -2710,6 +2775,10 @@ p,
 @media (prefers-reduced-motion: reduce) {
   .project-slider {
     scroll-behavior: auto;
+  }
+
+  .project-arrow-btn {
+    transition: none;
   }
 }
 
@@ -5722,7 +5791,7 @@ p,
 /* =========================================
    Smooth Scroll Fix For Project Sliders Only
    Paste this at the bottom of globals.css
-========================================= */
+========================================= 
 
 .home-page-smooth {
   width: 100%;
@@ -5737,7 +5806,7 @@ p,
   background: #f8f4ec;
 }
 
-/* ProjectImageSlider + ProjectGlideSlider wrapper fix */
+/* ProjectImageSlider + ProjectGlideSlider wrapper fix 
 .project-slider-section,
 .project-glide-section,
 .glide-section {
@@ -5747,7 +5816,7 @@ p,
   position: relative;
 }
 
-/* Slider track performance fix */
+/* Slider track performance fix 
 .project-slider-track,
 .project-glide-track,
 .glide__track,
@@ -5756,7 +5825,7 @@ p,
   will-change: transform;
 }
 
-/* Slider card safety */
+/* Slider card safety 
 .project-slider-card,
 .project-glide-card,
 .glide__slide {
@@ -5764,7 +5833,7 @@ p,
   flex-shrink: 0;
 }
 
-/* Image optimization inside sliders */
+/* Image optimization inside sliders 
 .project-slider-card img,
 .project-glide-card img,
 .glide__slide img {
@@ -5774,14 +5843,14 @@ p,
   object-fit: cover;
 }
 
-/* Prevent slider from creating unwanted horizontal scroll */
+/* Prevent slider from creating unwanted horizontal scroll 
 .project-slider-section *,
 .project-glide-section *,
 .glide-section * {
   box-sizing: border-box;
 }
 
-/* Mobile smoothness */
+/* Mobile smoothness 
 @media (max-width: 768px) {
   .slider-loading-space {
     min-height: 240px;
@@ -5792,4 +5861,6 @@ p,
   .glide-section {
     overflow-x: hidden;
   }
-}
+}*/
+
+
