@@ -1760,11 +1760,11 @@ p,
 .clean-contact-card {
   width: 100%;
   max-width: 1080px;
-  /*background: #fffdf8;*/ 
-  background:
+  background: #fffdf8;
+ /* background:
     radial-gradient(circle at 45% 0%, rgba(28, 63, 89, 0.55), transparent 42%),
     linear-gradient(135deg, #071827 0%, #05111d 48%, #02070c 100%) !important;
-  color: #ffffff;
+  color: #ffffff;*/
   border: 1px solid rgba(185, 135, 55, 0.18);
   border-radius: 22px;
   padding: 34px 82px 40px;
