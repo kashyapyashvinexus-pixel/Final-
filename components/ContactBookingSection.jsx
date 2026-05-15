@@ -126,11 +126,11 @@ Message: ${form.message || 'No message'}
 
           <i></i>
 
-          <a href="mailto:sales@stellavia99.com">
+          <a href="mailto:infinitystellavia99@gmail.com">
             <span>
               <Mail size={18} />
             </span>
-            sales@stellavia99.com
+            infinitystellavia99@gmail.com
           </a>
         </div>
       </div>
