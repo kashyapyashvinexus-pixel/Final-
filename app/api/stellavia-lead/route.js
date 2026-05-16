@@ -25,10 +25,7 @@ export async function POST(req) {
 
     if (!name || !phone || !email) {
       return NextResponse.json(
-        {
-          success: false,
-          message: 'Name, phone and email are required.',
-        },
+        { success: false, message: 'Name, phone and email are required.' },
         { status: 400 }
       );
     }
@@ -55,44 +52,21 @@ export async function POST(req) {
               New Stellavia ${escapeHtml(type)}
             </h2>
 
-            <table style="width:100%;border-collapse:collapse;">
-              <tr>
-                <td style="padding:10px;border-bottom:1px solid #eee;"><strong>Name</strong></td>
-                <td style="padding:10px;border-bottom:1px solid #eee;">${escapeHtml(name)}</td>
-              </tr>
+            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(email)}</p>
 
-              <tr>
-                <td style="padding:10px;border-bottom:1px solid #eee;"><strong>Phone</strong></td>
-                <td style="padding:10px;border-bottom:1px solid #eee;">${escapeHtml(phone)}</td>
-              </tr>
+            ${
+              visitDate
+                ? `<p><strong>Preferred Visit Date:</strong> ${escapeHtml(visitDate)}</p>`
+                : ''
+            }
 
-              <tr>
-                <td style="padding:10px;border-bottom:1px solid #eee;"><strong>Email</strong></td>
-                <td style="padding:10px;border-bottom:1px solid #eee;">${escapeHtml(email)}</td>
-              </tr>
-
-              ${
-                visitDate
-                  ? `
-                    <tr>
-                      <td style="padding:10px;border-bottom:1px solid #eee;"><strong>Preferred Visit Date</strong></td>
-                      <td style="padding:10px;border-bottom:1px solid #eee;">${escapeHtml(visitDate)}</td>
-                    </tr>
-                  `
-                  : ''
-              }
-
-              ${
-                message
-                  ? `
-                    <tr>
-                      <td style="padding:10px;border-bottom:1px solid #eee;"><strong>Message</strong></td>
-                      <td style="padding:10px;border-bottom:1px solid #eee;">${escapeHtml(message)}</td>
-                    </tr>
-                  `
-                  : ''
-              }
-            </table>
+            ${
+              message
+                ? `<p><strong>Message:</strong> ${escapeHtml(message)}</p>`
+                : ''
+            }
 
             <p style="font-size:13px;color:#777;margin-top:20px;">
               Source: Stellavia Website
