@@ -5991,6 +5991,7 @@ p,
 .stellavia-about-landing {
   width: 100%;
   background: #f6efe4;
+  padding-top: 112px;
   color: #0b1d33;
   overflow: hidden;
 }
@@ -6555,7 +6556,8 @@ p,
 
 @media (max-width: 1440px) {
   .story-section {
-    padding: 64px 64px;
+    /*padding: 64px 64px;*/
+    padding: 100px 64px 64px;
     grid-template-columns: 54px minmax(300px, 470px) 1fr;
     gap: 28px;
   }
@@ -6635,7 +6637,8 @@ p,
 @media (max-width: 1280px) {
   .story-section {
     grid-template-columns: 54px minmax(300px, 440px) 1fr;
-    padding: 58px 44px;
+    /*padding: 58px 44px;*/
+    padding: 100px 44px 58px;
   }
 
   .story-copy h1 {
@@ -6799,7 +6802,8 @@ p,
 
 @media (max-width: 1024px) {
   .story-section {
-    padding: 54px 34px;
+    /*padding: 54px 34px;*/
+    padding: 100px 34px 54px;
   }
 
   .story-copy h1 {
@@ -6849,7 +6853,8 @@ p,
   .story-section,
   .closing-section {
     grid-template-columns: 1fr;
-    padding: 54px 22px;
+    /*padding: 54px 22px;*/
+    padding: 100px 34px 54px;
   }
 
   .story-visual {
