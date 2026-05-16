@@ -66,7 +66,7 @@ export default function StellaviaAboutLanding() {
 
         <div className="story-visual">
           <div className="blueprint-circle" />
-          <img src="/img/about-building.webp" alt="Stellavia residential towers" />
+          <img src="/img/JB_CAM_02_FFF-r.webp" alt="Stellavia residential towers" />
 
           <div className="trust-seal">
             <span>★</span>
@@ -148,7 +148,7 @@ export default function StellaviaAboutLanding() {
         </div>
 
         <div className="comfort-image">
-          <img src="/img/lifestyle-balcony.webp" alt="Stellavia lifestyle balcony" />
+          <img src="/sample house image/06.webp" alt="Stellavia lifestyle hall" />
 
           <div className="vertical-dots">
             <span className="active" />
@@ -211,7 +211,7 @@ export default function StellaviaAboutLanding() {
         </div>
 
         <div className="closing-image">
-          <img src="/img/project-night.webp" alt="Stellavia project night view" />
+          <img src="/img/JB_CAM_02_NIGHT_FFF-r.webp" alt="Stellavia project night view" />
         </div>
       </div>
     </section>
