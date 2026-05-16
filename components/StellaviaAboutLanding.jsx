@@ -37,11 +37,25 @@ const trustPoints = [
   { icon: MapPin, title: 'Strategic', sub: 'connectivity' },
 ];
 
+function ScaleRuler({ dark = false }) {
+  return (
+    <div className={`scale-ruler ${dark ? 'dark-scale-ruler' : ''}`}>
+      <span style={{ '--pos': '0%' }}>12</span>
+      <span style={{ '--pos': '20%' }}>9</span>
+      <span style={{ '--pos': '40%' }}>7</span>
+      <span style={{ '--pos': '60%' }}>3</span>
+      <span style={{ '--pos': '80%' }}>2</span>
+    </div>
+  );
+}
+
 export default function StellaviaAboutLanding() {
   return (
     <section className="stellavia-about-landing">
       {/* 01 Our Story */}
       <div className="story-section">
+        <ScaleRuler />
+
         <div className="section-number">01</div>
 
         <div className="story-copy">
@@ -65,6 +79,9 @@ export default function StellaviaAboutLanding() {
 
         <div className="story-visual">
           <div className="blueprint-circle" />
+          <div className="drafting-line drafting-line-top" />
+          <div className="drafting-line drafting-line-right" />
+          <div className="draft-cross" />
 
           <img
             src="/img/about-building.webp"
@@ -151,6 +168,8 @@ export default function StellaviaAboutLanding() {
         </div>
 
         <div className="comfort-image">
+          <div className="comfort-draft-corner" />
+
           <img
             src="/img/lifestyle-balcony.webp"
             alt="Stellavia lifestyle balcony"
@@ -189,6 +208,11 @@ export default function StellaviaAboutLanding() {
 
       {/* 05 Closing CTA */}
       <div className="closing-section">
+        <ScaleRuler dark />
+
+        <div className="closing-draft-circle" />
+        <div className="closing-draft-box" />
+
         <div className="section-number dark-number">05</div>
 
         <div className="closing-copy">
