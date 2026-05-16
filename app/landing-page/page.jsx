@@ -47,7 +47,7 @@ export const metadata = {
     title: 'Premium 3 BHK Homes in Khoraj, Gandhinagar | Stellavia',
     description:
       'Premium 3 BHK homes with only 2 flats per floor, column-less planning and practical luxury.',
-    images: [`${siteUrl}/img/about-building.webp`],
+    images: [`${siteUrl}/landing image/3.png`],
   },
 };
 
