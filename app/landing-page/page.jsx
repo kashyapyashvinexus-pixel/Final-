@@ -60,7 +60,6 @@ const schemaData = {
       name: 'Stellavia',
       url: siteUrl,
       logo: `${siteUrl}/logo-mark.svg`,
-      sameAs: [],
     },
     {
       '@type': 'WebSite',
@@ -103,7 +102,7 @@ const schemaData = {
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Khoraj',
-        addressRegion: 'Gandhinagar, Gujarat',
+        addressRegion: 'Gandhinagar',
         addressCountry: 'IN',
       },
       amenityFeature: [
@@ -115,6 +114,11 @@ const schemaData = {
         {
           '@type': 'LocationFeatureSpecification',
           name: 'Column-less planning',
+          value: true,
+        },
+        {
+          '@type': 'LocationFeatureSpecification',
+          name: 'Zero wasted space',
           value: true,
         },
         {
@@ -185,7 +189,7 @@ const schemaData = {
   ],
 };
 
-export default function AdsLandingPage() {
+export default function LandingPage() {
   return (
     <>
       <script
