@@ -47,14 +47,17 @@ export default function StellaviaAboutLanding() {
         <div className="story-copy">
           <span className="mini-label">Our Story</span>
 
-          <h2>
-            From thoughtful <br />
-            planning to trusted delivery.
-          </h2>
+          <h1>
+            Premium 3 BHK Homes in Khoraj, Gandhinagar
+          </h1>
+
+          <p className="seo-subtitle">
+            From thoughtful planning to trusted delivery.
+          </p>
 
           <span className="gold-line" />
 
-          <p>
+          <p className="story-description">
             At Stellavia, every detail begins with purpose. From intelligent layouts
             to premium construction, our focus is to create homes that simplify
             your life and elevate your everyday. With award-winning planning,
