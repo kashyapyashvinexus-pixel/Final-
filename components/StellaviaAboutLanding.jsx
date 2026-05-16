@@ -215,7 +215,7 @@ export default function StellaviaAboutLanding() {
             <div className="draft-cross" />
 
             <img
-              src="/landing image/1.png"
+              src="/landing image/3.png"
               alt="Stellavia residential towers"
             />
 
@@ -427,7 +427,7 @@ export default function StellaviaAboutLanding() {
 
             <small>
               or call directly <br />
-              +91 XXXXX XXXXX
+              +91 75728 18000
             </small>
           </form>
         </div>
