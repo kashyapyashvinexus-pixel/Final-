@@ -47,9 +47,7 @@ export default function StellaviaAboutLanding() {
         <div className="story-copy">
           <span className="mini-label">Our Story</span>
 
-          <h1>
-            Premium 3 BHK Homes in Khoraj, Gandhinagar
-          </h1>
+          <h1>Premium 3 BHK Homes in Khoraj, Gandhinagar</h1>
 
           <p className="seo-subtitle">
             From thoughtful planning to trusted delivery.
