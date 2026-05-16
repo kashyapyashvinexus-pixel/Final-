@@ -41,32 +41,35 @@ export default function StellaviaAboutLanding() {
   return (
     <section className="stellavia-about-landing">
       {/* 01 Our Story */}
-      <div className="stellavia-blueprint-section story-section">
+      <div className="story-section">
         <div className="section-number">01</div>
 
         <div className="story-copy">
           <span className="mini-label">Our Story</span>
 
-          <h1>Premium 3 BHK Homes in Khoraj, Gandhinagar</h1>
-
-          <p className="seo-subtitle">
-            From thoughtful planning to trusted delivery.
-          </p>
+          <h1>
+            From thoughtful <br />
+            planning to trusted delivery.
+          </h1>
 
           <span className="gold-line" />
 
-          <p className="story-description">
+          <p>
             At Stellavia, every detail begins with purpose. From intelligent layouts
             to premium construction, our focus is to create homes that simplify
             your life and elevate your everyday. With award-winning planning,
             RERA certification, and a commitment to on-time delivery, Stellavia
-            reflects the trust of modern families.
+            reflects the trust of hundreds of happy families.
           </p>
         </div>
 
         <div className="story-visual">
           <div className="blueprint-circle" />
-          <img src="/img/JB_CAM_02_FFF-r.webp" alt="Stellavia residential towers" />
+
+          <img
+            src="/img/about-building.webp"
+            alt="Stellavia residential towers"
+          />
 
           <div className="trust-seal">
             <span>★</span>
@@ -148,7 +151,10 @@ export default function StellaviaAboutLanding() {
         </div>
 
         <div className="comfort-image">
-          <img src="/sample house image/06.webp" alt="Stellavia lifestyle hall" />
+          <img
+            src="/img/lifestyle-balcony.webp"
+            alt="Stellavia lifestyle balcony"
+          />
 
           <div className="vertical-dots">
             <span className="active" />
@@ -211,7 +217,10 @@ export default function StellaviaAboutLanding() {
         </div>
 
         <div className="closing-image">
-          <img src="/img/JB_CAM_02_NIGHT_FFF-r.webp" alt="Stellavia project night view" />
+          <img
+            src="/img/project-night.webp"
+            alt="Stellavia project night view"
+          />
         </div>
       </div>
     </section>
