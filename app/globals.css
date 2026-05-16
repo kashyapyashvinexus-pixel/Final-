@@ -6147,11 +6147,12 @@ p,
   gap: 34px;
   align-items: start;
   position: relative;
-  background:
+  /*background:
     linear-gradient(90deg, rgba(196, 154, 50, 0.13) 1px, transparent 1px) 0 0 / 90px 90px,
     linear-gradient(180deg, rgba(196, 154, 50, 0.1) 1px, transparent 1px) 0 0 / 90px 90px,
     radial-gradient(circle at 74% 35%, rgba(196, 154, 50, 0.08), transparent 31%),
-    #f7efe3;
+    #f7efe3;*/
+  background: #ffffff;
   border-bottom: 1px solid rgba(185, 151, 88, 0.35);
 }
 
