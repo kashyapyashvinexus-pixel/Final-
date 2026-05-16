@@ -6,17 +6,17 @@ const pageUrl = `${siteUrl}/landing-page`;
 export const metadata = {
   title: 'Premium 3 BHK Homes in Khoraj, Gandhinagar | Stellavia',
   description:
-    'Discover Stellavia premium 3 BHK homes in Khoraj, Gandhinagar with only 2 flats per floor, column-less planning, spacious bedrooms, RERA certification and practical luxury.',
+    'Explore Stellavia premium 3 BHK homes in Khoraj, Gandhinagar with only 2 flats per floor, column-less planning, zero wasted space, RERA certification and practical luxury.',
   keywords: [
-    '3 BHK flats in Khoraj',
-    '3 BHK homes in Gandhinagar',
-    'premium flats in Gandhinagar',
+    'Premium 3 BHK homes in Khoraj',
+    '3 BHK flats in Gandhinagar',
     'Stellavia',
-    'residential project in Khoraj',
+    'Stellavia Construction',
     'RERA certified project Gandhinagar',
-    '2 flats per floor homes',
-    'column less flats',
+    '2 flats per floor apartments',
+    'column less planning homes',
     'premium apartments near Ahmedabad',
+    'residential project in Khoraj',
   ],
   alternates: {
     canonical: pageUrl,
@@ -28,9 +28,11 @@ export const metadata = {
   openGraph: {
     title: 'Premium 3 BHK Homes in Khoraj, Gandhinagar | Stellavia',
     description:
-      'Built for life, not just living. Explore Stellavia premium 3 BHK homes with practical luxury, better privacy, smart planning and trusted delivery.',
+      'Built for life, not just living. Discover Stellavia premium 3 BHK homes with practical luxury, better privacy and trusted delivery.',
     url: pageUrl,
     siteName: 'Stellavia',
+    locale: 'en_IN',
+    type: 'website',
     images: [
       {
         url: `${siteUrl}/img/about-building.webp`,
@@ -39,8 +41,6 @@ export const metadata = {
         alt: 'Stellavia Premium 3 BHK Homes in Khoraj Gandhinagar',
       },
     ],
-    locale: 'en_IN',
-    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
@@ -98,7 +98,7 @@ const schemaData = {
         `${siteUrl}/img/project-night.webp`,
       ],
       description:
-        'Premium 3 BHK residential homes at Khoraj, Gandhinagar designed with only 2 flats per floor, column-less planning, spacious bedrooms, dedicated dining area and better privacy.',
+        'Premium 3 BHK residential homes at Khoraj, Gandhinagar designed with only 2 flats per floor, column-less planning, zero wasted space, spacious bedrooms, dedicated dining area and better privacy.',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Khoraj',
@@ -124,6 +124,11 @@ const schemaData = {
         {
           '@type': 'LocationFeatureSpecification',
           name: 'Dedicated dining area',
+          value: true,
+        },
+        {
+          '@type': 'LocationFeatureSpecification',
+          name: 'Spacious bedrooms',
           value: true,
         },
         {
@@ -199,7 +204,7 @@ export default function LandingPage() {
         }}
       />
 
-      <main>
+      <main className="landing-page-main">
         <StellaviaAboutLanding />
       </main>
     </>
