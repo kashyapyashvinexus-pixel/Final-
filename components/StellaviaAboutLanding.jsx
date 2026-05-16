@@ -21,8 +21,8 @@ import {
   X,
 } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '919999999999'; // change this number
-const BROCHURE_FILE = '/brochure.pdf'; // your existing brochure path
+const WHATSAPP_NUMBER = '917572818000'; // change this number
+const BROCHURE_FILE = '/brochure/STELLAVIA BROCHURE.pdf'; // your existing brochure path
 
 const features = [
   { icon: Building2, title: 'Only 2 flats', sub: 'per floor' },
@@ -215,7 +215,7 @@ export default function StellaviaAboutLanding() {
             <div className="draft-cross" />
 
             <img
-              src="/img/about-building.webp"
+              src="/landing image/1.png"
               alt="Stellavia residential towers"
             />
 
