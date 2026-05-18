@@ -1220,7 +1220,7 @@ p,
 
 /* Mobile */
 /*@media (max-width: 768px) {*/
-*@media (max-width: auto) {
+*@media (max-width: 768px) {
   .sample-slider {
     height: 82svh;
     min-height: 520px;
@@ -1244,8 +1244,7 @@ p,
 }
 
 /* Small Mobile */
-/*@media (max-width: 480px) {*/
-*@media (max-width: auto) {
+@media (max-width: 480px) {
   .sample-slider {
     height: 78svh;
     min-height: 480px;
