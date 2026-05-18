@@ -1228,8 +1228,8 @@ p,
   }
 
   .sample-img {
-   object-fit: contain;
-    object-position: center center;
+   object-position: center;
+   
   }
 
   .sample-overlay {
@@ -1252,8 +1252,7 @@ p,
   }
 
   .sample-img {
-    object-fit: contain;
-    object-position: center center;
+    object-position: center;
   }
 } 
 /*======================================================*/
