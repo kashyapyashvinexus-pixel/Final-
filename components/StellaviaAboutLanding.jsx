@@ -295,7 +295,7 @@ export default function StellaviaAboutLanding() {
           </div>
 
           <div className="plan-visual">
-            <img src="/img/floor-plan.webp" alt="Stellavia floor plan" />
+            <img src="/landing image/Floor Plan 3d View.png" alt="Stellavia floor plan" />
           </div>
 
           <div className="comfort-image">
