@@ -6,19 +6,19 @@ import gsap from 'gsap';
 const slides = [
   {
     desktop: '/img/ST_CAM_07_FFF-r.jpg.jpeg',
-    mobile: '/img/ST_CAM_07_FFF-r.jpg.jpeg',
+    mobile: '/mobile img/10.jpg',
   },
   {
     desktop: '/img/JB_CAM_16_FFF.webp',
-    mobile: '/img/JB_CAM_16_FFF.webp',
+    mobile: '/mobile img/5.jpg',
   },
   {
     desktop: '/img/ST_CAM_02_FFF.webp',
-    mobile: '/img/ST_CAM_02_FFF.webp',
+    mobile: '/mobile img/5.jpg',
   },
   {
     desktop: '/img/ST_CAM_01_FFF.webp',
-    mobile: '/img/ST_CAM_01_FFF.webp',
+    mobile: '/mobile img/5.jpg',
   },
 ];
 
