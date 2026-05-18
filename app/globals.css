@@ -1220,11 +1220,11 @@ p,
 
 /* Mobile */
 /*@media (max-width: 768px) {*/
-*@media (max-width: 1080px) {
+*@media (max-width: auto) {
   .sample-slider {
-    /*height: 82svh;
-    min-height: 520px;*/
-    height: 1920px;
+    height: 82svh;
+    min-height: 520px;
+    /*height: 1920px;*/
   }
 
   .sample-img {
@@ -1245,11 +1245,11 @@ p,
 
 /* Small Mobile */
 /*@media (max-width: 480px) {*/
-*@media (max-width: 1080px) {
+*@media (max-width: auto) {
   .sample-slider {
-    /*height: 78svh;
-    min-height: 480px;*/
-    height: auto;
+    height: 78svh;
+    min-height: 480px;
+   /* height: auto;*/
   }
 
   .sample-img {
