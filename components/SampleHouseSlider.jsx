@@ -14,11 +14,11 @@ const slides = [
   },
   {
     desktop: '/img/ST_CAM_02_FFF.webp',
-    mobile: '/mobile img/5.jpg',
+    mobile: '/mobile img/8.jpg',
   },
   {
     desktop: '/img/ST_CAM_01_FFF.webp',
-    mobile: '/mobile img/5.jpg',
+    mobile: '/mobile img/7.jpg',
   },
 ];
 
