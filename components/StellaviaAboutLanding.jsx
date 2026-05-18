@@ -472,7 +472,7 @@ export default function StellaviaAboutLanding() {
 
           <div className="closing-image">
             <img
-              src="/img/project-night.webp"
+              src="/landing image/1.png"
               alt="Stellavia project night view"
             />
           </div>
