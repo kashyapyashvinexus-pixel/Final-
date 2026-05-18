@@ -302,7 +302,7 @@ export default function StellaviaAboutLanding() {
             <div className="comfort-draft-corner" />
 
             <img
-              src="/img/lifestyle-balcony.webp"
+              src="/sample house image/06.webp"
               alt="Stellavia lifestyle balcony"
             />
 
