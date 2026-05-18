@@ -5,8 +5,10 @@ import MouseGlow from '@/components/MouseGlow';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+const siteUrl = 'https://final-rouge-theta.vercel.app';
+
 export const metadata = {
-  metadataBase: new URL('https://stellavia.vercel.app'),
+  metadataBase: new URL(siteUrl),
 
   title: {
     default: 'Stellavia Construction | Premium Flats & Apartments',
@@ -37,28 +39,24 @@ export const metadata = {
   icons: {
     icon: [
       {
-        url: '/favicon.ico',
+        url: '/favicon.ico?v=3',
         sizes: 'any',
       },
       {
-        url: '/icon.png',
+        url: '/icon.png?v=3',
         type: 'image/png',
         sizes: '512x512',
       },
-      {
-        url: '/favicon.svg',
-        type: 'image/svg+xml',
-      },
     ],
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico?v=3',
+    apple: '/apple-touch-icon.png?v=3',
   },
 
   openGraph: {
     title: 'Stellavia Construction',
     description:
       'Premium residential flats and apartments designed for modern living.',
-    url: 'https://stellavia.vercel.app',
+    url: siteUrl,
     siteName: 'Stellavia Construction',
     images: [
       {
@@ -85,9 +83,9 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Stellavia Construction',
-  url: 'https://stellavia.vercel.app',
-  logo: 'https://stellavia.vercel.app/icon.png',
-  image: 'https://stellavia.vercel.app/og-image.jpg',
+  url: siteUrl,
+  logo: `${siteUrl}/icon.png`,
+  image: `${siteUrl}/og-image.jpg`,
   description:
     'Stellavia builds premium residential flats and apartments with modern design, luxury positioning, and strong construction trust.',
   address: {
