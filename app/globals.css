@@ -7585,132 +7585,251 @@ p,
 
 
 /*================================================================header condition button for broucher==================================================*/
-.site-nav-center .nav-link-btn {
-  border: 0;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  padding: 0;
-  text-decoration: none;
+/* =========================================================
+   HEADER BROCHURE BUTTON + MODAL FORM FIX
+   Paste this at the VERY BOTTOM of app/globals.css
+========================================================= */
+
+/* Brochure nav button should look exactly like other header menu links */
+.site-header .site-nav .site-nav-center .nav-link-btn {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-.site-nav-center .nav-link-btn:hover {
-  color: inherit;
+.site-header .site-nav .site-nav-center .nav-link-btn:hover,
+.site-header .site-nav .site-nav-center .nav-link-btn:focus {
+  color: inherit !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
 }
+
+/* =========================================================
+   BROCHURE POPUP OVERLAY
+========================================================= */
 
 .brochure-modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.58);
-  backdrop-filter: blur(8px);
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 22px !important;
+  background: rgba(5, 12, 22, 0.68) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
+
+/* =========================================================
+   BROCHURE POPUP CARD
+========================================================= */
 
 .brochure-modal {
-  position: relative;
-  width: min(460px, 100%);
-  padding: 34px 28px 30px;
-  border-radius: 26px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
-  color: #10243a;
+  position: relative !important;
+  width: min(460px, 100%) !important;
+  max-width: 460px !important;
+  padding: 36px 28px 30px !important;
+  border-radius: 26px !important;
+  background: rgba(255, 255, 255, 0.97) !important;
+  border: 1px solid rgba(255, 255, 255, 0.55) !important;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.32) !important;
+  color: #10243a !important;
+  text-align: left !important;
+  overflow: hidden !important;
 }
+
+/* Optional premium top shine */
+.brochure-modal::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 5px !important;
+  background: linear-gradient(90deg, #10243a, #c7a46a, #10243a) !important;
+}
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
 
 .brochure-modal-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 38px;
-  height: 38px;
-  border: 0;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  color: #10243a;
-  background: rgba(16, 36, 58, 0.08);
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  left: auto !important;
+  width: 38px !important;
+  height: 38px !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  cursor: pointer !important;
+  color: #10243a !important;
+  background: rgba(16, 36, 58, 0.08) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  transition: background 0.25s ease, transform 0.25s ease !important;
 }
 
+.brochure-modal-close:hover {
+  background: rgba(16, 36, 58, 0.14) !important;
+  transform: rotate(90deg) !important;
+}
+
+/* =========================================================
+   MODAL TEXT
+========================================================= */
+
 .brochure-modal-label {
-  margin: 0 0 10px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #c7a46a;
+  display: block !important;
+  margin: 0 0 10px !important;
+  padding: 0 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: #c7a46a !important;
 }
 
 .brochure-modal h3 {
-  margin: 0;
-  font-size: clamp(26px, 4vw, 34px);
-  line-height: 1.12;
-  color: #10243a;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: clamp(26px, 4vw, 34px) !important;
+  line-height: 1.12 !important;
+  font-weight: 700 !important;
+  color: #10243a !important;
 }
 
 .brochure-modal-text {
-  margin: 12px 0 24px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(16, 36, 58, 0.72);
+  display: block !important;
+  margin: 12px 0 24px !important;
+  padding: 0 !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: rgba(16, 36, 58, 0.72) !important;
 }
 
+/* =========================================================
+   FORM DESIGN
+========================================================= */
+
 .brochure-form {
-  display: grid;
-  gap: 14px;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .brochure-form input {
-  width: 100%;
-  height: 52px;
-  border-radius: 14px;
-  border: 1px solid rgba(16, 36, 58, 0.15);
-  outline: none;
-  padding: 0 16px;
-  font-size: 15px;
-  color: #10243a;
-  background: #fff;
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 52px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(16, 36, 58, 0.15) !important;
+  outline: none !important;
+  padding: 0 16px !important;
+  margin: 0 !important;
+  font-size: 15px !important;
+  font-family: inherit !important;
+  color: #10243a !important;
+  background: #ffffff !important;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+}
+
+.brochure-form input::placeholder {
+  color: rgba(16, 36, 58, 0.48) !important;
 }
 
 .brochure-form input:focus {
-  border-color: #c7a46a;
-  box-shadow: 0 0 0 4px rgba(199, 164, 106, 0.16);
+  border-color: #c7a46a !important;
+  box-shadow: 0 0 0 4px rgba(199, 164, 106, 0.16) !important;
 }
 
 .brochure-form button {
-  height: 54px;
-  border: 0;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  background: #10243a;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 54px !important;
+  border: 0 !important;
+  outline: 0 !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  font-size: 15px !important;
+  font-family: inherit !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  background: #10243a !important;
+  box-shadow: 0 14px 32px rgba(16, 36, 58, 0.24) !important;
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease !important;
 }
 
 .brochure-form button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) !important;
+  box-shadow: 0 18px 38px rgba(16, 36, 58, 0.32) !important;
 }
 
 .brochure-form button:disabled {
-  cursor: not-allowed;
-  opacity: 0.7;
-  transform: none;
+  cursor: not-allowed !important;
+  opacity: 0.7 !important;
+  transform: none !important;
+  box-shadow: 0 14px 32px rgba(16, 36, 58, 0.18) !important;
 }
 
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
 @media (max-width: 640px) {
+  .brochure-modal-overlay {
+    padding: 16px !important;
+    align-items: center !important;
+  }
+
   .brochure-modal {
-    padding: 30px 20px 24px;
-    border-radius: 22px;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 32px 20px 24px !important;
+    border-radius: 22px !important;
   }
 
   .brochure-modal h3 {
-    font-size: 26px;
+    font-size: 26px !important;
+  }
+
+  .brochure-modal-text {
+    font-size: 14px !important;
+  }
+
+  .brochure-form input {
+    height: 50px !important;
+    font-size: 14px !important;
+  }
+
+  .brochure-form button {
+    height: 52px !important;
+    font-size: 14px !important;
   }
 }
-
