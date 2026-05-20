@@ -17,8 +17,8 @@ const navItems = [
   { label: 'Project', path: '/projects/stellavia' },
   { label: 'About Us', path: '/about' },
   { label: 'Contact Us', path: '/contact' },
-  { label: 'Brochure', type: 'brochure' },
-  { label: 'News', path: '#' }
+  { label: 'News', path: '#' },
+  { label: 'Brochure', type: 'brochure' }
 ];
 
 function createWhatsappMessage(data) {
